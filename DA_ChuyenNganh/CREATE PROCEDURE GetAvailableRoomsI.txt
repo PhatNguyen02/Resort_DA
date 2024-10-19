@@ -1,0 +1,15 @@
+CREATE PROCEDURE GetAvailableRoomsInDateRange
+    @CheckInDate DATETIME,
+    @CheckOutDate DATETIME
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT r.RoomID, r.RoomType, r.Price, r.Description, r.ImageRooms
+    FROM Rooms r
+    WHERE r.RoomID NOT IN (
+        SELECT b.RoomID
+        FROM Bookings b
+        WHERE (b.CheckInDate < @CheckOutDate AND b.CheckOutDate > @CheckInDate)
+    )
+END

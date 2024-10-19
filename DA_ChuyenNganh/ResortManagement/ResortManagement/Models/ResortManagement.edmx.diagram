@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ab7e63275fcc49ab83acca8d89aa3b02" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_ResortfModel.Booking" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Invoice" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Promotion" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Review" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Room" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Service" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.UsedService" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.User" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="DB_ResortfModel.FK__Bookings__Promot__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__Bookings__RoomID__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__Bookings__UserID__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__Invoices__Bookin__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__UsedServi__Booki__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__Reviews__RoomID__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__Reviews__Service__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__Reviews__UserID__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__UsedServi__Servi__6383C8BA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
