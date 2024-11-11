@@ -54,5 +54,22 @@ namespace ResortManagement.Services
             return checkIn < checkOut && checkIn >= DateTime.Now;
         }
 
+        public bool IsRoomAvailable(int roomId, DateTime newCheckIn, DateTime newCheckOut)
+        {
+            using (var db = new DB_ResortfEntities())
+            {
+                // Kiểm tra xem có booking nào đã tồn tại với thời gian chồng chéo không
+                var overlappingBooking = db.Bookings
+                    .Any(b => b.RoomID == roomId &&
+                              ((newCheckIn < b.CheckOutDate && newCheckOut > b.CheckInDate) ||
+                               (newCheckIn == b.CheckInDate && newCheckOut == b.CheckOutDate)));
+
+                // Trả về true nếu không có trùng lịch
+                return !overlappingBooking;
+            }
+        }
+
+
+
     }
 }

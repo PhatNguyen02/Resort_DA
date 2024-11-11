@@ -23,6 +23,7 @@
         <AssociationConnector Association="DB_ResortfModel.FK__Reviews__Service__5FB337D6" ManuallyRouted="false" />
         <AssociationConnector Association="DB_ResortfModel.FK__Reviews__UserID__5DCAEF64" ManuallyRouted="false" />
         <AssociationConnector Association="DB_ResortfModel.FK__UsedServi__Servi__6383C8BA" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DB_ResortfModel.TemporarySchedule" Width="1.5" PointX="8.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -36,6 +36,7 @@ namespace ResortManagement.Models
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<UsedService> UsedServices { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<TemporarySchedule> TemporarySchedules { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

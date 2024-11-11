@@ -66,6 +66,7 @@
           <Property Name="Status" Type="nvarchar" MaxLength="50" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
           <Property Name="ImageRooms" Type="nvarchar" MaxLength="255" />
+          <Property Name="MainImage" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Services">
           <Key>
@@ -88,6 +89,17 @@
           <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TemporarySchedule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="customerId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="startTime" Type="datetime" Nullable="false" />
+          <Property Name="endTime" Type="datetime" Nullable="false" />
+          <Property Name="serviceId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="UsedServices">
           <Key>
@@ -222,10 +234,6 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="SearchAvailableRooms" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CheckIn" Type="datetime" Mode="In" />
-          <Parameter Name="CheckOut" Type="datetime" Mode="In" />
-        </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -264,6 +272,7 @@
           <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TemporarySchedule" EntityType="Self.TemporarySchedule" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UsedServices" EntityType="Self.UsedServices" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Bookings__Promot__571DF1D5" Association="Self.FK__Bookings__Promot__571DF1D5">
@@ -380,6 +389,7 @@
           <Property Name="ImageRooms" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Bookings" Relationship="Self.FK__Bookings__RoomID__5629CD9C" FromRole="Rooms" ToRole="Bookings" />
           <NavigationProperty Name="Reviews" Relationship="Self.FK__Reviews__RoomID__5EBF139D" FromRole="Rooms" ToRole="Reviews" />
+          <Property Name="MainImage" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
@@ -621,6 +631,7 @@
             <Parameter Name="CheckIn" Mode="In" Type="DateTime" />
             <Parameter Name="CheckOut" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <EntitySet Name="TemporarySchedules" EntityType="DB_ResortfModel.TemporarySchedule" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -633,6 +644,17 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="TemporarySchedule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="customerId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="startTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="endTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="serviceId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -697,6 +719,7 @@
           <EntitySetMapping Name="Rooms">
             <EntityTypeMapping TypeName="DB_ResortfModel.Room">
               <MappingFragment StoreEntitySet="Rooms">
+                <ScalarProperty Name="MainImage" ColumnName="MainImage" />
                 <ScalarProperty Name="RoomID" ColumnName="RoomID" />
                 <ScalarProperty Name="RoomType" ColumnName="RoomType" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
@@ -780,7 +803,18 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DB_ResortfModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DB_ResortfModel.Store.sp_upgraddiagrams" />
-          <FunctionImportMapping FunctionImportName="SearchAvailableRooms" FunctionName="DB_ResortfModel.Store.SearchAvailableRooms" />
+          <EntitySetMapping Name="TemporarySchedules">
+            <EntityTypeMapping TypeName="DB_ResortfModel.TemporarySchedule">
+              <MappingFragment StoreEntitySet="TemporarySchedule">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="serviceId" ColumnName="serviceId" />
+                <ScalarProperty Name="endTime" ColumnName="endTime" />
+                <ScalarProperty Name="startTime" ColumnName="startTime" />
+                <ScalarProperty Name="customerId" ColumnName="customerId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -159,70 +159,7 @@
                                             <li class="position-static">
                                                 <a href="index.html">Home</a>
                                                 <div class="tp-mega-menu">
-                                                    <div class="tp-main-has-submenu">
-                                                        <div class="row gx-6 row-cols-1 row-cols-md-2 row-cols-lg-5">
-                                                            <div class="col homemenu">
-                                                                <div class="homemenu-thumb mb-15">
-                                                                    <a href="index.html">
-                                                                        <img src="~/assets/img/menu-demo/demo.jpg" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        <a href="index.html">Modern Hotel</a>
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col homemenu">
-                                                                <div class="homemenu-thumb mb-15">
-                                                                    <a href="index-2.html">
-                                                                        <img src="~/assets/img/menu-demo/demo-2.jpg" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        <a href="index-2.html">City Hotel</a>
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col homemenu">
-                                                                <div class="homemenu-thumb mb-15">
-                                                                    <a href="index-3.html">
-                                                                        <img src="~/assets/img/menu-demo/demo-3.jpg" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        <a href="index-3.html">Luxury Hotel</a>
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col homemenu">
-                                                                <div class="homemenu-thumb mb-15">
-                                                                    <a href="index-4.html">
-                                                                        <img src="~/assets/img/menu-demo/demo-4.jpg" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        <a href="index-4.html">Modern Resort</a>
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col homemenu">
-                                                                <div class="homemenu-thumb mb-15">
-                                                                    <a href="index-5.html">
-                                                                        <img src="~/assets/img/menu-demo/demo-5.jpg" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        <a href="index-5.html">Sea Hotel</a>
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    
                                                 </div>
                                             </li>
                                             <li>
@@ -492,17 +429,22 @@
                                                                 <div class="tp-hero-two-search-bottom d-flex justify-content-between align-items-center" style="width: 100%;">
 
                                                                     <!-- Sử dụng Flexbox để căn các input cách đều nhau -->
+                                                                    @{
+                                                                        var currentDate = DateTime.Now.ToString("yyyy-MM-dd");
+                                                                    }
+
                                                                     <div class="d-flex" style="gap: 15px; flex-grow: 1;">
                                                                         <div>
                                                                             <label>Check In</label>
-                                                                            @Html.TextBox("CheckIn", null, new { @class = "form-control", type = "date", required = "required" })
+                                                                            @Html.TextBox("CheckIn", null, new { @class = "form-control", type = "date", min = currentDate, required = "required" })
                                                                         </div>
 
                                                                         <div>
                                                                             <label>Check Out</label>
-                                                                            @Html.TextBox("CheckOut", null, new { @class = "form-control", type = "date", required = "required" })
+                                                                            @Html.TextBox("CheckOut", null, new { @class = "form-control", type = "date", min = currentDate, required = "required" })
                                                                         </div>
                                                                     </div>
+
 
                                                                     <!-- Nút Search -->
                                                                     <div class="tp-hero-submit-btn-wrap-2">

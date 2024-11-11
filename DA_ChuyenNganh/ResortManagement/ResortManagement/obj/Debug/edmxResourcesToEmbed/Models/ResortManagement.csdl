@@ -73,6 +73,7 @@
     <Property Name="ImageRooms" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Bookings" Relationship="Self.FK__Bookings__RoomID__5629CD9C" FromRole="Rooms" ToRole="Bookings" />
     <NavigationProperty Name="Reviews" Relationship="Self.FK__Reviews__RoomID__5EBF139D" FromRole="Rooms" ToRole="Reviews" />
+    <Property Name="MainImage" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Service">
     <Key>
@@ -314,6 +315,7 @@
       <Parameter Name="CheckIn" Mode="In" Type="DateTime" />
       <Parameter Name="CheckOut" Mode="In" Type="DateTime" />
     </FunctionImport>
+    <EntitySet Name="TemporarySchedules" EntityType="DB_ResortfModel.TemporarySchedule" />
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -326,4 +328,15 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="TemporarySchedule">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="customerId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="startTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="endTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="serviceId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

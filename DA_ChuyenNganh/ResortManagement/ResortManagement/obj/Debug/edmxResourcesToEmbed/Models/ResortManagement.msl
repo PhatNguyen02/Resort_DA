@@ -59,6 +59,7 @@
     <EntitySetMapping Name="Rooms">
       <EntityTypeMapping TypeName="DB_ResortfModel.Room">
         <MappingFragment StoreEntitySet="Rooms">
+          <ScalarProperty Name="MainImage" ColumnName="MainImage" />
           <ScalarProperty Name="RoomID" ColumnName="RoomID" />
           <ScalarProperty Name="RoomType" ColumnName="RoomType" />
           <ScalarProperty Name="Price" ColumnName="Price" />
@@ -142,6 +143,17 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DB_ResortfModel.Store.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DB_ResortfModel.Store.sp_upgraddiagrams" />
-    <FunctionImportMapping FunctionImportName="SearchAvailableRooms" FunctionName="DB_ResortfModel.Store.SearchAvailableRooms" />
+    <EntitySetMapping Name="TemporarySchedules">
+      <EntityTypeMapping TypeName="DB_ResortfModel.TemporarySchedule">
+        <MappingFragment StoreEntitySet="TemporarySchedule">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="serviceId" ColumnName="serviceId" />
+          <ScalarProperty Name="endTime" ColumnName="endTime" />
+          <ScalarProperty Name="startTime" ColumnName="startTime" />
+          <ScalarProperty Name="customerId" ColumnName="customerId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
