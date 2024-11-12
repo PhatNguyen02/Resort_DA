@@ -24,7 +24,7 @@ namespace ResortManagement.Models
         public string PromotionCode { get; set; }
         public string Description { get; set; }
         public Nullable<decimal> Discount { get; set; }
-        public Nullable<bool> IsFlashDeal { get; set; }
+        public bool IsFlashDeal { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
     

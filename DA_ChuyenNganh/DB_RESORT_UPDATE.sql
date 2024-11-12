@@ -77,6 +77,22 @@ CREATE TABLE Invoices (
     FOREIGN KEY (BookingID) REFERENCES Bookings(BookingID)
 );
 
+-- Bảng Invoices_Detail (Hóa đơn chi tiết)
+CREATE TABLE Invoices_Detail (
+    InvoiceDetailID INT PRIMARY KEY IDENTITY(1,1),
+    InvoiceID INT,
+	UserID INT,
+    UsedServiceID INT NULL, 
+    RoomID INT NULL, 
+    Quantity INT,
+    UnitPrice DECIMAL(10,2),
+    TotalPrice DECIMAL(10,2),
+    FOREIGN KEY (InvoiceID) REFERENCES Invoices(InvoiceID),
+	FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (UsedServiceID) REFERENCES UsedServices(UsedServiceID),
+    FOREIGN KEY (RoomID) REFERENCES Rooms(RoomID)
+);
+
 -- Bảng Reviews (Đánh giá)
 CREATE TABLE Reviews (
     ReviewID INT PRIMARY KEY IDENTITY(1,1),

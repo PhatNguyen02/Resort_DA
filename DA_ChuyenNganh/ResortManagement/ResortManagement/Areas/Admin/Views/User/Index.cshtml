@@ -1,0 +1,75 @@
+﻿@model List<ResortManagement.Models.User>
+@{
+    ViewBag.Title = "User Management";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="row m-b-30">
+            <div class="col-lg-8">
+                @*<div class="d-md-flex">
+                    <div class="m-b-10 m-r-15">
+                        <select class="custom-select" style="min-width: 180px;">
+                            <option selected>Role</option>
+                            <option value="all">All</option>
+                            <option value="admin">Admin</option>
+                            <option value="customer">Customer</option>
+                        </select>
+                    </div>
+                    <div class="m-b-10">
+                        <input type="text" class="form-control" placeholder="Search by Username or Email">
+                    </div>
+                </div>*@
+            </div>
+            <div class="col-md-4 d-flex justify-content-md-end" style="margin-top: 60px;">
+                <div class="d-flex justify-content-end">
+                    <a href="@Url.Action("AddUser", "User")" class="btn btn-primary">
+                        <i class="anticon anticon-plus-circle m-r-5"></i>
+                        <span>Add User</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover e-commerce-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Role</th>
+                        <th>Registration Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>@user.UserID</td>
+                            <td>@user.FullName</td>
+                            <td>@user.Email</td>
+                            <td>@user.PhoneNumber</td>
+                            <td>@user.Username</td>
+                            <td>@user.Password</td>
+                            <td>@user.Role</td>
+                            <td>@(user.RegistrationDate.HasValue ? user.RegistrationDate.Value.ToString("dd/MM/yyyy") : "N.A")</td>
+                            <td class="text-right">
+                                <a href="@Url.Action("EditUser","User", new { id = user.UserID })" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                    <i class="anticon anticon-edit"></i>
+                                </a>
+                                <a href="@Url.Action("DeleteUser","User", new { id = user.UserID })" class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                    <i class="anticon anticon-delete"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

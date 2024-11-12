@@ -1,0 +1,83 @@
+﻿@model ResortManagement.Models.Room
+
+@{
+    ViewBag.Title = "Edit Room";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+}
+
+<div class="card">
+    <div class="card-body" style="margin-top: 60px">
+        <h2 class="my-4 text-center">Edit Room</h2>
+
+        @using (Html.BeginForm("EditRoom", "Room", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    @Html.HiddenFor(m => m.ImageRooms)
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(m => m.RoomType, htmlAttributes: new { @class = "form-label" })
+                        @Html.DropDownListFor(m => m.RoomType,
+                            new SelectList(new List<SelectListItem>
+                            {
+                                new SelectListItem { Text = "Single", Value = "Single" },
+                                new SelectListItem { Text = "Double", Value = "Double" },
+                                new SelectListItem { Text = "Suite", Value = "Suite" }
+                            }, "Value", "Text", Model.RoomType),
+                            "-- Select Room Type --",
+                            new { @class = "form-control", required = "required" })
+                        @Html.ValidationMessageFor(m => m.RoomType, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(m => m.Price, htmlAttributes: new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.Price, new { @class = "form-control", @placeholder = "Enter price", type = "number", step = "0.01", min = "0", required = "required" })
+                        @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(m => m.Status, htmlAttributes: new { @class = "form-label" })
+                        @Html.DropDownListFor(m => m.Status,
+                            new SelectList(new List<SelectListItem>
+                            {
+                                new SelectListItem { Text = "Available", Value = "Available" },
+                                new SelectListItem { Text = "Not Available", Value = "Not Available" }
+                            }, "Value", "Text", Model.Status),
+                            "-- Select Status --",
+                            new { @class = "form-control", required = "required" })
+                        @Html.ValidationMessageFor(m => m.Status, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(m => m.Description, htmlAttributes: new { @class = "form-label" })
+                        @Html.TextAreaFor(m => m.Description, new { @class = "form-control", @placeholder = "Enter description", rows = 4, required = "required" })
+                        @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(m => m.ImageRooms, htmlAttributes: new { @class = "form-label" })
+                        <input type="file" class="form-control" name="ImageRooms" id="ImageRooms" accept="image/*" />
+                        @Html.ValidationMessageFor(m => m.ImageRooms, "", new { @class = "text-danger" })
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model.ImageRooms))
+                    {
+                        <div class="form-group mb-3">
+                            <label class="form-label">Current Image</label>
+                            <div>
+                                <img src="@Url.Content("~/assets_detail/img/room/" + Model.ImageRooms)" alt="Room Image" class="img-thumbnail" style="max-width: 200px;" />
+                            </div>
+                        </div>
+                    }
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+                        <a href="@Url.Action("Index", "Room")" class="btn btn-secondary mt-2">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

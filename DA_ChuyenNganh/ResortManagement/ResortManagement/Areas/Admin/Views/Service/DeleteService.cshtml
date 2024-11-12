@@ -1,0 +1,60 @@
+﻿@model ResortManagement.Models.Service
+
+@{
+    ViewBag.Title = "Confirm Delete Service";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+}
+
+<div class="card">
+    <div class="card-body" style="margin-top: 60px">
+        <h2 class="my-4 text-center text-center">Confirm Delete Service</h2>
+
+          <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="form-group mb-3">
+                    <label class="form-label"><strong>Service Name:</strong></label>
+                    <p>@Model.ServiceName</p>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="form-label"><strong>Service Category:</strong></label>
+                    <p>@Model.ServiceCategory</p>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="form-label"><strong>Price:</strong></label>
+                    <p>@Model.Price</p>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="form-label"><strong>Description:</strong></label>
+                    <p>@Model.Description</p>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="form-label"><strong>Status:</strong></label>
+                    <p>@Model.StatusServices</p>
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model.ImageServices))
+                {
+                    <div class="form-group mb-3">
+                        <label class="form-label"><strong>Current Image:</strong></label>
+                        <div>
+                            <img src="@Url.Content("~/assets_detail/img/service/" + Model.ImageServices)" alt="Service Image" class="img-thumbnail" style="max-width: 200px;" />
+                        </div>
+                    </div>
+                }
+
+                <form asp-action="ConfirmDeleteService" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="id" value="@Model.ServiceID" />
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-danger">Delete Service</button>
+                        <a href="@Url.Action("Index", "Service")" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
