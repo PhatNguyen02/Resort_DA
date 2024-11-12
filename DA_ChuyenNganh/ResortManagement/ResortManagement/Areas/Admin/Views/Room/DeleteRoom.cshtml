@@ -1,0 +1,51 @@
+﻿@model ResortManagement.Models.Room
+
+@{
+    ViewBag.Title = "Confirm Delete Room";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+}
+
+<div class="card">
+    <div class="card-body" style="margin-top: 60px">
+        <h2 class="my-4 text-center">Confirm Delete Room</h2>
+
+        <div class="form-group mb-3">
+            <label class="form-label">Room Type:</label>
+            <p>@Model.RoomType</p>
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="form-label">Price:</label>
+            <p>@Model.Price</p> 
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="form-label">Status:</label>
+            <p>@Model.Status</p>
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="form-label">Description:</label>
+            <p>@Model.Description</p>
+        </div>
+
+        @if (!string.IsNullOrEmpty(Model.ImageRooms))
+        {
+            <div class="form-group mb-3">
+                <label class="form-label">Room Image:</label>
+                <div>
+                    <img src="@Url.Content("~/assets_detail/img/room/" + Model.ImageRooms)" alt="Room Image" class="img-thumbnail" style="max-width: 200px;" />
+                </div>
+            </div>
+        }
+
+        <form asp-action="ConfirmDeleteRoom" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.RoomID" />
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-danger">Delete Room</button>
+                <a href="@Url.Action("Index", "Room")" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

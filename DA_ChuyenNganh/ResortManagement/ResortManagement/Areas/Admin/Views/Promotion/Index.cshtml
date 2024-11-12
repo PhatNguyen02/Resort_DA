@@ -1,0 +1,90 @@
+﻿@model List<ResortManagement.Models.Promotion>
+
+@{
+    ViewBag.Title = "Promotion List";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="row m-b-30">
+            <div class="col-md-8 d-flex flex-wrap">
+                @*<div class="m-b-10 m-r-15">
+                    <select class="custom-select" style="min-width: 180px;">
+                        <option selected>Status</option>
+                        <option value="all">All</option>
+                        <option value="available">Available</option>
+                        <option value="unavailable">Unavailable</option>
+                    </select>
+                </div>
+                <div class="m-b-10">
+                    <input type="text" class="form-control" placeholder="Search by Service Name">
+                </div>*@
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-md-end" style="margin-top: 60px;">
+                <div class="d-flex justify-content-end">
+                    <a href="@Url.Action("AddPromotion", "Promotion")" class="btn btn-primary">
+                        <i class="anticon anticon-plus-circle m-r-5"></i>
+                        <span>Add Promotion</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover e-commerce-table">
+                <thead>
+                    <tr>
+                        <th>Promotion ID</th>
+                        <th>Promotion Code</th>
+                        <th>Description</th>
+                        <th>Discount (%)</th>
+                        <th>Flash Deal</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var promotion in Model)
+                    {
+                        <tr>
+                            <td>@promotion.PromotionID</td>
+                            <td>@promotion.PromotionCode</td>
+                            <td>@promotion.Description</td>
+                            <td>@promotion.Discount</td>
+                            <td>
+                                @if (promotion.IsFlashDeal == true)
+                                {
+                                    <span class="badge badge-success">Yes</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-secondary">No</span>
+                                }
+                            </td>
+                            <td>@(promotion.StartDate.HasValue ? promotion.StartDate.Value.ToString("dd/MM/yyyy") : "N/A")</td>
+                            <td>@(promotion.EndDate.HasValue ? promotion.EndDate.Value.ToString("dd/MM/yyyy") : "N/A")</td>
+
+                            <td>
+                                <a href="@Url.Action("EditPromotion","Promotion", new { id = promotion.PromotionID })" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                    <i class="anticon anticon-edit"></i>
+                                </a>
+                                <a href="@Url.Action("DeletePromotion","Promotion", new { id = promotion.PromotionID })" class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                    <i class="anticon anticon-delete"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="8" class="text-center">No promotions available.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

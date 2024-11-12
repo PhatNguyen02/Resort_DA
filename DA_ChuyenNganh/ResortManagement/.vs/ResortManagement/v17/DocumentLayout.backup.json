@@ -1,0 +1,754 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\room\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\room\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|d:\\huuthanh\\tailieu\\hk7\\dacn\\source\\thanh\\resort_da\\da_chuyennganh\\resortmanagement\\resortmanagement\\areas\\admin\\views\\shared\\_layoutpage1_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\shared\\_layoutpage1_admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\promotion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\promotion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\controllers\\promotioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\controllers\\promotioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\promotion\\addpromotion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\promotion\\addpromotion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\views\\shared\\_layoutpage_detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\views\\shared\\_layoutpage_detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\views\\shared\\_layoutpage_mainpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\views\\shared\\_layoutpage_mainpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\user\\deleteuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\user\\deleteuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\promotion\\deletepromotion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\promotion\\deletepromotion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\service\\deleteservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\service\\deleteservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\room\\deleteroom.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\room\\deleteroom.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\user\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\user\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\service\\editservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\service\\editservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\promotion\\editpromotion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\promotion\\editpromotion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\room\\editroom.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\room\\editroom.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\user\\adduser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\user\\adduser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\service\\addservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\service\\addservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\views\\room\\addroom.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\views\\room\\addroom.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\models\\promotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\models\\promotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\views\\home\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\views\\home\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\views\\home\\mainpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\views\\home\\mainpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\areas\\admin\\adminarearegistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\areas\\admin\\adminarearegistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\viewmodel\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\viewmodel\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\models\\resortmanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\models\\resortmanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\services\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\services\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\views\\cart\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\views\\cart\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\viewmodel\\searchvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\viewmodel\\searchvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\resortmanagement\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{4FF656E2-20B4-4357-8975-6F5266727271}|ResortManagement\\ResortManagement.csproj|solutionrelative:resortmanagement\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RoomController.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Controllers\\RoomController.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Controllers\\RoomController.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Controllers\\RoomController.cs",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Controllers\\RoomController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T04:29:41.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Room\\Index.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Room\\Index.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Room\\Index.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Room\\Index.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAD4AAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-20T04:53:06.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ServiceController.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Controllers\\ServiceController.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Controllers\\ServiceController.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Controllers\\ServiceController.cs",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Controllers\\ServiceController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T04:30:02.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Service\\Index.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Service\\Index.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Service\\Index.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Service\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-20T05:07:03.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Controllers\\UserController.cs",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T04:16:51.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\User\\Index.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\User\\Index.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\User\\Index.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\User\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-20T04:22:27.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_LayoutPage1_Admin.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Shared\\_LayoutPage1_Admin.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Shared\\_LayoutPage1_Admin.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Shared\\_LayoutPage1_Admin.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Shared\\_LayoutPage1_Admin.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-09T17:32:32.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Promotion\\Index.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Promotion\\Index.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Promotion\\Index.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Promotion\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-20T10:16:03.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PromotionController.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Controllers\\PromotionController.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Controllers\\PromotionController.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Controllers\\PromotionController.cs",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Controllers\\PromotionController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T04:30:17.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T17:53:45.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Booking\\Index.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Booking\\Index.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Booking\\Index.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Booking\\Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-09T17:55:06.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Controllers\\BookingController.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Controllers\\BookingController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T10:49:12.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-09T17:57:34.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AddPromotion.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Promotion\\AddPromotion.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Promotion\\AddPromotion.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Promotion\\AddPromotion.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Promotion\\AddPromotion.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAB8AAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-21T07:15:28.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_LayoutPage_Mainpage.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Views\\Shared\\_LayoutPage_Mainpage.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Views\\Shared\\_LayoutPage_Mainpage.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Views\\Shared\\_LayoutPage_Mainpage.cshtml",
+              "RelativeToolTip": "ResortManagement\\Views\\Shared\\_LayoutPage_Mainpage.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOEBAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-19T10:49:11.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_LayoutPage_Detail.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Views\\Shared\\_LayoutPage_Detail.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Views\\Shared\\_LayoutPage_Detail.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Views\\Shared\\_LayoutPage_Detail.cshtml",
+              "RelativeToolTip": "ResortManagement\\Views\\Shared\\_LayoutPage_Detail.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAABAAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-19T10:49:11.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Controllers\\BookingController.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "ResortManagement\\Controllers\\BookingController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwDgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T10:49:11.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DeleteService.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Service\\DeleteService.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Service\\DeleteService.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Service\\DeleteService.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Service\\DeleteService.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-21T16:12:05.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DeleteUser.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\User\\DeleteUser.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\User\\DeleteUser.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\User\\DeleteUser.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\User\\DeleteUser.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-20T18:53:49.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DeletePromotion.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Promotion\\DeletePromotion.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Promotion\\DeletePromotion.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Promotion\\DeletePromotion.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Promotion\\DeletePromotion.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-21T10:36:01.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DeleteRoom.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Room\\DeleteRoom.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Room\\DeleteRoom.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Room\\DeleteRoom.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Room\\DeleteRoom.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-21T17:49:35.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "EditUser.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\User\\EditUser.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\User\\EditUser.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\User\\EditUser.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\User\\EditUser.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAD4AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-21T06:00:55.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "EditService.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Service\\EditService.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Service\\EditService.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Service\\EditService.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Service\\EditService.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-21T15:26:58.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "EditPromotion.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Promotion\\EditPromotion.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Promotion\\EditPromotion.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Promotion\\EditPromotion.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Promotion\\EditPromotion.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-21T10:07:34.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "EditRoom.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Room\\EditRoom.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Room\\EditRoom.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Room\\EditRoom.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Room\\EditRoom.cshtml",
+              "ViewState": "AgIAADoAAAAAAAAAAAAIwE0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-21T17:00:44.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AddUser.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\User\\AddUser.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\User\\AddUser.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\User\\AddUser.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\User\\AddUser.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAEAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-20T19:44:11.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "AddService.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Service\\AddService.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Service\\AddService.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Service\\AddService.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Service\\AddService.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAEAAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-21T13:44:25.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AddRoom.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Room\\AddRoom.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\Views\\Room\\AddRoom.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\Views\\Room\\AddRoom.cshtml",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\Views\\Room\\AddRoom.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEAAAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-21T16:44:41.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Room.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Models\\Room.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Models\\Room.cs",
+              "RelativeToolTip": "ResortManagement\\Models\\Room.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T04:53:26.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "RoomController.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Controllers\\RoomController.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Controllers\\RoomController.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Controllers\\RoomController.cs",
+              "RelativeToolTip": "ResortManagement\\Controllers\\RoomController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T10:49:11.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Service.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Models\\Service.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Models\\Service.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Models\\Service.cs",
+              "RelativeToolTip": "ResortManagement\\Models\\Service.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBQAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T07:05:45.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Promotion.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Models\\Promotion.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Models\\Promotion.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Models\\Promotion.cs",
+              "RelativeToolTip": "ResortManagement\\Models\\Promotion.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAUwBkAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T07:21:51.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Controllers\\CartController.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Controllers\\CartController.cs",
+              "RelativeToolTip": "ResortManagement\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T10:49:11.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Models\\User.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Models\\User.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Models\\User.cs",
+              "RelativeToolTip": "ResortManagement\\Models\\User.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T09:42:37.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Views\\Home\\Detail.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Views\\Home\\Detail.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Views\\Home\\Detail.cshtml",
+              "RelativeToolTip": "ResortManagement\\Views\\Home\\Detail.cshtml",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAAwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-19T10:49:12.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "MainPage.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Views\\Home\\MainPage.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Views\\Home\\MainPage.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Views\\Home\\MainPage.cshtml",
+              "RelativeToolTip": "ResortManagement\\Views\\Home\\MainPage.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-19T10:49:12.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "AdminAreaRegistration.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\AdminAreaRegistration.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Areas\\Admin\\AdminAreaRegistration.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Areas\\Admin\\AdminAreaRegistration.cs",
+              "RelativeToolTip": "ResortManagement\\Areas\\Admin\\AdminAreaRegistration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T19:05:24.697Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "ResortManagement\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwCYAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T10:49:11.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "ResortManagement\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADQAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-19T10:49:11.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "web.config",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Views\\web.config",
+              "RelativeDocumentMoniker": "ResortManagement\\Views\\web.config",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Views\\web.config",
+              "RelativeToolTip": "ResortManagement\\Views\\web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-10-19T10:49:11.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "LoginVM.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\ViewModel\\LoginVM.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\ViewModel\\LoginVM.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\ViewModel\\LoginVM.cs",
+              "RelativeToolTip": "ResortManagement\\ViewModel\\LoginVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T10:49:11.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ResortManagement.Designer.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Models\\ResortManagement.Designer.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Models\\ResortManagement.Designer.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Models\\ResortManagement.Designer.cs",
+              "RelativeToolTip": "ResortManagement\\Models\\ResortManagement.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T10:49:11.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "SearchVM.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\ViewModel\\SearchVM.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\ViewModel\\SearchVM.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\ViewModel\\SearchVM.cs",
+              "RelativeToolTip": "ResortManagement\\ViewModel\\SearchVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T10:49:11.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Cart.cshtml",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Views\\Cart\\Cart.cshtml",
+              "RelativeDocumentMoniker": "ResortManagement\\Views\\Cart\\Cart.cshtml",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Views\\Cart\\Cart.cshtml",
+              "RelativeToolTip": "ResortManagement\\Views\\Cart\\Cart.cshtml",
+              "ViewState": "AQIAAKAAAAAAAAAAAAAAACEAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-10-19T10:49:12.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "BookingService.cs",
+              "DocumentMoniker": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Services\\BookingService.cs",
+              "RelativeDocumentMoniker": "ResortManagement\\Services\\BookingService.cs",
+              "ToolTip": "D:\\HUUTHANH\\TaiLieu\\HK7\\DACN\\Source\\Thanh\\Resort_DA\\DA_ChuyenNganh\\ResortManagement\\ResortManagement\\Services\\BookingService.cs",
+              "RelativeToolTip": "ResortManagement\\Services\\BookingService.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAwDYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T10:49:12.954Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

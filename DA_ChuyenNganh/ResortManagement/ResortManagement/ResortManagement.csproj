@@ -472,7 +472,12 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BookingController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RoomController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ServiceController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PromotionController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\CartController.cs" />
@@ -552,7 +557,6 @@
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutPage1_Admin.cshtml" />
-    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="assets_admin\fonts\anticon.eot" />
     <Content Include="assets_admin\fonts\anticon.ttf" />
     <Content Include="assets_admin\fonts\anticon.woff" />
@@ -584,6 +588,25 @@
     <Content Include="assets_detail\fonts\fa-thin-100.woff2" />
     <Content Include="assets_detail\fonts\fa-v4compatibility.ttf" />
     <Content Include="assets_detail\fonts\fa-v4compatibility.woff2" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Room\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Service\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Voucher\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Promotion\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\AddUser.cshtml" />
+    <Content Include="Areas\Admin\Views\User\DeleteUser.cshtml" />
+    <Content Include="Areas\Admin\Views\User\EditUser.cshtml" />
+    <Content Include="Areas\Admin\Views\Promotion\AddPromotion.cshtml" />
+    <Content Include="Areas\Admin\Views\Promotion\EditPromotion.cshtml" />
+    <Content Include="Areas\Admin\Views\Promotion\DeletePromotion.cshtml" />
+    <Content Include="Areas\Admin\Views\Service\AddService.cshtml" />
+    <Content Include="Areas\Admin\Views\Service\EditService.cshtml" />
+    <Content Include="Areas\Admin\Views\Service\DeleteService.cshtml" />
+    <Content Include="Areas\Admin\Views\Room\AddRoom.cshtml" />
+    <Content Include="Areas\Admin\Views\Room\EditRoom.cshtml" />
+    <Content Include="Areas\Admin\Views\Room\DeleteRoom.cshtml" />
+    <Content Include="Areas\Admin\Views\Booking\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_LayoutPage_Mainpage.cshtml" />
     <Content Include="Views\Home\MainPage.cshtml" />
