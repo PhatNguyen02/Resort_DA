@@ -1,0 +1,75 @@
+﻿@model List<ResortManagement.Models.Service>
+@{
+    ViewBag.Title = "Service Management";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="row m-b-30">
+            <div class="col-md-8 d-flex flex-wrap">
+                @*<div class="m-b-10 m-r-15">
+                    <select class="custom-select" style="min-width: 180px;">
+                        <option selected>Status</option>
+                        <option value="all">All</option>
+                        <option value="available">Available</option>
+                        <option value="unavailable">Unavailable</option>
+                    </select>
+                </div>
+                <div class="m-b-10">
+                    <input type="text" class="form-control" placeholder="Search by Service Name">
+                </div>*@
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-md-end" style="margin-top: 60px;">
+                <div class="d-flex justify-content-end">
+                    <a href="@Url.Action("AddService", "Service")" class="btn btn-primary">
+                        <i class="anticon anticon-plus-circle m-r-5"></i>
+                        <span>Add Service</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover e-commerce-table">
+                <thead>
+                    <tr>
+                        <th>Service ID</th>
+                        <th>Service Name</th>
+                        <th>Service Category</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var service in Model)
+                    {
+                        <tr>
+                            <td>@service.ServiceID</td>
+                            <td>@service.ServiceName</td>
+                            <td>@service.ServiceCategory</td>
+                            <td>@service.Price</td>
+                            <td>@service.Description</td>
+                            <td>@service.StatusServices</td>
+                            <td>
+                                <img src="~/assets_detail/img/service/@service.ImageServices" alt="Service Image" style="width: 80px; height: 60px; object-fit: cover;">
+                            </td>
+                            <td class="text-right">
+                                <a href="@Url.Action("EditService","Service", new { id = service.ServiceID })" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                    <i class="anticon anticon-edit"></i>
+                                </a>
+                                <a href="@Url.Action("DeleteService","Service", new { id = service.ServiceID })" class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                    <i class="anticon anticon-delete"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

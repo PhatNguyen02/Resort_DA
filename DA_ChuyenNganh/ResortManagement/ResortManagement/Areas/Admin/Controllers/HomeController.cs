@@ -1,5 +1,4 @@
-﻿using ResortManagement.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,10 +11,7 @@ namespace ResortManagement.Areas.Admin.Controllers
         // GET: Admin/Home
         public ActionResult Index()
         {
-            DB_ResortfEntities dBContext = new DB_ResortfEntities();
-            List<Booking> book = dBContext.Bookings.ToList();
-            return View(book);  // Truyền model cho View
-            
+            return View();
         }
     }
 }

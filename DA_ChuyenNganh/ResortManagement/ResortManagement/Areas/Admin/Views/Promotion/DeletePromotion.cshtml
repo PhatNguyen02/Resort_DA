@@ -1,0 +1,50 @@
+﻿@model ResortManagement.Models.Promotion
+
+@{
+    ViewBag.Title = "Confirm Delete Promotion";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+}
+
+<div class="card">
+    <div class="card-body" style="margin-top: 60px">
+        <h2 class="my-4 text-center">Confirm Delete Promotion</h2>
+
+        <dl class="row">
+            <dt class="col-sm-3">Promotion Code:</dt>
+            <dd class="col-sm-9">@Model.PromotionCode</dd>
+
+            <dt class="col-sm-3">Description:</dt>
+            <dd class="col-sm-9">@Model.Description</dd>
+
+            <dt class="col-sm-3">Discount:</dt>
+            <dd class="col-sm-9">@Model.Discount</dd>
+
+            <dt class="col-sm-3">Is Flash Deal:</dt>
+            <dd class="col-sm-9">
+                @if (Model.IsFlashDeal == true)
+                {
+                    <span class="badge badge-success">Yes</span>
+                }
+                else
+                {
+                    <span class="badge badge-secondary">No</span>
+                }
+            </dd>
+
+            <dt class="col-sm-3">Start Date:</dt>
+            <dd class="col-sm-9">@(Model.StartDate.HasValue ? Model.StartDate.Value.ToString("dd/MM/yyyy") : "N/A")</dd>
+
+            <dt class="col-sm-3">End Date:</dt>
+            <dd class="col-sm-9">@(Model.EndDate.HasValue ? Model.EndDate.Value.ToString("dd/MM/yyyy") : "N/A")</dd>
+        </dl>
+
+        <form asp-action="DeleteUserConfirmed" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.PromotionID" />
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-danger">Delete Promotion</button>
+                <a href="@Url.Action("Index", "Promotion")" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
