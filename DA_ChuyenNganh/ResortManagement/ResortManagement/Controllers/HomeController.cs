@@ -69,11 +69,11 @@ namespace ResortManagement.Controllers
         public ActionResult Search(SearchVM searchDateTime, int page = 1)
         {
             // Kiểm tra ngày check-in và check-out
-            if (!_bookingService.CheckBooking(searchDateTime.CheckIn, searchDateTime.CheckOut))
-            {
-                ViewBag.Message = "Invalid check-in or check-out date.";
-                return RedirectToAction("MainPage");
-            }
+            //if (!_bookingService.CheckBooking(searchDateTime.CheckIn, searchDateTime.CheckOut))
+            //{
+            //    ViewBag.Message = "Invalid check-in or check-out date.";
+            //    return RedirectToAction("MainPage");
+            //}
 
             // Lọc các phòng khả dụng trực tiếp trong truy vấn LINQ
             var availableRooms = dBContext.Rooms

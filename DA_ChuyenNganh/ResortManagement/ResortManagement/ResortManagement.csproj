@@ -477,6 +477,7 @@
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -525,6 +526,9 @@
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TemporarySchedule.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\UsedService.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
@@ -534,6 +538,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BookingService.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
+    <Compile Include="ViewModel\PaypalConfiguration.cs" />
     <Compile Include="ViewModel\SearchVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -586,6 +591,9 @@
     <Content Include="Views\Shared\_LayoutPage_Detail.cshtml" />
     <Content Include="Views\Home\Detail.cshtml" />
     <Content Include="Views\Cart\Cart.cshtml" />
+    <Content Include="Views\Invoice\Payment.cshtml" />
+    <Content Include="Views\Invoice\PaymentSuccess.cshtml" />
+    <Content Include="Views\Invoice\PaymentFail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
