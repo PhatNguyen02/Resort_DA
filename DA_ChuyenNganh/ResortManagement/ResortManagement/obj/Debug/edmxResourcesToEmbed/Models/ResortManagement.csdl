@@ -69,11 +69,18 @@
     <Property Name="RoomType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ImageRooms" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MainImage" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Bookings" Relationship="Self.FK__Bookings__RoomID__5629CD9C" FromRole="Rooms" ToRole="Bookings" />
     <NavigationProperty Name="Reviews" Relationship="Self.FK__Reviews__RoomID__5EBF139D" FromRole="Rooms" ToRole="Reviews" />
-    <Property Name="MainImage" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Description_check_in" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description_check_out" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description_service_room" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description_bed_type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description_max_occupancy" Type="Int32" />
+    <Property Name="Description_room_no_smoke" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description_room_size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Service">
     <Key>
@@ -98,6 +105,17 @@
     <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TemporarySchedule">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="customerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="startTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="endTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="serviceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="UsedService">
     <Key>
@@ -243,6 +261,7 @@
     <EntitySet Name="Rooms" EntityType="Self.Room" />
     <EntitySet Name="Services" EntityType="Self.Service" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TemporarySchedules" EntityType="Self.TemporarySchedule" />
     <EntitySet Name="UsedServices" EntityType="Self.UsedService" />
     <EntitySet Name="Users" EntityType="Self.User" />
     <AssociationSet Name="FK__Bookings__Promot__571DF1D5" Association="Self.FK__Bookings__Promot__571DF1D5">
@@ -281,62 +300,5 @@
       <End Role="Services" EntitySet="Services" />
       <End Role="UsedServices" EntitySet="UsedServices" />
     </AssociationSet>
-    <FunctionImport Name="sp_alterdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_creatediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_dropdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DB_ResortfModel.sp_helpdiagramdefinition_Result)">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DB_ResortfModel.sp_helpdiagrams_Result)">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_renamediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="new_diagramname" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="sp_upgraddiagrams" />
-    <FunctionImport Name="SearchAvailableRooms" ReturnType="Collection(Int32)">
-      <Parameter Name="CheckIn" Mode="In" Type="DateTime" />
-      <Parameter Name="CheckOut" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <EntitySet Name="TemporarySchedules" EntityType="DB_ResortfModel.TemporarySchedule" />
   </EntityContainer>
-  <ComplexType Name="sp_helpdiagramdefinition_Result">
-    <Property Type="Int32" Name="version" Nullable="true" />
-    <Property Type="Binary" Name="definition" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="sp_helpdiagrams_Result">
-    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-    <Property Type="Int32" Name="OwnerID" Nullable="false" />
-  </ComplexType>
-  <EntityType Name="TemporarySchedule">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="customerId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="startTime" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="endTime" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="serviceId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-  </EntityType>
 </Schema>

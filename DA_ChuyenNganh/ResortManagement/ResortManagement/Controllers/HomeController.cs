@@ -38,6 +38,8 @@ namespace ResortManagement.Controllers
             return View(rooms); // Trả về view hiển thị chi tiết sản phẩm
 
         }
+
+        //public ActionResult Service
         //public ActionResult Search(SearchVM searchDateTime, int page = 1)
         //{
         //    // Kiểm tra ngày check-in và check-out

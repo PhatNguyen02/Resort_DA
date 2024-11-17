@@ -522,12 +522,6 @@
     <Compile Include="Models\Service.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>ResortManagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagrams_Result.cs">
-      <DependentUpon>ResortManagement.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
@@ -548,13 +542,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <EntityDeploy Include="Models\ResortManagement.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ResortManagement.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ResortManagement.edmx.diagram">
-      <DependentUpon>ResortManagement.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutPage1_Admin.cshtml" />
     <Content Include="assets_admin\fonts\anticon.eot" />
@@ -607,6 +594,13 @@
     <Content Include="Areas\Admin\Views\Room\DeleteRoom.cshtml" />
     <Content Include="Areas\Admin\Views\Booking\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <EntityDeploy Include="Models\ResortManagement.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ResortManagement.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ResortManagement.edmx.diagram">
+      <DependentUpon>ResortManagement.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\_LayoutPage_Mainpage.cshtml" />
     <Content Include="Views\Home\MainPage.cshtml" />
@@ -617,6 +611,7 @@
     <Content Include="Views\Invoice\Payment.cshtml" />
     <Content Include="Views\Invoice\PaymentSuccess.cshtml" />
     <Content Include="Views\Invoice\PaymentFail.cshtml" />
+    <Content Include="Views\Booking\SelectService.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -630,7 +625,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Views\Booking\" />
     <Folder Include="Views\Room\" />
   </ItemGroup>
   <PropertyGroup>

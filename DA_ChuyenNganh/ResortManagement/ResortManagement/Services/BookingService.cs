@@ -20,6 +20,15 @@ namespace ResortManagement.Services
             return true;
         }
 
+        public int totalday(DateTime checkInDate, DateTime checkOutDate)
+        {
+            double totalDays = (checkOutDate - checkInDate).TotalDays;
+
+            // Làm tròn lên nếu có phần thập phân (ngày phần thập phân có nghĩa là chưa đến hết một ngày)
+            int rentalUnits = (int)Math.Ceiling(totalDays);
+            return rentalUnits;
+        }
+
         public decimal calculateTotal(DateTime checkInDate, DateTime checkOutDate, decimal pricePerDay)
         {
             if(checkBooking(checkInDate,checkOutDate))

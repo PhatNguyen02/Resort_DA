@@ -28,6 +28,13 @@ namespace ResortManagement.Models
         public string Description { get; set; }
         public string ImageRooms { get; set; }
         public string MainImage { get; set; }
+        public string Description_check_in { get; set; }
+        public string Description_check_out { get; set; }
+        public string Description_service_room { get; set; }
+        public string Description_bed_type { get; set; }
+        public Nullable<int> Description_max_occupancy { get; set; }
+        public string Description_room_no_smoke { get; set; }
+        public string Description_room_size { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Booking> Bookings { get; set; }

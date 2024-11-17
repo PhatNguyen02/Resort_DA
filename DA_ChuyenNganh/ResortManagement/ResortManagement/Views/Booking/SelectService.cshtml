@@ -1,0 +1,480 @@
+﻿@model List<ResortManagement.Models.Service>
+@{
+    ViewBag.Title = "SelectService";
+    Layout = "~/Views/Shared/_LayoutPage_Detail.cshtml";
+}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div class="tp-breadcrumb-area pt-130 pb-100 p-relative">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="tp-breadcrumb-title-wrap text-center">
+                    <h2 class="tp-breadcrumb-title-blog tp-breadcrumb-title-blog-3 mb-15">Service</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="tp-cart-area pb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8">
+                <div class="tp-cart-list mb-25 mr-30">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="tp-cart-header-product">Product</th>
+                                <th class="tp-cart-header-price">Price</th>
+                                <th class="tp-cart-header-quantity">Quantity for people</th>
+                                <th class="tp-cart-header-quantity">@ViewBag.Totalday</th>
+                                @{
+                                    int bookingid = @ViewBag.BookingId;
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+
+                                <tr class="service-row" data-id="@item.ServiceID" data-name="@item.ServiceName" data-price="@item.Price">
+
+                                    <!-- img -->
+                                    <td class="tp-cart-img">
+                                        <a href="room-details-1.html">
+                                            @*<img src="assets/img/product/01.jpg" alt="">*@
+                                        </a>
+                                    </td>
+                                    <!-- title -->
+                                    <td class="tp-cart-title">
+                                        <a href="room-details-1.html">@item.ServiceName</a>
+                                    </td>
+                                    <!-- price -->
+                                    <td class="tp-cart-price">
+                                        <span>@item.Price</span>
+                                    </td>
+                                    <!-- quantity -->
+                                    <td class="tp-cart-quantity">
+                                        <div class="tp-product-quantity mt-10 mb-10">
+                                            <button id="minus-@item.ServiceID" class="tp-cart-minus" data-id="@item.ServiceID">
+                                                <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 1H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </button>
+                                            <input id="quantity-@item.ServiceID" class="tp-cart-input" type="text" value="0" data-id="@item.ServiceID" min="0">
+                                            <button id="plus-@item.ServiceID" class="tp-cart-plus" data-id="@item.ServiceID">
+                                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5 1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M1 5H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <!-- action -->
+                                    <td class="tp-cart-action">
+                                        <button class="tp-cart-action-btn">
+                                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.53033 1.53033C9.82322 1.23744 9.82322 0.762563 9.53033 0.46967C9.23744 0.176777 8.76256 0.176777 8.46967 0.46967L5 3.93934L1.53033 0.46967C1.23744 0.176777 0.762563 0.176777 0.46967 0.46967C0.176777 0.762563 0.176777 1.23744 0.46967 1.53033L3.93934 5L0.46967 8.46967C0.176777 8.76256 0.176777 9.23744 0.46967 9.53033C0.762563 9.82322 1.23744 9.82322 1.53033 9.53033L5 6.06066L8.46967 9.53033C8.76256 9.82322 9.23744 9.82322 9.53033 9.53033C9.82322 9.23744 9.82322 8.76256 9.53033 8.46967L6.06066 5L9.53033 1.53033Z" fill="currentColor" />
+                                            </svg>
+                                            <span>Remove</span>
+                                        </button>
+                                    </td>
+                                </tr>
+
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tp-cart-bottom">
+                    <div class="row align-items-end">
+                        <div class="col-xl-6 col-md-8">
+                            <div class="tp-cart-coupon">
+                                <form action="#">
+                                    <div class="tp-cart-coupon-input-box">
+                                        <label>Coupon Code:</label>
+                                        <div class="tp-cart-coupon-input d-flex align-items-center">
+                                            <input type="text" placeholder="Enter Coupon Code">
+                                            <button type="submit">Apply</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-4">
+                            <div class="tp-cart-update text-md-end">
+                                <button type="button" class="tp-cart-update-btn">Update Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="tp-cart-checkout-wrapper">
+                    <div class="tp-cart-checkout-top d-flex align-items-center justify-content-between">
+                        <span class="tp-cart-checkout-top-title">Subtotal</span>
+                        <span class="tp-cart-checkout-top-price">$742</span>
+                    </div>
+                    <div class="tp-cart-checkout-shipping">
+                        <h4 class="tp-cart-checkout-shipping-title">Shipping</h4>
+                        <div class="tp-cart-checkout-shipping-option-wrapper">
+                            <div class="tp-cart-checkout-shipping-option">
+                                <input id="flat_rate" type="radio" name="shipping">
+                                <label for="flat_rate">Flat rate: <span>$20.00</span></label>
+                            </div>
+                            <div class="tp-cart-checkout-shipping-option">
+                                <input id="local_pickup" type="radio" name="shipping">
+                                <label for="local_pickup">Local pickup: <span> $25.00</span></label>
+                            </div>
+                            <div class="tp-cart-checkout-shipping-option">
+                                <input id="free_shipping" type="radio" name="shipping">
+                                <label for="free_shipping">Free shipping</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tp-cart-checkout-total d-flex align-items-center justify-content-between">
+                        <span>Total</span>
+                        <span id="total">$</span>
+                    </div>
+                    <!-- Sau khi tính toán giá tiền, bạn có thể chuyển sang trang thanh toán -->
+                    <div class="tp-cart-checkout-proceed">
+                        <!-- Nút thanh toán -->
+                        <button id="btnPayment" data-booking-id="bookingid" data-cancel="false">Thanh toán PayPal</button>
+                        <a href="@Url.Action("PaymentWithPaypal", "Invoice", new { bookingId = 13 })">Thanh toán</a>
+
+
+
+                        @*<a href="@Url.Action("PaymentWithPaypal", "Invoice", new { totalAmount = ViewBag.TotalAmount })" class="tp-cart-checkout-btn w-100" id="btnPayment" data-booking-id="bookingid" data-cancel="false">Proceed to Checkout with PayPal</a>*@
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const ServiceID = button.getAttribute('data-id');
+
+    document.get
+    function btnPlus() {
+       
+      
+    }
+
+
+    function updateQuantity(action, serviceID) {
+        const input = document.getElementById(`quantity-${serviceID}`);
+        let currentValue = parseInt(input.value) || 0;
+        console.log("input value before", input.value)
+        if (action === 'minus' && currentValue > 0) {
+            currentValue -= 1;
+        } else if (action === 'plus') {
+            currentValue += 1; // Đã bỏ comment
+        }
+        console.log("input value after", input.value)
+        input.value = currentValue;
+        updateTotalPrice();
+    }
+
+    function updateTotalPrice() {
+        let subtotal = 0;
+        const rows = document.querySelectorAll('tbody tr');
+
+        rows.forEach(row => {
+            const price = parseFloat(row.querySelector('.tp-cart-price span').textContent.replace('$', ''));
+            const quantity = parseInt(row.querySelector('.tp-cart-input').value) || 0;
+            subtotal += price * quantity;
+        });
+
+        // Update subtotal
+        const subtotalElement = document.querySelector('.tp-cart-checkout-top-price');
+        if (subtotalElement) {
+            subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+        }
+
+        // Get shipping cost
+        let shippingCost = 0;
+        const selectedShipping = document.querySelector('input[name="shipping"]:checked');
+        if (selectedShipping) {
+            if (selectedShipping.id === 'flat_rate') shippingCost = 20;
+            else if (selectedShipping.id === 'local_pickup') shippingCost = 25;
+        }
+
+        // Calculate total
+        const total = subtotal + shippingCost;
+        document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+    }
+
+    // Initial calculation
+    updateTotalPrice();
+</script>
+
+<script>
+    $("#btnPayment").click(function () {
+        var services = [];
+
+        // Lấy bookingId từ data attribute của nút thanh toán
+        var bookingId = $("#btnPayment").data("booking-id");
+
+        // Kiểm tra nếu bookingId không có giá trị
+        if (!bookingId) {
+            alert("Thông tin booking không hợp lệ. Vui lòng thử lại.");
+            return;
+        }
+
+        // Duyệt qua từng hàng dịch vụ
+        $(".service-row").each(function () {
+            var serviceId = $(this).data("id");
+            var serviceName = $(this).data("name");
+            var servicePrice = parseFloat($(this).data("price"));
+            var serviceQuantity = parseInt($(this).find(".tp-cart-input").val(), 10);
+
+            console.log("Dịch vụ: ", serviceName); // Kiểm tra dữ liệu dịch vụ
+
+            // Chỉ thêm nếu số lượng lớn hơn 0 và có thông tin hợp lệ
+            if (serviceQuantity > 0 && !isNaN(servicePrice) && serviceName) {
+                services.push({
+                    id: serviceId,
+                    name: serviceName,
+                    price: servicePrice,
+                    quantity: serviceQuantity
+                });
+            }
+        });
+
+        // Kiểm tra nếu không có dịch vụ nào được chọn
+        if (services.length === 0) {
+            alert("Vui lòng chọn ít nhất một dịch vụ để thanh toán.");
+            return;
+        }
+
+        console.log(services);  // Kiểm tra dữ liệu dịch vụ trong console
+
+        // Gửi dữ liệu qua AJAX
+        $.ajax({
+            url: '/Invoice/PaymentWithPaypal',
+            type: 'POST',
+            data: JSON.stringify({
+                services: services,
+                bookingId: bookingId
+            }),
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (response) {
+                if (response.success) {
+                    alert(response.message || "Thanh toán thành công!");
+                    // Có thể redirect hoặc cập nhật giao diện sau khi thanh toán thành công
+                } else {
+                    alert(response.message || "Có lỗi xảy ra trong quá trình thanh toán.");
+                }
+            },
+            error: function (xhr, status, error) {
+                // Xử lý lỗi trả về từ server
+                var errorMessage = "Lỗi xảy ra. Vui lòng thử lại!";
+
+                if (xhr.responseJSON && xhr.responseJSON.message) {
+                    errorMessage = xhr.responseJSON.message;
+                }
+
+                alert(errorMessage);  // Hiển thị thông báo lỗi chi tiết hơn
+            }
+        });
+    });
+
+</script>
+
+
+@*<script>
+
+            // Lắng nghe sự kiện cho các nút
+            const minusButtons = document.querySelectorAll('.tp-cart-minus');
+            const plusButtons = document.querySelectorAll('.tp-cart-plus');
+            const removeButtons = document.querySelectorAll('.tp-cart-action-btn');
+            const updateCartButton = document.querySelector('.tp-cart-update-btn');
+            const couponForm = document.querySelector('.tp-cart-coupon form');
+            let plusbtn = document.getElementById("data-id");
+            /*const plusbtn = document.querySelectorAll('.tp-cart-plus');*/
+
+
+            // Xử lý nút minus
+            //minusButtons.forEach(button => {
+            //    button.addEventListener('click', function () {
+            //        const serviceID = this.getAttribute('data-id');
+            //        console.log("serviced", serviceID)
+            //        updateQuantity('minus', serviceID);
+            //    });
+            //});
+            //plusbtn.addEventListener("click", (event) => {
+            //    const serviceID = this.getAttribute('data-id');
+            //    console.log("id serve", serviceID)
+            //    updateQuantity('plus', serviceID);
+            //});
+            //function handlePlusClick() {
+            //    const serviceID = this.getAttribute('data-id');
+            //    console.log("id serve", serviceID)
+            //    updateQuantity('plus', serviceID);
+            //}
+            document.querySelectorAll('.tp-cart-plus').forEach(button => {
+                button.addEventListener('click', () => {
+                    const serviceID = button.getAttribute('data-id');
+                    const input = document.querySelector(`.tp-cart-input[data-id="${serviceID}"]`);
+                    const currentValue = parseInt(input.value) || 0;
+                    input.value = currentValue + 1;
+                    updateTotalPrice();
+                });
+            });
+
+            //function plusButton(serviceID) {
+            //    const input = document.getElementById(`input-${serviceID}`);
+            //    input.value = parseInt(input.value) + 1;
+            //    updateTotalPrice();
+            //}
+
+            // Xử lý nút plus
+            //plusButtons.forEach(button => {
+            //    button.addEventListener('click', function () {
+            //        const serviceID = this.getAttribute('data-id');
+
+            //        updateQuantity('plus', serviceID);
+            //    });
+            //});
+
+            // Xử lý nút remove
+            removeButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const row = this.closest('tr');
+                    if (row) {
+                        row.remove();
+                        updateTotalPrice();
+                    }
+                });
+            });
+
+            // Xử lý input số lượng
+            document.querySelectorAll('.tp-cart-input').forEach(input => {
+                input.addEventListener('change', function () {
+                    // Validate input
+                    let value = parseInt(this.value) || 0;
+                    if (value < 0) value = 0;
+                    this.value = value;
+                    updateTotalPrice();
+                });
+            });
+
+            // Xử lý update cart
+            if (updateCartButton) {
+                updateCartButton.addEventListener('click', function () {
+                    updateTotalPrice();
+                    alert('Cart updated successfully!');
+                });
+            }
+
+            // Xử lý coupon form
+            if (couponForm) {
+                couponForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const couponInput = this.querySelector('input[type="text"]');
+                    if (couponInput && couponInput.value.trim()) {
+                        // Ở đây sẽ thêm logic xử lý coupon
+                        alert('Coupon applied successfully!');
+                    }
+                });
+            }
+
+            function updateQuantity(action, serviceID) {
+                const input = document.getElementById(`quantity-${serviceID}`);
+                let currentValue = parseInt(input.value) || 0;
+                console.log("input value before", input.value)
+                if (action === 'minus' && currentValue > 0) {
+                           currentValue -= 1;
+                } else if (action === 'plus') {
+                    currentValue += 1; // Đã bỏ comment
+                }
+                console.log("input value after", input.value)
+                input.value = currentValue;
+                updateTotalPrice();
+            }
+
+            function updateTotalPrice() {
+                let subtotal = 0;
+                const rows = document.querySelectorAll('tbody tr');
+
+                rows.forEach(row => {
+                    const price = parseFloat(row.querySelector('.tp-cart-price span').textContent.replace('$', ''));
+                    const quantity = parseInt(row.querySelector('.tp-cart-input').value) || 0;
+                    subtotal += price * quantity;
+                });
+
+                // Update subtotal
+                const subtotalElement = document.querySelector('.tp-cart-checkout-top-price');
+                if (subtotalElement) {
+                    subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+                }
+
+                // Get shipping cost
+                let shippingCost = 0;
+                const selectedShipping = document.querySelector('input[name="shipping"]:checked');
+                if (selectedShipping) {
+                    if (selectedShipping.id === 'flat_rate') shippingCost = 20;
+                    else if (selectedShipping.id === 'local_pickup') shippingCost = 25;
+                }
+
+                // Calculate total
+                const total = subtotal + shippingCost;
+                document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+            }
+
+            // Initial calculation
+            updateTotalPrice();
+
+    </script>*@
+
+
+@*<script>$("#btnPayment").click(function () {
+            var services = [];
+            var bookingId = $("#btnPayment").data("booking-id");  // Lấy bookingId từ data attribute
+
+            // Kiểm tra thông tin bookingId
+            console.log("Booking ID:", bookingId);
+
+            $(".service-row").each(function () {
+                var serviceId = $(this).data("id");
+                var serviceName = $(this).data("name");
+                var servicePrice = parseFloat($(this).data("price"));
+                var serviceQuantity = parseInt($(this).find(".tp-cart-input").val(), 10);
+
+                // Chỉ thêm nếu số lượng lớn hơn 0
+                if (serviceQuantity > 0) {
+                    services.push({
+                        id: serviceId,
+                        name: serviceName,
+                        price: servicePrice,
+                        quantity: serviceQuantity
+                    });
+                }
+            });
+
+            // Gửi dữ liệu qua AJAX
+            $.ajax({
+                url: '/Invoice/PaymentWithPaypal',
+                type: 'POST',
+                data: JSON.stringify({
+                    services: services,
+                    bookingId: bookingId
+                }),
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function (response) {
+                    alert(response.message || "Thanh toán thành công!");
+                },
+                error: function (xhr, status, error) {
+                    // Kiểm tra chi tiết lỗi từ server
+                    console.error(xhr.responseText);
+                    alert("Lỗi xảy ra. Vui lòng thử lại!");
+                }
+            });
+        });
+    </script>*@

@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-
+using ResortManagement.Controllers;
 namespace ResortManagement
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -13,6 +13,11 @@ namespace ResortManagement
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            // Thực hiện kiểm tra tự động mỗi giờ
+            System.Timers.Timer timer = new System.Timers.Timer();
+            timer.Interval = 3600000; // 1 giờ (3600000 ms)
+            timer.Elapsed += (sender, e) => new BookingController().AutoCancelExpiredBookings();
+            timer.Start();
         }
     }
 }
