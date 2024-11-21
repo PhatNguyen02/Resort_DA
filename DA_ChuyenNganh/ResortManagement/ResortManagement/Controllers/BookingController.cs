@@ -12,103 +12,48 @@ namespace ResortManagement.Controllers
     {
         private readonly BookingService _bookingService = new BookingService();
 
-        // GET: Booking
-        [HttpPost]
-        //public ActionResult BookingRoom(int idRoom, int idUser, string checkIn, string checkOut , decimal price)
-        //{
-        //    DateTime checkInDate, checkOutDate;
-        //    string status = "Pending";
-        //    // Chuyển đổi dữ liệu từ chuỗi sang DateTime
-        //    if (!DateTime.TryParse(checkIn, out checkInDate) || !DateTime.TryParse(checkOut, out checkOutDate))
-        //    {
-        //        ViewBag.Message = "Invalid date format.";
-        //        return RedirectToAction("MainPage");
-        //    }
+       
+        public ActionResult Confirm(int? idRoom, int? idUser, string checkIn, string checkOut, decimal? idPrice)
+        {
+            return View();
+        }
 
-        //    // Thiết lập thời gian cố định cho check-in và check-out
-        //    checkInDate = checkInDate.Date.AddHours(14);  // Check-in lúc 14h
-        //    checkOutDate = checkOutDate.Date.AddHours(12); // Check-out lúc 12h
-
-        //    // Kiểm tra: Ngày check-out phải sau check-in
-        //    if (checkOutDate <= checkInDate)
-        //    {
-        //        ViewBag.Message = "Check-out date must be later than check-in date.";
-        //        return RedirectToAction("MainPage");
-        //    }
-
-        //    // Kiểm tra xem phòng có trùng lịch không
-        //    if (!_bookingService.IsRoomAvailable(idRoom, checkInDate, checkOutDate))
-        //    {
-        //        ViewBag.Message = "Room is already booked during this period.";
-        //        return RedirectToAction("MainPage");
-        //    }
-
-        //    using (var db = new DB_ResortfEntities())
-        //    {
-        //        var room = db.Rooms.FirstOrDefault(r => r.RoomID == idRoom);
-        //        var user = db.Users.Find(idUser);
-
-        //        if (room == null || user == null)
-        //        {
-        //            ViewBag.Message = "Invalid Room or User ID.";
-        //            return RedirectToAction("MainPage");
-        //        }
-
-        //        // Tạo booking mới
-        //        var booking = new Booking
-        //        {
-        //            RoomID = room.RoomID,
-        //            UserID = user.UserID,
-        //            BookingDate = DateTime.Now,
-        //            CheckInDate = checkInDate,
-        //            CheckOutDate = checkOutDate,
-        //            TotalPrice = price, // Giá có thể tính toán dựa vào thời gian thuê
-        //            PaymentType = "Prepaid",
-        //            Status = status
-        //        };
-
-        //        try
-        //        {
-        //            db.Bookings.Add(booking);
-        //            db.SaveChanges();
-        //            ViewBag.Message = "Booking successful!";
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            ViewBag.Message = "An error occurred while booking. Please try again.";
-        //        }
-
-        //        return RedirectToAction("MainPage","Home");
-        //    }
-        //}
-
-        public ActionResult BookingRoom(int idRoom, int idUser, string checkIn, string checkOut, decimal idPrice)
+        public ActionResult BookingRoom(int idRoom, int idUser, string checkIn, string checkOut)
         {
             DateTime checkInDate, checkOutDate;
             string status = "Pending";
+            Decimal? price = null;
+            // Kiểm tra giá trị của các tham số
+            if (idRoom == 0 || idUser == 0 )
+            {
+                TempData["Message"] = "Invalid room, user, or price information.";
+                return RedirectToAction("Error", "HandleError"); // Chuyển hướng đến trang báo lỗi
+            }
             // Chuyển đổi dữ liệu từ chuỗi sang DateTime
             if (!DateTime.TryParse(checkIn, out checkInDate) || !DateTime.TryParse(checkOut, out checkOutDate))
             {
-                ViewBag.Message = "Invalid date format.";
-                return RedirectToAction("MainPage","Home");
+                TempData["Message"] = "Invalid date format.";
+                return RedirectToAction("Error", "HandleError"); // Trả về một view báo lỗi
             }
 
             // Thiết lập thời gian cố định cho check-in và check-out
-            checkInDate = checkInDate.Date.AddHours(14);  // Check-in lúc 14h
+            checkInDate = checkInDate.Date.AddHours(14); // Check-in lúc 14h
             checkOutDate = checkOutDate.Date.AddHours(12); // Check-out lúc 12h
+            price = _bookingService.calculateTotal(checkInDate, checkOutDate,idRoom);
+
 
             // Kiểm tra: Ngày check-out phải sau check-in
             if (checkOutDate <= checkInDate)
             {
-                ViewBag.Message = "Check-out date must be later than check-in date.";
-                return RedirectToAction("MainPage", "Home");
+                TempData["Message"] = "Check-out date must be later than check-in date.";
+                return RedirectToAction("Error", "HandleError"); // Trả về một view báo lỗi
             }
 
             // Kiểm tra xem phòng có trùng lịch không
             if (!_bookingService.IsRoomAvailable(idRoom, checkInDate, checkOutDate))
             {
-                ViewBag.Message = "Room is already booked during this period.";
-                return RedirectToAction("MainPage", "Home");
+                TempData["Message"] = "Room is already booked during this period.";
+                return RedirectToAction("Error", "HandleError"); // Trả về một view báo lỗi
             }
 
             using (var db = new DB_ResortfEntities())
@@ -118,8 +63,8 @@ namespace ResortManagement.Controllers
 
                 if (room == null || user == null)
                 {
-                    ViewBag.Message = "Invalid Room or User ID.";
-                    return RedirectToAction("MainPage", "Home");
+                    TempData["Message"] = "Invalid Room or User ID.";
+                    return RedirectToAction("Error", "HandleError"); // Trả về một view báo lỗi
                 }
 
                 // Tạo booking mới
@@ -130,7 +75,7 @@ namespace ResortManagement.Controllers
                     BookingDate = DateTime.Now,
                     CheckInDate = checkInDate,
                     CheckOutDate = checkOutDate,
-                    TotalPrice = idPrice, // Giá có thể tính toán dựa vào thời gian thuê
+                    TotalPrice = price,
                     PaymentType = "Prepaid",
                     Status = status
                 };
@@ -139,16 +84,23 @@ namespace ResortManagement.Controllers
                 {
                     db.Bookings.Add(booking);
                     db.SaveChanges();
-                    ViewBag.Message = "Booking successful!";
+
+                    // Truyền BookingID qua TempData
+                    TempData["BookingID"] = booking.BookingID;
+                    TempData["Message"] = "Booking successful!";
+                    TempData["Price"] = booking.TotalPrice;
+
+                    return View("Confirm");// Trả về view xác nhận
                 }
                 catch (Exception ex)
                 {
-                    ViewBag.Message = "An error occurred while booking. Please try again.";
+                    TempData["Message"] = "An error occurred while booking. Please try again.";
+                    return RedirectToAction("Error", "HandleError"); // Trả về một view báo lỗi
                 }
-
-                return RedirectToAction("MainPage","Home");
             }
         }
+
+
 
 
         public ActionResult SelectService(int bookingId=13)

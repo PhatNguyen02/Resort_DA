@@ -96,12 +96,12 @@
                                             <div class="d-flex" style="gap: 15px; flex-grow: 1;">
                                                 <div>
                                                     <label>Check In</label>
-                                                    @Html.TextBox("CheckIn", null, new { @class = "form-control", type = "date", min = currentDate, required = "required" })
+                                                    @Html.TextBox("CheckIn", null, new { @class = "form-control", type = "date", min = currentDate, required = "required", id = "checkIn" })
                                                 </div>
 
                                                 <div>
                                                     <label>Check Out</label>
-                                                    @Html.TextBox("CheckOut", null, new { @class = "form-control", type = "date", min = currentDate, required = "required" })
+                                                    @Html.TextBox("CheckOut", null, new { @class = "form-control", type = "date", min = currentDate, required = "required", id = "checkOut" })
                                                 </div>
                                             </div>
 
@@ -236,7 +236,8 @@
                         </div>
 
                         <div class="tp-purches-btn">
-                            <button class="tp-btn-falured">Book Now</button>
+
+                            <button class="tp-btn-falured" type="submit">Book Now</button>
                             <a href="@Url.Action("PaymentWithPaypal", "Invoice")">Pay with PayPal</a> |
                         </div>
 
@@ -249,3 +250,18 @@
 
 </div>
 
+<script>
+    // Lấy các phần tử của ngày Check In và Check Out
+    var checkIn = document.getElementById('checkIn');
+    var checkOut = document.getElementById('checkOut');
+
+    // Hàm để cập nhật giá trị min của ngày Check Out khi ngày Check In thay đổi
+    checkIn.addEventListener('change', function () {
+        var checkInDate = new Date(checkIn.value); // Lấy giá trị của ngày Check In
+        checkInDate.setDate(checkInDate.getDate() + 1); // Thêm 1 ngày vào ngày Check In
+
+        // Chuyển giá trị ngày mới thành định dạng yyyy-mm-dd và gán vào min của CheckOut
+        var checkOutMinDate = checkInDate.toISOString().split('T')[0]; // Lấy ngày dưới dạng yyyy-mm-dd
+        checkOut.min = checkOutMinDate; // Cập nhật giá trị min của CheckOut
+    });
+</script>

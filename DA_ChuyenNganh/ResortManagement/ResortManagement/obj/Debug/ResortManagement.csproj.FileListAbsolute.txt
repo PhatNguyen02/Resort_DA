@@ -160,6 +160,8 @@ D:\HUUTHANH\TaiLieu\HK7\DACN\Source\Thanh\Resort_DA\DA_ChuyenNganh\ResortManagem
 D:\HUUTHANH\TaiLieu\HK7\DACN\Source\Thanh\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\obj\Debug\ResortMa.C79B90A4.Up2Date
 D:\HUUTHANH\TaiLieu\HK7\DACN\Source\Thanh\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\obj\Debug\ResortManagement.dll
 D:\HUUTHANH\TaiLieu\HK7\DACN\Source\Thanh\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\obj\Debug\ResortManagement.pdb
+D:\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\obj\Debug\ResortManagement.csproj.AssemblyReference.cache
+D:\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\obj\Debug\ResortManagement.csproj.CoreCompileInputs.cache
 D:\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\bin\ResortManagement.dll.config
 D:\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\bin\ResortManagement.dll
 D:\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\bin\ResortManagement.pdb
@@ -236,8 +238,6 @@ D:\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\bin\System.Web.Web
 D:\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\bin\System.Web.Helpers.xml
 D:\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\bin\System.Web.Mvc.xml
 D:\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\obj\Debug\ResortManagement.csproj.AssemblyReference.cache
-D:\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\obj\Debug\ResortManagement.csproj.CoreCompileInputs.cache
 D:\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\obj\Debug\ResortManagement.csproj.CopyComplete
 D:\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\obj\Debug\ResortManagement.dll
 D:\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\obj\Debug\ResortManagement.pdb

@@ -29,9 +29,15 @@ namespace ResortManagement.Services
             return rentalUnits;
         }
 
-        public decimal calculateTotal(DateTime checkInDate, DateTime checkOutDate, decimal pricePerDay)
+        public decimal calculateTotal(DateTime checkInDate, DateTime checkOutDate, int  idRoom)
         {
-            if(checkBooking(checkInDate,checkOutDate))
+            decimal pricePerDay = _dbContext.Rooms
+            .Where(x => x.RoomID == idRoom)
+            .Select(x => x.Price)
+            .SingleOrDefault() ?? 0m;  // Nếu giá là null, gán 0m (mặc định)
+
+
+            if (checkBooking(checkInDate,checkOutDate))
             {
                 double totalHours = (checkOutDate - checkInDate).TotalHours;
 
