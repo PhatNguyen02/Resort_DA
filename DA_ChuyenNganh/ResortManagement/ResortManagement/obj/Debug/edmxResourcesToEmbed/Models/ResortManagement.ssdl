@@ -244,7 +244,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Bookings__RoomID__5629CD9C">
+  <Association Name="FK__Bookings__RoomID__4D94879B">
     <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
     <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
     <ReferentialConstraint>
@@ -256,7 +256,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Bookings__UserID__5535A963">
+  <Association Name="FK__Bookings__UserID__4E88ABD4">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
     <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
     <ReferentialConstraint>
@@ -280,7 +280,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Reviews__Service__5FB337D6">
+  <Association Name="FK__Reviews__Service__5070F446">
     <End Role="Services" Type="Self.Services" Multiplicity="0..1" />
     <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
     <ReferentialConstraint>
@@ -292,7 +292,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Reviews__UserID__5DCAEF64">
+  <Association Name="FK__Reviews__UserID__5165187F">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
     <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
     <ReferentialConstraint>
@@ -316,7 +316,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__UsedServi__Servi__6383C8BA">
+  <Association Name="FK__UsedServi__Servi__534D60F1">
     <End Role="Services" Type="Self.Services" Multiplicity="0..1" />
     <End Role="UsedServices" Type="Self.UsedServices" Multiplicity="*" />
     <ReferentialConstraint>
@@ -382,23 +382,23 @@
       <End Role="Promotions" EntitySet="Promotions" />
       <End Role="Bookings" EntitySet="Bookings" />
     </AssociationSet>
-    <AssociationSet Name="FK__Bookings__RoomID__5629CD9C" Association="Self.FK__Bookings__RoomID__5629CD9C">
+    <AssociationSet Name="FK__Bookings__RoomID__4D94879B" Association="Self.FK__Bookings__RoomID__4D94879B">
       <End Role="Rooms" EntitySet="Rooms" />
       <End Role="Bookings" EntitySet="Bookings" />
     </AssociationSet>
-    <AssociationSet Name="FK__Bookings__UserID__5535A963" Association="Self.FK__Bookings__UserID__5535A963">
+    <AssociationSet Name="FK__Bookings__UserID__4E88ABD4" Association="Self.FK__Bookings__UserID__4E88ABD4">
       <End Role="Users" EntitySet="Users" />
       <End Role="Bookings" EntitySet="Bookings" />
     </AssociationSet>
-    <AssociationSet Name="FK__Reviews__RoomID__5EBF139D" Association="Self.FK__Reviews__RoomID__5EBF139D">
+    <AssociationSet Name="FK__Reviews__RoomID__4F7CD00D" Association="Self.FK__Reviews__RoomID__4F7CD00D">
       <End Role="Rooms" EntitySet="Rooms" />
       <End Role="Reviews" EntitySet="Reviews" />
     </AssociationSet>
-    <AssociationSet Name="FK__Reviews__Service__5FB337D6" Association="Self.FK__Reviews__Service__5FB337D6">
+    <AssociationSet Name="FK__Reviews__Service__5070F446" Association="Self.FK__Reviews__Service__5070F446">
       <End Role="Services" EntitySet="Services" />
       <End Role="Reviews" EntitySet="Reviews" />
     </AssociationSet>
-    <AssociationSet Name="FK__Reviews__UserID__5DCAEF64" Association="Self.FK__Reviews__UserID__5DCAEF64">
+    <AssociationSet Name="FK__Reviews__UserID__5165187F" Association="Self.FK__Reviews__UserID__5165187F">
       <End Role="Users" EntitySet="Users" />
       <End Role="Reviews" EntitySet="Reviews" />
     </AssociationSet>
@@ -406,7 +406,7 @@
       <End Role="Bookings" EntitySet="Bookings" />
       <End Role="UsedServices" EntitySet="UsedServices" />
     </AssociationSet>
-    <AssociationSet Name="FK__UsedServi__Servi__6383C8BA" Association="Self.FK__UsedServi__Servi__6383C8BA">
+    <AssociationSet Name="FK__UsedServi__Servi__534D60F1" Association="Self.FK__UsedServi__Servi__534D60F1">
       <End Role="Services" EntitySet="Services" />
       <End Role="UsedServices" EntitySet="UsedServices" />
     </AssociationSet>

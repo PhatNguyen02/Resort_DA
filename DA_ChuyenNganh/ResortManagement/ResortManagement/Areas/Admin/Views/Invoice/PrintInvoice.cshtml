@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "PrintInvoice";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+}
+
+<h2>Hóa Đơn</h2>
+
+<p>Mã Hóa Đơn: @Model.InvoiceID</p>
+<p>Ngày Xuất: @Model.InvoiceDate.ToShortDateString()</p>
+<p>Tổng Tiền: @Model.TotalAmount</p>
+<p>Trạng Thái Thanh Toán: @Model.PaymentStatus</p>
+<p>Phương Thức Thanh Toán: @Model.PaymentMethod</p>
+

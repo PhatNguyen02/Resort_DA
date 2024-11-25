@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DB_ResortfModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DB_ResortfModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bookings">
           <Key>
             <PropertyRef Name="BookingID" />
@@ -249,7 +249,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bookings__RoomID__5629CD9C">
+        <Association Name="FK__Bookings__RoomID__4D94879B">
           <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
           <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
           <ReferentialConstraint>
@@ -261,7 +261,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bookings__UserID__5535A963">
+        <Association Name="FK__Bookings__UserID__4E88ABD4">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
           <ReferentialConstraint>
@@ -285,7 +285,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reviews__Service__5FB337D6">
+        <Association Name="FK__Reviews__Service__5070F446">
           <End Role="Services" Type="Self.Services" Multiplicity="0..1" />
           <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
           <ReferentialConstraint>
@@ -297,7 +297,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reviews__UserID__5DCAEF64">
+        <Association Name="FK__Reviews__UserID__5165187F">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
           <ReferentialConstraint>
@@ -321,7 +321,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__UsedServi__Servi__6383C8BA">
+        <Association Name="FK__UsedServi__Servi__534D60F1">
           <End Role="Services" Type="Self.Services" Multiplicity="0..1" />
           <End Role="UsedServices" Type="Self.UsedServices" Multiplicity="*" />
           <ReferentialConstraint>
@@ -387,11 +387,11 @@
             <End Role="Promotions" EntitySet="Promotions" />
             <End Role="Bookings" EntitySet="Bookings" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bookings__RoomID__5629CD9C" Association="Self.FK__Bookings__RoomID__5629CD9C">
+          <AssociationSet Name="FK__Bookings__RoomID__4D94879B" Association="Self.FK__Bookings__RoomID__4D94879B">
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Bookings" EntitySet="Bookings" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bookings__UserID__5535A963" Association="Self.FK__Bookings__UserID__5535A963">
+          <AssociationSet Name="FK__Bookings__UserID__4E88ABD4" Association="Self.FK__Bookings__UserID__4E88ABD4">
             <End Role="Users" EntitySet="Users" />
             <End Role="Bookings" EntitySet="Bookings" />
           </AssociationSet>
@@ -399,11 +399,11 @@
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Reviews" EntitySet="Reviews" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reviews__Service__5FB337D6" Association="Self.FK__Reviews__Service__5FB337D6">
+          <AssociationSet Name="FK__Reviews__Service__5070F446" Association="Self.FK__Reviews__Service__5070F446">
             <End Role="Services" EntitySet="Services" />
             <End Role="Reviews" EntitySet="Reviews" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reviews__UserID__5DCAEF64" Association="Self.FK__Reviews__UserID__5DCAEF64">
+          <AssociationSet Name="FK__Reviews__UserID__5165187F" Association="Self.FK__Reviews__UserID__5165187F">
             <End Role="Users" EntitySet="Users" />
             <End Role="Reviews" EntitySet="Reviews" />
           </AssociationSet>
@@ -411,7 +411,7 @@
             <End Role="Bookings" EntitySet="Bookings" />
             <End Role="UsedServices" EntitySet="UsedServices" />
           </AssociationSet>
-          <AssociationSet Name="FK__UsedServi__Servi__6383C8BA" Association="Self.FK__UsedServi__Servi__6383C8BA">
+          <AssociationSet Name="FK__UsedServi__Servi__534D60F1" Association="Self.FK__UsedServi__Servi__534D60F1">
             <End Role="Services" EntitySet="Services" />
             <End Role="UsedServices" EntitySet="UsedServices" />
           </AssociationSet>
@@ -424,15 +424,16 @@
             <End Role="State" EntitySet="State" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DB_ResortfModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Booking">
+        <EntityType Name="Bookings">
           <Key>
             <PropertyRef Name="BookingID" />
           </Key>
-          <Property Name="BookingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookingID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserID" Type="Int32" />
           <Property Name="RoomID" Type="Int32" />
           <Property Name="PromotionID" Type="Int32" />
@@ -442,26 +443,26 @@
           <Property Name="TotalPrice" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Promotion" Relationship="Self.FK__Bookings__Promot__571DF1D5" FromRole="Bookings" ToRole="Promotions" />
-          <NavigationProperty Name="Room" Relationship="Self.FK__Bookings__RoomID__5629CD9C" FromRole="Bookings" ToRole="Rooms" />
-          <NavigationProperty Name="User" Relationship="Self.FK__Bookings__UserID__5535A963" FromRole="Bookings" ToRole="Users" />
-          <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoices__Bookin__5AEE82B9" FromRole="Bookings" ToRole="Invoices" />
+          <NavigationProperty Name="Promotions" Relationship="Self.FK__Bookings__Promot__4CA06362" FromRole="Bookings" ToRole="Promotions" />
+          <NavigationProperty Name="Rooms" Relationship="Self.FK__Bookings__RoomID__4D94879B" FromRole="Bookings" ToRole="Rooms" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Bookings__UserID__4E88ABD4" FromRole="Bookings" ToRole="Users" />
           <NavigationProperty Name="UsedServices" Relationship="Self.FK__UsedServi__Booki__628FA481" FromRole="Bookings" ToRole="UsedServices" />
+          <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoices_BookingID" FromRole="Bookings" ToRole="Invoices" />
         </EntityType>
-        <EntityType Name="Invoice">
+        <EntityType Name="Invoices">
           <Key>
             <PropertyRef Name="InvoiceID" />
           </Key>
-          <Property Name="InvoiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BookingID" Type="Int32" />
+          <Property Name="InvoiceID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookingID" Type="Int64" />
           <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
           <Property Name="TotalAmount" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="IsPaid" Type="Boolean" />
           <Property Name="PaymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Booking" Relationship="Self.FK__Invoices__Bookin__5AEE82B9" FromRole="Invoices" ToRole="Bookings" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK_Invoices_BookingID" FromRole="Invoices" ToRole="Bookings" />
         </EntityType>
-        <EntityType Name="Promotion">
+        <EntityType Name="Promotions">
           <Key>
             <PropertyRef Name="PromotionID" />
           </Key>
@@ -472,9 +473,9 @@
           <Property Name="IsFlashDeal" Type="Boolean" />
           <Property Name="StartDate" Type="DateTime" Precision="3" />
           <Property Name="EndDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Bookings" Relationship="Self.FK__Bookings__Promot__571DF1D5" FromRole="Promotions" ToRole="Bookings" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Bookings__Promot__4CA06362" FromRole="Promotions" ToRole="Bookings" />
         </EntityType>
-        <EntityType Name="Review">
+        <EntityType Name="Reviews">
           <Key>
             <PropertyRef Name="ReviewID" />
           </Key>
@@ -485,11 +486,11 @@
           <Property Name="Rating" Type="Int32" />
           <Property Name="Comment" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="ReviewDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Room" Relationship="Self.FK__Reviews__RoomID__5EBF139D" FromRole="Reviews" ToRole="Rooms" />
-          <NavigationProperty Name="Service" Relationship="Self.FK__Reviews__Service__5FB337D6" FromRole="Reviews" ToRole="Services" />
-          <NavigationProperty Name="User" Relationship="Self.FK__Reviews__UserID__5DCAEF64" FromRole="Reviews" ToRole="Users" />
+          <NavigationProperty Name="Rooms" Relationship="Self.FK__Reviews__RoomID__4F7CD00D" FromRole="Reviews" ToRole="Rooms" />
+          <NavigationProperty Name="Services" Relationship="Self.FK__Reviews__Service__5070F446" FromRole="Reviews" ToRole="Services" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Reviews__UserID__5165187F" FromRole="Reviews" ToRole="Users" />
         </EntityType>
-        <EntityType Name="Room">
+        <EntityType Name="Rooms">
           <Key>
             <PropertyRef Name="RoomID" />
           </Key>
@@ -510,7 +511,7 @@
           <Property Name="Description_room_no_smoke" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Description_room_size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Service">
+        <EntityType Name="Services">
           <Key>
             <PropertyRef Name="ServiceID" />
           </Key>
@@ -521,10 +522,10 @@
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="StatusServices" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="ImageServices" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Reviews" Relationship="Self.FK__Reviews__Service__5FB337D6" FromRole="Services" ToRole="Reviews" />
-          <NavigationProperty Name="UsedServices" Relationship="Self.FK__UsedServi__Servi__6383C8BA" FromRole="Services" ToRole="UsedServices" />
+          <NavigationProperty Name="Reviews" Relationship="Self.FK__Reviews__Service__5070F446" FromRole="Services" ToRole="Reviews" />
+          <NavigationProperty Name="UsedServices" Relationship="Self.FK__UsedServi__Servi__534D60F1" FromRole="Services" ToRole="UsedServices" />
         </EntityType>
-        <EntityType Name="sysdiagram">
+        <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
@@ -547,17 +548,28 @@
         </EntityType>
         <EntityType Name="UsedService">
           <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="customerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="startTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="endTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="serviceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UsedServices">
+          <Key>
             <PropertyRef Name="UsedServiceID" />
           </Key>
           <Property Name="UsedServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BookingID" Type="Int32" />
+          <Property Name="BookingID" Type="Int64" />
           <Property Name="ServiceID" Type="Int32" />
           <Property Name="Quantity" Type="Int32" />
           <Property Name="TotalPrice" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="Booking" Relationship="Self.FK__UsedServi__Booki__628FA481" FromRole="UsedServices" ToRole="Bookings" />
-          <NavigationProperty Name="Service" Relationship="Self.FK__UsedServi__Servi__6383C8BA" FromRole="UsedServices" ToRole="Services" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__UsedServi__Booki__628FA481" FromRole="UsedServices" ToRole="Bookings" />
+          <NavigationProperty Name="Services" Relationship="Self.FK__UsedServi__Servi__534D60F1" FromRole="UsedServices" ToRole="Services" />
         </EntityType>
-        <EntityType Name="User">
+        <EntityType Name="Users">
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
@@ -570,12 +582,12 @@
           <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="RegistrationDate" Type="DateTime" Precision="3" />
           <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Bookings" Relationship="Self.FK__Bookings__UserID__5535A963" FromRole="Users" ToRole="Bookings" />
-          <NavigationProperty Name="Reviews" Relationship="Self.FK__Reviews__UserID__5DCAEF64" FromRole="Users" ToRole="Reviews" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Bookings__UserID__4E88ABD4" FromRole="Users" ToRole="Bookings" />
+          <NavigationProperty Name="Reviews" Relationship="Self.FK__Reviews__UserID__5165187F" FromRole="Users" ToRole="Reviews" />
         </EntityType>
-        <Association Name="FK__Bookings__Promot__571DF1D5">
-          <End Role="Promotions" Type="Self.Promotion" Multiplicity="0..1" />
-          <End Role="Bookings" Type="Self.Booking" Multiplicity="*" />
+        <Association Name="FK__Bookings__Promot__4CA06362">
+          <End Role="Promotions" Type="Self.Promotions" Multiplicity="0..1" />
+          <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Promotions">
               <PropertyRef Name="PromotionID" />
@@ -585,9 +597,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bookings__RoomID__5629CD9C">
-          <End Role="Rooms" Type="Self.Room" Multiplicity="0..1" />
-          <End Role="Bookings" Type="Self.Booking" Multiplicity="*" />
+        <Association Name="FK__Bookings__RoomID__4D94879B">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+          <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Rooms">
               <PropertyRef Name="RoomID" />
@@ -597,9 +609,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bookings__UserID__5535A963">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Bookings" Type="Self.Booking" Multiplicity="*" />
+        <Association Name="FK__Bookings__UserID__4E88ABD4">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -609,21 +621,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Invoices__Bookin__5AEE82B9">
-          <End Role="Bookings" Type="Self.Booking" Multiplicity="0..1" />
-          <End Role="Invoices" Type="Self.Invoice" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Bookings">
-              <PropertyRef Name="BookingID" />
-            </Principal>
-            <Dependent Role="Invoices">
-              <PropertyRef Name="BookingID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__UsedServi__Booki__628FA481">
-          <End Role="Bookings" Type="Self.Booking" Multiplicity="0..1" />
-          <End Role="UsedServices" Type="Self.UsedService" Multiplicity="*" />
+          <End Role="Bookings" Type="Self.Bookings" Multiplicity="0..1" />
+          <End Role="UsedServices" Type="Self.UsedServices" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Bookings">
               <PropertyRef Name="BookingID" />
@@ -633,9 +633,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reviews__RoomID__5EBF139D">
-          <End Role="Rooms" Type="Self.Room" Multiplicity="0..1" />
-          <End Role="Reviews" Type="Self.Review" Multiplicity="*" />
+        <Association Name="FK_Invoices_BookingID">
+          <End Role="Bookings" Type="Self.Bookings" Multiplicity="0..1" />
+          <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bookings">
+              <PropertyRef Name="BookingID" />
+            </Principal>
+            <Dependent Role="Invoices">
+              <PropertyRef Name="BookingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reviews__RoomID__4F7CD00D">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Rooms">
               <PropertyRef Name="RoomID" />
@@ -645,9 +657,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reviews__Service__5FB337D6">
-          <End Role="Services" Type="Self.Service" Multiplicity="0..1" />
-          <End Role="Reviews" Type="Self.Review" Multiplicity="*" />
+        <Association Name="FK__Reviews__Service__5070F446">
+          <End Role="Services" Type="Self.Services" Multiplicity="0..1" />
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Services">
               <PropertyRef Name="ServiceID" />
@@ -657,9 +669,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reviews__UserID__5DCAEF64">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Reviews" Type="Self.Review" Multiplicity="*" />
+        <Association Name="FK__Reviews__UserID__5165187F">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -669,9 +681,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__UsedServi__Servi__6383C8BA">
-          <End Role="Services" Type="Self.Service" Multiplicity="0..1" />
-          <End Role="UsedServices" Type="Self.UsedService" Multiplicity="*" />
+        <Association Name="FK__UsedServi__Servi__534D60F1">
+          <End Role="Services" Type="Self.Services" Multiplicity="0..1" />
+          <End Role="UsedServices" Type="Self.UsedServices" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Services">
               <PropertyRef Name="ServiceID" />
@@ -696,35 +708,35 @@
             <End Role="Promotions" EntitySet="Promotions" />
             <End Role="Bookings" EntitySet="Bookings" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bookings__RoomID__5629CD9C" Association="Self.FK__Bookings__RoomID__5629CD9C">
+          <AssociationSet Name="FK__Bookings__RoomID__4D94879B" Association="Self.FK__Bookings__RoomID__4D94879B">
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Bookings" EntitySet="Bookings" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bookings__UserID__5535A963" Association="Self.FK__Bookings__UserID__5535A963">
+          <AssociationSet Name="FK__Bookings__UserID__4E88ABD4" Association="Self.FK__Bookings__UserID__4E88ABD4">
             <End Role="Users" EntitySet="Users" />
             <End Role="Bookings" EntitySet="Bookings" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Invoices__Bookin__5AEE82B9" Association="Self.FK__Invoices__Bookin__5AEE82B9">
-            <End Role="Bookings" EntitySet="Bookings" />
-            <End Role="Invoices" EntitySet="Invoices" />
           </AssociationSet>
           <AssociationSet Name="FK__UsedServi__Booki__628FA481" Association="Self.FK__UsedServi__Booki__628FA481">
             <End Role="Bookings" EntitySet="Bookings" />
             <End Role="UsedServices" EntitySet="UsedServices" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reviews__RoomID__5EBF139D" Association="Self.FK__Reviews__RoomID__5EBF139D">
+          <AssociationSet Name="FK_Invoices_BookingID" Association="Self.FK_Invoices_BookingID">
+            <End Role="Bookings" EntitySet="Bookings" />
+            <End Role="Invoices" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reviews__RoomID__4F7CD00D" Association="Self.FK__Reviews__RoomID__4F7CD00D">
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Reviews" EntitySet="Reviews" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reviews__Service__5FB337D6" Association="Self.FK__Reviews__Service__5FB337D6">
+          <AssociationSet Name="FK__Reviews__Service__5070F446" Association="Self.FK__Reviews__Service__5070F446">
             <End Role="Services" EntitySet="Services" />
             <End Role="Reviews" EntitySet="Reviews" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reviews__UserID__5DCAEF64" Association="Self.FK__Reviews__UserID__5DCAEF64">
+          <AssociationSet Name="FK__Reviews__UserID__5165187F" Association="Self.FK__Reviews__UserID__5165187F">
             <End Role="Users" EntitySet="Users" />
             <End Role="Reviews" EntitySet="Reviews" />
           </AssociationSet>
-          <AssociationSet Name="FK__UsedServi__Servi__6383C8BA" Association="Self.FK__UsedServi__Servi__6383C8BA">
+          <AssociationSet Name="FK__UsedServi__Servi__534D60F1" Association="Self.FK__UsedServi__Servi__534D60F1">
             <End Role="Services" EntitySet="Services" />
             <End Role="UsedServices" EntitySet="UsedServices" />
           </AssociationSet>
@@ -892,7 +904,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DB_ResortfModelStoreContainer" CdmEntityContainer="DB_ResortfEntities">
           <EntitySetMapping Name="Bookings">
-            <EntityTypeMapping TypeName="DB_ResortfModel.Booking">
+            <EntityTypeMapping TypeName="DB_ResortfModel.Bookings">
               <MappingFragment StoreEntitySet="Bookings">
                 <ScalarProperty Name="BookingID" ColumnName="BookingID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
@@ -908,7 +920,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Invoices">
-            <EntityTypeMapping TypeName="DB_ResortfModel.Invoice">
+            <EntityTypeMapping TypeName="DB_ResortfModel.Invoices">
               <MappingFragment StoreEntitySet="Invoices">
                 <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
                 <ScalarProperty Name="BookingID" ColumnName="BookingID" />
@@ -921,7 +933,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Promotions">
-            <EntityTypeMapping TypeName="DB_ResortfModel.Promotion">
+            <EntityTypeMapping TypeName="DB_ResortfModel.Promotions">
               <MappingFragment StoreEntitySet="Promotions">
                 <ScalarProperty Name="PromotionID" ColumnName="PromotionID" />
                 <ScalarProperty Name="PromotionCode" ColumnName="PromotionCode" />
@@ -934,7 +946,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Reviews">
-            <EntityTypeMapping TypeName="DB_ResortfModel.Review">
+            <EntityTypeMapping TypeName="DB_ResortfModel.Reviews">
               <MappingFragment StoreEntitySet="Reviews">
                 <ScalarProperty Name="ReviewID" ColumnName="ReviewID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
@@ -947,7 +959,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Rooms">
-            <EntityTypeMapping TypeName="DB_ResortfModel.Room">
+            <EntityTypeMapping TypeName="DB_ResortfModel.Rooms">
               <MappingFragment StoreEntitySet="Rooms">
                 <ScalarProperty Name="Description_room_size" ColumnName="Description_room_size" />
                 <ScalarProperty Name="Description_room_no_smoke" ColumnName="Description_room_no_smoke" />
@@ -967,7 +979,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Services">
-            <EntityTypeMapping TypeName="DB_ResortfModel.Service">
+            <EntityTypeMapping TypeName="DB_ResortfModel.Services">
               <MappingFragment StoreEntitySet="Services">
                 <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
                 <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
@@ -980,7 +992,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="DB_ResortfModel.sysdiagram">
+            <EntityTypeMapping TypeName="DB_ResortfModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -1003,7 +1015,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UsedServices">
-            <EntityTypeMapping TypeName="DB_ResortfModel.UsedService">
+            <EntityTypeMapping TypeName="DB_ResortfModel.UsedServices">
               <MappingFragment StoreEntitySet="UsedServices">
                 <ScalarProperty Name="UsedServiceID" ColumnName="UsedServiceID" />
                 <ScalarProperty Name="BookingID" ColumnName="BookingID" />
@@ -1014,7 +1026,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="DB_ResortfModel.User">
+            <EntityTypeMapping TypeName="DB_ResortfModel.Users">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
@@ -1151,7 +1163,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

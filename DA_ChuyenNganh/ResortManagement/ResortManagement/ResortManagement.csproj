@@ -59,9 +59,56 @@
     <Reference Include="Hangfire.SqlServer, Version=1.8.15.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Hangfire.SqlServer.1.8.15\lib\net451\Hangfire.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.32\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
@@ -91,6 +138,28 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -112,6 +181,9 @@
       <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -181,6 +253,7 @@
     <Content Include="assets_admin\images\logo\logo-fold.png" />
     <Content Include="assets_admin\images\logo\logo-white.png" />
     <Content Include="assets_admin\images\logo\logo.png" />
+    <Content Include="assets_admin\images\logo\ResortThreeFriends.jpg" />
     <Content Include="assets_admin\images\others\adobe-thumb.png" />
     <Content Include="assets_admin\images\others\amazon-thumb.png" />
     <Content Include="assets_admin\images\others\cambridge-thumb.png" />
@@ -455,11 +528,13 @@
     <Content Include="assets_detail\img\product\04.jpg" />
     <Content Include="assets_detail\img\review\avatar-2.png" />
     <Content Include="assets_detail\img\review\avatar.png" />
+    <Content Include="assets_detail\img\room-details\double_room.jfif" />
     <Content Include="assets_detail\img\room-details\room-01.jpg" />
     <Content Include="assets_detail\img\room-details\room-02.jpg" />
     <Content Include="assets_detail\img\room-details\room-03.jpg" />
     <Content Include="assets_detail\img\room-details\room-04.jpg" />
     <Content Include="assets_detail\img\room-details\room-1.jpg" />
+    <Content Include="assets_detail\img\room-details\suite_room.jfif" />
     <Content Include="assets_detail\img\room\01.jpg" />
     <Content Include="assets_detail\img\room\02.jpg" />
     <Content Include="assets_detail\img\room\03.jpg" />
@@ -480,6 +555,9 @@
     <Content Include="assets_detail\img\service\04.jpg" />
     <Content Include="assets_detail\img\service\05.jpg" />
     <Content Include="assets_detail\img\service\06.jpg" />
+    <Content Include="assets_detail\img\service\Breakfast.jpg" />
+    <Content Include="assets_detail\img\service\city_tour.jpg" />
+    <Content Include="assets_detail\img\service\massage.jpg" />
     <Content Include="assets_detail\img\service\service3\01.jpg" />
     <Content Include="assets_detail\img\service\service3\02.jpg" />
     <Content Include="assets_detail\img\service\service3\03.jpg" />
@@ -633,6 +711,8 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BookingController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InvoiceController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoomController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServiceController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
@@ -652,8 +732,11 @@
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Booking.cs">
+    <Compile Include="Models\AddBookingViewModel.cs" />
+    <Compile Include="Models\Bookings.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BookingViewModel.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Counter.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
@@ -662,6 +745,9 @@
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Invoice.cs">
+    <Compile Include="Models\CustomerViewModel.cs" />
+    <Compile Include="Models\InvoiceDetailViewModel.cs" />
+    <Compile Include="Models\Invoices.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Job.cs">
@@ -678,6 +764,8 @@
     </Compile>
     <Compile Include="Models\PaymentRequest.cs" />
     <Compile Include="Models\Promotion.cs">
+    <Compile Include="Models\InvoiceVM.cs" />
+    <Compile Include="Models\Promotions.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ResortDBContext.cs" />
@@ -696,10 +784,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResortManagement.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Review.cs">
+    <Compile Include="Models\Reviews.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Room.cs">
+    <Compile Include="Models\Rooms.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Schema.cs">
@@ -709,27 +797,26 @@
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Service.cs">
+    <Compile Include="Models\SelectRoomViewModel.cs" />
+    <Compile Include="Models\Services.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ServiceItem.cs" />
     <Compile Include="Models\Set.cs">
-      <DependentUpon>ResortManagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\State.cs">
-      <DependentUpon>ResortManagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
+    <Compile Include="Models\ServiceSelectionViewModel.cs" />
+    <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TemporarySchedule.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UsedService.cs">
+    <Compile Include="Models\UsedServices.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\User.cs">
+    <Compile Include="Models\Users.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BackgroundJobs.cs" />
     <Compile Include="Services\BookingService.cs" />
@@ -823,6 +910,23 @@
     <Content Include="assets_user\fonts\fa-solid-900.woff" />
     <Content Include="assets_user\fonts\fa-solid-900.woff2" />
     <Content Include="assets_user\fonts\fa-solid-900d41d.eot" />
+    <Content Include="Areas\Admin\Views\Invoice\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Invoice\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Invoice\PrintInvoice.cshtml" />
+    <Content Include="Areas\Admin\Views\Booking\CustomerSelection.cshtml" />
+    <Content Include="Areas\Admin\Views\Booking\RoomSelection.cshtml" />
+    <Content Include="Areas\Admin\Views\Booking\GetAvailableRooms.cshtml" />
+    <Content Include="Areas\Admin\Views\Booking\ServiceSelection.cshtml" />
+    <Content Include="Areas\Admin\Views\Booking\Checkout.cshtml" />
+    <Content Include="Areas\Admin\Views\Booking\BookingSuccess.cshtml" />
+    <Content Include="Areas\Admin\Views\Profile\Info.cshtml" />
+    <EntityDeploy Include="Models\ResortManagement.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ResortManagement.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ResortManagement.edmx.diagram">
+      <DependentUpon>ResortManagement.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\_LayoutPage_Mainpage.cshtml" />
     <Content Include="Views\Home\MainPage.cshtml" />
@@ -853,6 +957,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Proifile\" />
+    <Folder Include="Views\Booking\" />
     <Folder Include="Views\Room\" />
   </ItemGroup>
   <PropertyGroup>

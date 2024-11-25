@@ -1,0 +1,84 @@
+﻿@model ResortManagement.Models.InvoiceDetailViewModel
+@{
+    ViewBag.Title = "Invoice Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Invoice Details</h2>
+
+    <!-- Invoice Information -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h4>Invoice Information</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Invoice ID:</strong> @Model.Invoice.InvoiceID</p>
+            <p><strong>Invoice Date:</strong> @(Model.Invoice.InvoiceDate.HasValue ? Model.Invoice.InvoiceDate.Value.ToString("dd/MM/yyyy") : "N/A")</p>
+            <p><strong>Total Amount:</strong> @(Model.Invoice.TotalAmount.HasValue ? Model.Invoice.TotalAmount.Value.ToString("#,##0") + " $" : "0 $")</p>
+            <p><strong>Payment Status:</strong> @(Model.Invoice.IsPaid.HasValue ? Model.Invoice.IsPaid.Value : false)</p>
+            <p><strong>Payment Method:</strong> @Model.Invoice.PaymentMethod</p>
+        </div>
+    </div>
+
+    <!-- Room Information -->
+    <div class="card mb-4">
+        <div class="card-header bg-secondary text-white">
+            <h4>Room Information</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Room Type:</strong> @Model.Room.RoomType</p>
+            <p><strong>Price per Night:</strong> @(Model.Room.Price.HasValue ? Model.Room.Price.Value.ToString("#,##0") : "0") $</p>
+            <p>
+                <strong>Check-in Date:</strong>
+                @(Model.Booking.CheckInDate.HasValue ? Model.Booking.CheckInDate.Value.ToString("dd/MM/yyyy") : "Not Available")
+            </p>
+            <p>
+                <strong>Check-out Date:</strong>
+                @(Model.Booking.CheckOutDate.HasValue ? Model.Booking.CheckOutDate.Value.ToString("dd/MM/yyyy") : "Not Available")
+            </p>
+        </div>
+    </div>
+
+    <!-- Used Services -->
+    <div class="card">
+        <div class="card-header bg-info text-white">
+            <h4>Used Services</h4>
+        </div>
+        <div class="card-body">
+            @if (Model.UsedServices.Any())
+            {
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Service Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var service in Model.UsedServices)
+                        {
+                            <tr>
+                                <td>@service.ServiceName</td>
+                                <td>@service.Price.ToString("#,##0") $</td>
+                                <td>@service.Quantity</td>
+                                <td>@service.TotalPrice.ToString("#,##0") $</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No services were used.</p>
+            }
+        </div>
+    </div>
+
+    <!-- Back to List -->
+    <div class="mt-4">
+        <a href="@Url.Action("Index","Invoice")" class="btn btn-secondary">Back to Invoices</a>
+    </div>
+</div>

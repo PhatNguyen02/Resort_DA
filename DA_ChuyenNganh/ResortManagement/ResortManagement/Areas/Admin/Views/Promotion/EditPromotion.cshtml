@@ -1,4 +1,4 @@
-﻿@model ResortManagement.Models.Promotion
+﻿@model ResortManagement.Models.Promotions
 
 @{
     ViewBag.Title = "Edit Promotion";
@@ -12,6 +12,7 @@
         @using (Html.BeginForm("EditPromotion", "Promotion", FormMethod.Post, new { @class = "form-horizontal" }))
         {
             @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.PromotionID)
             @Html.HiddenFor(m => m.PromotionCode) 
 
             <div class="row">
@@ -31,6 +32,7 @@
                     <div class="form-group mb-3">
                         @Html.LabelFor(m => m.IsFlashDeal, htmlAttributes: new { @class = "form-label" })
                         <div class="form-check">
+                            @Html.CheckBoxFor(m => m.IsFlashDeal, new { @class = "form-check-input" })     
                             @Html.CheckBoxFor(m => m.IsFlashDeal, new { @class = "form-check-input" })
                             <label class="form-check-label" for="IsFlashDeal">Is Flash Deal?</label>
                         </div>

@@ -1,0 +1,94 @@
+﻿@model List<ResortManagement.Models.Invoices>
+@{
+    ViewBag.Title = "Invoices";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+
+    <style>
+        #searchBox {
+            background-color: #f8f9fa;
+            border: 2px solid #007bff;
+            border-radius: 0.375rem;
+            transition: border-color 0.3s ease;
+        }
+
+            #searchBox:focus {
+                border-color: #0056b3;
+                box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+            }
+    </style>
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="row m-b-30">
+            <div class="col-lg-8">
+                <form method="get" action="@Url.Action("Index", "Invoice", new { area = "Admin" })" class="d-flex">
+                    <input type="text" class="form-control " id="searchBox" placeholder="Enter Booking ID or Payment Status..." value="@ViewBag.Search" />
+                </form>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover e-commerce-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Booking ID</th>
+                        <th>Invoice Date</th>
+                        <th>Total Amount</th>
+                        <th>Is Paid</th>
+                        <th>Payment Status</th>
+                        <th>Payment Method</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.InvoiceID</td>
+                            <td>@item.BookingID</td>
+                            <td>@(item.InvoiceDate.HasValue ? item.InvoiceDate.Value.ToString("dd/MM/yyyy") : "N/A")</td>
+                            <td>@(item.TotalAmount.HasValue ? item.TotalAmount.Value.ToString("#,##0") + " $" : "0 $")</td>
+                            <td>
+                                @if (item?.IsPaid == true)
+                                {
+                                    <span class="badge badge-success">Paid</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-danger">Unpaid</span>
+                                }
+
+                            </td>
+                            <td>@item.PaymentStatus</td>
+                            <td>@item.PaymentMethod</td>
+                            <td>
+                                <a href="@Url.Action("Details","Invoice", new { id = item.InvoiceID })" class="btn btn-icon btn-hover btn-sm btn-rounded" title="View Details">
+                                    <i class="anticon anticon-eye"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#searchBox").on("input", function () {
+            var searchTerm = $(this).val();
+            $.ajax({
+                url: '@Url.Action("Index", "Invoice", new { area = "Admin" })',
+                type: 'GET',
+                data: { search: searchTerm },
+                success: function (data) {
+                    $("tbody").html($(data).find("tbody").html());
+                }
+            });
+        });
+    });
+</script>

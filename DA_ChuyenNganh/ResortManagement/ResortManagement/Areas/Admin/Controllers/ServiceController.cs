@@ -4,17 +4,32 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Service = ResortManagement.Models.Services;
 
 namespace ResortManagement.Areas.Admin.Controllers
 {
     public class ServiceController : Controller
     {
         // GET: Admin/Service
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
             DB_ResortfEntities context = new DB_ResortfEntities();
-            List<Service> Services = context.Services.ToList();
-            return View(Services);
+            List<Service> services;
+
+
+            if (string.IsNullOrEmpty(search))
+            {
+                services = context.Services.ToList();
+            }
+            else
+            {
+                services = context.Services
+                .Where(p => p.ServiceName.Contains(search))
+                    .ToList();
+            }
+
+            ViewBag.Search = search;
+            return View(services);
         }
 
         [HttpGet]

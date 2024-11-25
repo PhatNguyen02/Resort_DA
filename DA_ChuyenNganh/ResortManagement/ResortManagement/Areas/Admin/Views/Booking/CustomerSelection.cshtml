@@ -1,0 +1,49 @@
+﻿@model ResortManagement.Models.CustomerViewModel 
+@{
+    ViewBag.Title = "CustomerSelection";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+}
+
+<div class="container">
+    <h2>Select Customer</h2>
+    <form method="post" action="@Url.Action("IdentifyOrCreateCustomer","Booking")">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="IsExistingCustomer" value="true" id="existingCustomer" checked>
+            <label class="form-check-label" for="existingCustomer">Existing Customer</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="IsExistingCustomer" value="false" id="newCustomer">
+            <label class="form-check-label" for="newCustomer">New Customer</label>
+        </div>
+        <div id="existingCustomerFields" class="mt-3">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <label>Phone Number:</label>
+            <input type="text" class="form-control" name="ExistUserPhoneNumber" />
+        </div>
+        <div id="newCustomerFields" class="mt-3" style="display:none;">
+            <label>Full Name:</label>
+            <input type="text" class="form-control" name="FullName" />
+            <label>Phone Number:</label>
+            <input type="text" class="form-control" name="NewUserPhoneNumber" />
+            <label>Email:</label>
+            <input type="email" class="form-control" name="Email" />
+            <label>Address:</label>
+            <input type="text" class="form-control" name="Address" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Select Room</button>
+    </form>
+</div>
+<script>
+    document.querySelectorAll('input[name="IsExistingCustomer"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (document.getElementById('existingCustomer').checked) {
+                document.getElementById('existingCustomerFields').style.display = "block";
+                document.getElementById('newCustomerFields').style.display = "none";
+            } else {
+                document.getElementById('existingCustomerFields').style.display = "none";
+                document.getElementById('newCustomerFields').style.display = "block";
+            }
+        });
+    });
+</script>
+

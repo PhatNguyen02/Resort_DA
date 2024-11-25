@@ -1,7 +1,22 @@
-﻿@model List<ResortManagement.Models.Booking>
+﻿@model List<ResortManagement.Models.Bookings>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+
+    <style>
+        #searchBox {
+            background-color: #f8f9fa; 
+            border: 2px solid #007bff;
+            border-radius: 0.375rem; 
+            transition: border-color 0.3s ease; 
+        }
+
+           
+            #searchBox:focus {
+                border-color: #0056b3; 
+                box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); 
+            }
+    </style>
 }
 
 
@@ -9,29 +24,13 @@
     <div class="card-body">
         <div class="row m-b-30">
             <div class="col-lg-8">
-                @*<div class="d-md-flex">
-                    <div class="m-b-10 m-r-15">
-                        <select class="custom-select" style="min-width: 180px;">
-                            <option selected>Catergory</option>
-                            <option value="all">All</option>
-                            <option value="homeDeco">Home Decoration</option>
-                            <option value="eletronic">Eletronic</option>
-                            <option value="jewellery">Jewellery</option>
-                        </select>
-                    </div>
-                    <div class="m-b-10">
-                        <select class="custom-select" style="min-width: 180px;">
-                            <option selected>Status</option>
-                            <option value="all">All</option>
-                            <option value="inStock">In Stock </option>
-                            <option value="outOfStock">Out of Stock</option>
-                        </select>
-                    </div>
-                </div>*@
+                <form method="get" action="@Url.Action("Index", "Booking", new { area = "Admin" })" class="d-flex">
+                    <input type="text" class="form-control " id="searchBox" placeholder="Enter username..." value="@ViewBag.Search" />
+                </form>
             </div>
             <div class="col-md-4 d-flex justify-content-md-end" style="margin-top: 60px;">
                 <div class="d-flex justify-content-end">
-                    <a href="@Url.Action("AddBook", "Home")" class="btn btn-primary">
+                    <a href="@Url.Action("CustomerSelection", "Booking")" class="btn btn-primary">
                         <i class="anticon anticon-plus-circle m-r-5"></i>
                         <span>Add Booking</span>
                     </a>
@@ -42,12 +41,6 @@
             <table class="table table-hover e-commerce-table">
                 <thead>
                     <tr>
-                        <th>
-                            @*<div class="checkbox">
-                                    <input id="checkAll" type="checkbox">
-                                    <label for="checkAll" class="m-b-0"></label>
-                                </div>*@
-                        </th>
                         <th>ID</th>
                         <th>Name Customer</th>
                         <th>Id Room</th>
@@ -55,7 +48,7 @@
                         <th>Check In</th>
                         <th>Check Out</th>
                         <th>Total Price</th>
-                        <th>Status  </th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,25 +56,19 @@
                     {
                         <tr>
                             <td>
-                                @*<div class="checkbox">
-                                        <input id="check-item-1" type="checkbox">
-                                        <label for="check-item-1" class="m-b-0"></label>
-                                    </div>*@
-                            </td>
-                            <td>
                                 @item.BookingID
                             </td>
                             <td>
-                                <div class="d-flex align-items-center">
-                                    <img class="img-fluid rounded" src="assets/images/others/thumb-9.jpg" style="max-width: 60px" alt="">
-                                    <h6 class="m-b-0 m-l-10">@item.User.Username</h6>
-                                </div>
+                                @item.Users.FullName
                             </td>
                             <td>@item.RoomID</td>
                             <td>@item.BookingDate</td>
                             <td>@item.CheckInDate</td>
                             <td>@item.CheckOutDate</td>
-                            <td>@item.TotalPrice</td>
+                            <td>
+                                @(item.TotalPrice.HasValue ? item.TotalPrice.Value.ToString("#,##0") + " $" : "0$")
+                            </td>
+
 
                             <td>
                                 <div class="d-flex align-items-center">
@@ -89,18 +76,37 @@
                                     <div>@item.Status</div>
                                 </div>
                             </td>
-                            <td class="text-right">
-                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                            <td>
+                                <a href="@Url.Action("EditBooking","Booking", new { id = item.BookingID })" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
                                     <i class="anticon anticon-edit"></i>
-                                </button>
-                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                </a>
+                                <a href="@Url.Action("DeleteBooking","Booking", new { id = item.BookingID })" class="btn btn-icon btn-hover btn-sm btn-rounded">
                                     <i class="anticon anticon-delete"></i>
-                                </button>
+                                </a>
                             </td>
                         </tr>
                     }
                 </tbody>
             </table>
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+            <script>
+                $(document).ready(function () {
+                    $("#searchBox").on("input", function () {
+                        var searchTerm = $(this).val(); // Lấy giá trị từ ô tìm kiếm
+                        $.ajax({
+                            url: '@Url.Action("Index", "Booking", new { area = "Admin" })', // Đường dẫn đến action Index
+                            type: 'GET',
+                            data: { search: searchTerm }, // Truyền từ khóa tìm kiếm vào action
+                            success: function (data) {
+                                // Thay đổi nội dung của bảng với kết quả tìm kiếm mới
+                                $("tbody").html($(data).find("tbody").html());
+                            }
+                        });
+                    });
+                });
+            </script>
         </div>
     </div>
 </div>

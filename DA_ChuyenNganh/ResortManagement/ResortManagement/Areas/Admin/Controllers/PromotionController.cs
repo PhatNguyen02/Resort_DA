@@ -1,6 +1,9 @@
-﻿using ResortManagement.Models;
+﻿using PayPal.Api;
+using ResortManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace ResortManagement.Areas.Admin.Controllers
@@ -8,10 +11,24 @@ namespace ResortManagement.Areas.Admin.Controllers
     public class PromotionController : Controller
     {
         // GET: Admin/Voucher
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
             DB_ResortfEntities context = new DB_ResortfEntities();
-            List<Promotion> promotions = context.Promotions.ToList();
+            List<Promotions> promotions;
+
+            
+            if (string.IsNullOrEmpty(search))
+            {
+                promotions = context.Promotions.ToList();
+            }
+            else
+            {
+                promotions = context.Promotions
+                .Where(p => p.PromotionCode.Contains(search))  
+                    .ToList();
+            }
+
+            ViewBag.Search = search;  
             return View(promotions);
         }
 
@@ -22,7 +39,7 @@ namespace ResortManagement.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddPromotion(Promotion promotion)
+        public ActionResult AddPromotion(Promotions promotion)
         {
             DB_ResortfEntities _context = new DB_ResortfEntities();
             if (ModelState.IsValid)
@@ -40,16 +57,16 @@ namespace ResortManagement.Areas.Admin.Controllers
             DB_ResortfEntities _context = new DB_ResortfEntities();
             var pro = _context.Promotions.Find(id);
 
-            if (pro == null)
+            if(pro == null)
             {
                 return HttpNotFound();
-            }
+            }    
 
             return View(pro);
         }
 
         [HttpPost]
-        public ActionResult EditPromotion(Promotion promotion)
+        public ActionResult EditPromotion(Promotions promotion)
         {
             if (ModelState.IsValid)
             {
@@ -82,10 +99,10 @@ namespace ResortManagement.Areas.Admin.Controllers
             DB_ResortfEntities _context = new DB_ResortfEntities();
             var pro = _context.Promotions.Find(id);
 
-            if (pro == null)
+            if(pro == null)
             {
                 return HttpNotFound();
-            }
+            }    
 
             return View(pro);
         }

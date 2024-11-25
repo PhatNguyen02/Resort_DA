@@ -1,18 +1,35 @@
-﻿using ResortManagement.Models;
+﻿using PayPal.Api;
+using ResortManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace ResortManagement.Areas.Admin.Controllers
 {
     public class UserController : Controller
     {
-
+       
         // GET: Admin/User
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
-            DB_ResortfEntities _context = new DB_ResortfEntities();
-            List<User> users = _context.Users.ToList();
+            DB_ResortfEntities context = new DB_ResortfEntities();
+            List<Users> users;
+
+
+            if (string.IsNullOrEmpty(search))
+            {
+                users = context.Users.ToList();
+            }
+            else
+            {
+                users = context.Users
+                .Where(p => p.Username.Contains(search))
+                    .ToList();
+            }
+
+            ViewBag.Search = search;
             return View(users);
         }
 
@@ -24,15 +41,15 @@ namespace ResortManagement.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddUser(User user)
+        public ActionResult AddUser(Users user)
         {
             DB_ResortfEntities _context = new DB_ResortfEntities();
             if (ModelState.IsValid)
             {
-                _context.Users.Add(user);
-                _context.SaveChanges();
+                    _context.Users.Add(user);
+                    _context.SaveChanges();
 
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
             }
             return View(user);
         }
@@ -47,7 +64,7 @@ namespace ResortManagement.Areas.Admin.Controllers
                 return HttpNotFound();
             }
 
-
+            
             return View(user);
         }
 
@@ -57,17 +74,17 @@ namespace ResortManagement.Areas.Admin.Controllers
             DB_ResortfEntities _context = new DB_ResortfEntities();
             var user = _context.Users.Find(id);
 
-
+           
             if (user == null)
             {
                 return HttpNotFound();
             }
 
-
+            
             _context.Users.Remove(user);
-            _context.SaveChanges();
+            _context.SaveChanges(); 
 
-
+            
             return RedirectToAction("Index");
         }
 
@@ -84,7 +101,7 @@ namespace ResortManagement.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditUser(User user)
+        public ActionResult EditUser(Users user)
         {
             if (ModelState.IsValid)
             {
@@ -99,6 +116,7 @@ namespace ResortManagement.Areas.Admin.Controllers
                     existingUser.FullName = user.FullName;
                     existingUser.Email = user.Email;
                     existingUser.PhoneNumber = user.PhoneNumber;
+                    existingUser.Address = user.Address;
                     existingUser.Username = user.Username;
                     existingUser.Password = user.Password;
                     existingUser.Role = user.Role;

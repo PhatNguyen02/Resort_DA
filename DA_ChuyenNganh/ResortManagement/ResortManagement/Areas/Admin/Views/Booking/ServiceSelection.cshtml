@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "ServiceSelection";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+}
+
+<div class="container">
+    <h2>Select Service</h2>
+    <form method="post" action="@Url.Action("AddServices", "Booking")">
+        <input type="hidden" name="BookingID" value="@Model.BookingID" />
+        <div class="form-group">
+            <label for="Services">Select Service:</label>
+            <select multiple class="form-control" id="Services" name="SelectedServiceIDs">
+                @if (ViewBag.Services != null)
+                {
+                    foreach (var service in ViewBag.Services)
+                    {
+                        <option value="@service.ServiceID">
+                            @service.Name - @(service.Price.ToString("#,##0") + " $")
+                        </option>
+                    }
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Checkout</button>
+    </form>
+</div>

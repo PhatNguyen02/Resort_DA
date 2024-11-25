@@ -68,7 +68,7 @@ namespace ResortManagement.Controllers
                 }
 
                 // Tạo booking mới
-                var booking = new Booking
+                var booking = new Bookings
                 {
                     RoomID = room.RoomID,
                     UserID = user.UserID,
