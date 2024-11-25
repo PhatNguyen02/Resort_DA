@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Confirm";
+    Layout = "~/Views/Shared/_LayoutPage_Detail.cshtml";
+}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Booking Successful!</h4>
+    <p>Your booking has been confirmed. Below are the details:</p>
+    <ul>
+        <li><strong>Booking ID:</strong> @TempData["BookingID"]</li>
+        <li><strong>Check-in Date:</strong> @TempData["CheckInDate"]</li>
+        <li><strong>Check-out Date:</strong> @TempData["CheckOutDate"]</li>
+        <li><strong>Total Price:</strong> @TempData["Price"]</li>
+    </ul>
+    <hr>
+    <p class="mb-0">Thank you for booking with us!</p>
+    <a href="@Url.Action("SelectService", "Booking", new { bookingId =  @TempData["BookingID"] })">Chọn thêm dịch vụ</a>
+    <a href="@Url.Action("SelectService", "Booking", new { bookingId =  @TempData["BookingID"] })">Thanh toán</a>
+</div>
+
+@using (Html.BeginForm("PaymentWithPaypal", "Invoice", FormMethod.Post))
+{
+    @Html.Hidden("BookingId", TempData["BookingID"])
+    <button id="btnPayment" type="button" class="btn btn-secondary">Pay with Paypal</button>
+}
+
+
+@using (Html.BeginForm("PaymentWithZaloPay", "Invoice", FormMethod.Post, new { id = "zaloPayForm" }))
+{
+    @Html.Hidden("BookingId", TempData["BookingID"])
+    @Html.Hidden("TotalAmount", TempData["Price"])
+    <button id="btnPaymentZaloPay" type="button" class="btn btn-primary">Thanh toán với ZaloPay</button>
+}
+<script>
+    $(document).ready(function () {
+        $('#btnPaymentZaloPay').on('click', function (e) {
+            e.preventDefault(); // Ngăn form submit mặc định
+
+            // Lấy và xử lý dữ liệu từ TempData
+            var bookingId = parseInt('@TempData["BookingID"]');
+            var priceString = '@TempData["Price"]'.toString();
+            // Loại bỏ các ký tự không phải số và dấu chấm
+            var totalAmount = Math.round(parseFloat(priceString.replace(/[^0-9.-]+/g, "")));
+
+            console.log("Booking ID:", bookingId);
+            console.log("Total Amount:", totalAmount);
+
+            // Gửi yêu cầu AJAX đến server
+            $.ajax({
+                url: '@Url.Action("PaymentWithZaloPay", "Invoice")',
+                type: 'POST',
+                contentType: 'application/json',
+                dataType: 'json',
+                data: JSON.stringify({
+                    BookingId: bookingId,
+                    TotalAmount: totalAmount,
+                    Services: [] // Thêm mảng Services rỗng
+                }),
+                success: function (response) {
+                    console.log('Server Response:', response);
+                    if (response.success) {
+                        window.location.href = response.paymentUrl;
+                    } else {
+                        alert(response.message || 'Đã có lỗi xảy ra!');
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);
+                    console.error('Response:', xhr.responseText);
+                    alert('Đã có lỗi xảy ra khi kết nối với ZaloPay!');
+                }
+            });
+        });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        // Lắng nghe sự kiện khi người dùng nhấn nút thanh toán
+        $('#btnPayment').on('click', function () {
+            // Lấy bookingId từ TempData (Hidden Field)
+            const bookingId = '@TempData["BookingID"]';
+
+            // Thu thập thông tin tổng tiền
+            const totalAmount = '@TempData["Price"]';
+
+            // Kiểm tra console nếu có sự cố
+            console.log("Booking ID:", bookingId);
+            console.log("Total Amount:", totalAmount);
+
+            // Gửi AJAX đến server để tạo đơn hàng và thanh toán
+            $.ajax({
+                url: '@Url.Action("PaymentWithPaypal", "Invoice")',
+                type: 'POST',
+                contentType: 'application/json', // Gửi dưới dạng JSON
+                dataType: 'json', // Nhận dữ liệu dạng JSON
+                data: JSON.stringify({
+                    bookingId: bookingId,
+                    totalAmount: totalAmount
+                }),
+                success: function (response) {
+                    // Xử lý khi thanh toán thành công
+                    if (response.success) {
+                        // Redirect đến PayPal
+                        window.location.href = response.redirectUrl;
+                    } else {
+                        // Hiển thị thông báo lỗi
+                        alert(response.message);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error(error); // Kiểm tra lỗi trong console
+                    alert('Đã có lỗi xảy ra trong quá trình thanh toán!');
+                }
+            });
+        });
+    });
+</script>

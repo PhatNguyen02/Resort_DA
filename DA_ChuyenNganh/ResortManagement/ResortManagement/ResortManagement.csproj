@@ -1,0 +1,899 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4FF656E2-20B4-4357-8975-6F5266727271}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ResortManagement</RootNamespace>
+    <AssemblyName>ResortManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44319</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.8.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.8.15\lib\net46\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.8.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.8.15\lib\net451\Hangfire.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="X.PagedList, Version=10.5.3.0, Culture=neutral, PublicKeyToken=525ccaa9023f010c, processorArchitecture=MSIL">
+      <HintPath>..\packages\X.PagedList.10.5.3\lib\netstandard2.0\X.PagedList.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets_admin\css\app.min.css" />
+    <Content Include="assets_admin\fonts\anticon.svg" />
+    <Content Include="assets_admin\fonts\fa-brands-400.svg" />
+    <Content Include="assets_admin\fonts\fa-regular-400.svg" />
+    <Content Include="assets_admin\fonts\fa-solid-900.svg" />
+    <Content Include="assets_admin\images\avatars\thumb-1.jpg" />
+    <Content Include="assets_admin\images\avatars\thumb-10.jpg" />
+    <Content Include="assets_admin\images\avatars\thumb-11.jpg" />
+    <Content Include="assets_admin\images\avatars\thumb-2.jpg" />
+    <Content Include="assets_admin\images\avatars\thumb-3.jpg" />
+    <Content Include="assets_admin\images\avatars\thumb-4.jpg" />
+    <Content Include="assets_admin\images\avatars\thumb-5.jpg" />
+    <Content Include="assets_admin\images\avatars\thumb-6.jpg" />
+    <Content Include="assets_admin\images\avatars\thumb-7.jpg" />
+    <Content Include="assets_admin\images\avatars\thumb-8.jpg" />
+    <Content Include="assets_admin\images\avatars\thumb-9.jpg" />
+    <Content Include="assets_admin\images\logo\favicon.png" />
+    <Content Include="assets_admin\images\logo\logo-fold-white.png" />
+    <Content Include="assets_admin\images\logo\logo-fold.png" />
+    <Content Include="assets_admin\images\logo\logo-white.png" />
+    <Content Include="assets_admin\images\logo\logo.png" />
+    <Content Include="assets_admin\images\others\adobe-thumb.png" />
+    <Content Include="assets_admin\images\others\amazon-thumb.png" />
+    <Content Include="assets_admin\images\others\cambridge-thumb.png" />
+    <Content Include="assets_admin\images\others\coffee-app-thumb.jpg" />
+    <Content Include="assets_admin\images\others\error-1.png" />
+    <Content Include="assets_admin\images\others\error-2.png" />
+    <Content Include="assets_admin\images\others\file-manager.png" />
+    <Content Include="assets_admin\images\others\img-1.jpg" />
+    <Content Include="assets_admin\images\others\img-11.jpg" />
+    <Content Include="assets_admin\images\others\img-12.jpg" />
+    <Content Include="assets_admin\images\others\img-13.jpg" />
+    <Content Include="assets_admin\images\others\img-14.jpg" />
+    <Content Include="assets_admin\images\others\img-2.jpg" />
+    <Content Include="assets_admin\images\others\img-3.jpg" />
+    <Content Include="assets_admin\images\others\img-4.jpg" />
+    <Content Include="assets_admin\images\others\img-5.jpg" />
+    <Content Include="assets_admin\images\others\img-6.jpg" />
+    <Content Include="assets_admin\images\others\img-7.jpg" />
+    <Content Include="assets_admin\images\others\img-8.jpg" />
+    <Content Include="assets_admin\images\others\login-1.jpg" />
+    <Content Include="assets_admin\images\others\login-2.png" />
+    <Content Include="assets_admin\images\others\login-3.png" />
+    <Content Include="assets_admin\images\others\music-app-thumb.jpg" />
+    <Content Include="assets_admin\images\others\nvidia-thumb.png" />
+    <Content Include="assets_admin\images\others\phillips-academy-thumb.png" />
+    <Content Include="assets_admin\images\others\product-1.jpg" />
+    <Content Include="assets_admin\images\others\product-2.jpg" />
+    <Content Include="assets_admin\images\others\product-3.jpg" />
+    <Content Include="assets_admin\images\others\sign-up-1.jpg" />
+    <Content Include="assets_admin\images\others\sign-up-2.png" />
+    <Content Include="assets_admin\images\others\thumb-1.jpg" />
+    <Content Include="assets_admin\images\others\thumb-10.jpg" />
+    <Content Include="assets_admin\images\others\thumb-11.jpg" />
+    <Content Include="assets_admin\images\others\thumb-12.jpg" />
+    <Content Include="assets_admin\images\others\thumb-13.jpg" />
+    <Content Include="assets_admin\images\others\thumb-14.jpg" />
+    <Content Include="assets_admin\images\others\thumb-15.jpg" />
+    <Content Include="assets_admin\images\others\thumb-16.jpg" />
+    <Content Include="assets_admin\images\others\thumb-2.jpg" />
+    <Content Include="assets_admin\images\others\thumb-3.jpg" />
+    <Content Include="assets_admin\images\others\thumb-4.jpg" />
+    <Content Include="assets_admin\images\others\thumb-5.jpg" />
+    <Content Include="assets_admin\images\others\thumb-6.jpg" />
+    <Content Include="assets_admin\images\others\thumb-7.jpg" />
+    <Content Include="assets_admin\images\others\thumb-8.jpg" />
+    <Content Include="assets_admin\images\others\thumb-9.jpg" />
+    <Content Include="assets_admin\images\others\weather-app-thumb.jpg" />
+    <Content Include="assets_admin\js\app.min.js" />
+    <Content Include="assets_admin\js\pages\chartist.js" />
+    <Content Include="assets_admin\js\pages\chartjs.js" />
+    <Content Include="assets_admin\js\pages\chat.js" />
+    <Content Include="assets_admin\js\pages\dashboard-crm.js" />
+    <Content Include="assets_admin\js\pages\dashboard-default.js" />
+    <Content Include="assets_admin\js\pages\dashboard-e-commerce.js" />
+    <Content Include="assets_admin\js\pages\dashboard-project.js" />
+    <Content Include="assets_admin\js\pages\datatables.js" />
+    <Content Include="assets_admin\js\pages\e-commerce-order-list.js" />
+    <Content Include="assets_admin\js\pages\e-commerce-product-edit.js" />
+    <Content Include="assets_admin\js\pages\file-manager.js" />
+    <Content Include="assets_admin\js\pages\form-elements.js" />
+    <Content Include="assets_admin\js\pages\form-validation.js" />
+    <Content Include="assets_admin\js\pages\icon.js" />
+    <Content Include="assets_admin\js\pages\mail.js" />
+    <Content Include="assets_admin\js\pages\pricing.js" />
+    <Content Include="assets_admin\js\pages\profile.js" />
+    <Content Include="assets_admin\js\pages\project-list.js" />
+    <Content Include="assets_admin\js\pages\slider.js" />
+    <Content Include="assets_admin\js\vendors.min.js" />
+    <Content Include="assets_admin\vendors\bootstrap-datepicker\bootstrap-datepicker.min.css" />
+    <Content Include="assets_admin\vendors\bootstrap-datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="assets_admin\vendors\chartist\chartist.min.js" />
+    <Content Include="assets_admin\vendors\chartjs\Chart.min.js" />
+    <Content Include="assets_admin\vendors\datatables\dataTables.bootstrap.min.css" />
+    <Content Include="assets_admin\vendors\datatables\dataTables.bootstrap.min.js" />
+    <Content Include="assets_admin\vendors\datatables\jquery.dataTables.min.js" />
+    <Content Include="assets_admin\vendors\jquery-validation\jquery.validate.min.js" />
+    <Content Include="assets_admin\vendors\nouislider\nouislider.min.css" />
+    <Content Include="assets_admin\vendors\nouislider\nouislider.min.js" />
+    <Content Include="assets_admin\vendors\quill\quill.min.js" />
+    <Content Include="assets_admin\vendors\select2\select2-spinner.gif" />
+    <Content Include="assets_admin\vendors\select2\select2.css" />
+    <Content Include="assets_admin\vendors\select2\select2.min.js" />
+    <Content Include="assets_admin\vendors\select2\select2.png" />
+    <Content Include="assets_admin\vendors\select2\select2x2.png" />
+    <Content Include="assets_detail\css\animate.css" />
+    <Content Include="assets_detail\css\bootstrap.css" />
+    <Content Include="assets_detail\css\flatpicker-min.css" />
+    <Content Include="assets_detail\css\font-awesome-pro.css" />
+    <Content Include="assets_detail\css\images\ui-icons_444444_256x240.html" />
+    <Content Include="assets_detail\css\images\ui-icons_555555_256x240.html" />
+    <Content Include="assets_detail\css\images\ui-icons_777620_256x240.html" />
+    <Content Include="assets_detail\css\images\ui-icons_777777_256x240.html" />
+    <Content Include="assets_detail\css\images\ui-icons_cc0000_256x240.html" />
+    <Content Include="assets_detail\css\images\ui-icons_ffffff_256x240.html" />
+    <Content Include="assets_detail\css\ion.rangeSlider.min.css" />
+    <Content Include="assets_detail\css\magnific-popup.css" />
+    <Content Include="assets_detail\css\main.css" />
+    <Content Include="assets_detail\css\spacing.css" />
+    <Content Include="assets_detail\css\swiper-bundle.css" />
+    <Content Include="assets_detail\fonts\fa-duotone-900.html" />
+    <Content Include="assets_detail\fonts\fa-duotone-901.html" />
+    <Content Include="assets_detail\img\about\01.jpg" />
+    <Content Include="assets_detail\img\about\about-4\bg.jpg" />
+    <Content Include="assets_detail\img\about\about-4\brand.png" />
+    <Content Include="assets_detail\img\about\about-4\shape-2.png" />
+    <Content Include="assets_detail\img\about\about-4\shape.png" />
+    <Content Include="assets_detail\img\about\about-4\thumb.jpg" />
+    <Content Include="assets_detail\img\about\about-4\user.png" />
+    <Content Include="assets_detail\img\about\about-4\yers.png" />
+    <Content Include="assets_detail\img\about\bg2.jpg" />
+    <Content Include="assets_detail\img\about\bird-cells-new.svg" />
+    <Content Include="assets_detail\img\about\home3\01.jpg" />
+    <Content Include="assets_detail\img\about\home3\02.jpg" />
+    <Content Include="assets_detail\img\about\hotel\thumb.jpg" />
+    <Content Include="assets_detail\img\about\shape-2.png" />
+    <Content Include="assets_detail\img\about\shape-3.png" />
+    <Content Include="assets_detail\img\about\shape.png" />
+    <Content Include="assets_detail\img\adventures\01.png" />
+    <Content Include="assets_detail\img\adventures\02.png" />
+    <Content Include="assets_detail\img\adventures\03.png" />
+    <Content Include="assets_detail\img\adventures\man.png" />
+    <Content Include="assets_detail\img\adventures\rainbox.png" />
+    <Content Include="assets_detail\img\adventures\rest.png" />
+    <Content Include="assets_detail\img\adventures\shape.png" />
+    <Content Include="assets_detail\img\adventures\woman.png" />
+    <Content Include="assets_detail\img\banner\01.png" />
+    <Content Include="assets_detail\img\banner\02.png" />
+    <Content Include="assets_detail\img\banner\03.png" />
+    <Content Include="assets_detail\img\blog\01.jpg" />
+    <Content Include="assets_detail\img\blog\01.png" />
+    <Content Include="assets_detail\img\blog\02.jpg" />
+    <Content Include="assets_detail\img\blog\02.png" />
+    <Content Include="assets_detail\img\blog\03.jpg" />
+    <Content Include="assets_detail\img\blog\03.png" />
+    <Content Include="assets_detail\img\blog\04.jpg" />
+    <Content Include="assets_detail\img\blog\05.jpg" />
+    <Content Include="assets_detail\img\blog\06.jpg" />
+    <Content Include="assets_detail\img\blog\blog-details\author.png" />
+    <Content Include="assets_detail\img\blog\blog-details\bg.jpg" />
+    <Content Include="assets_detail\img\blog\blog-details\bg2.jpg" />
+    <Content Include="assets_detail\img\blog\blog-details\thumb.jpg" />
+    <Content Include="assets_detail\img\blog\blog-details\thumb02.jpg" />
+    <Content Include="assets_detail\img\blog\blog-details\user.png" />
+    <Content Include="assets_detail\img\blog\blog-details\user2.png" />
+    <Content Include="assets_detail\img\blog\blog-sidebar\categoris\1.jpg" />
+    <Content Include="assets_detail\img\blog\blog-sidebar\categoris\2.jpg" />
+    <Content Include="assets_detail\img\blog\blog-sidebar\categoris\3.jpg" />
+    <Content Include="assets_detail\img\blog\blog-sidebar\categoris\4.jpg" />
+    <Content Include="assets_detail\img\blog\blog-sidebar\thumb.jpg" />
+    <Content Include="assets_detail\img\blog\blog-sidebar\thumb2.jpg" />
+    <Content Include="assets_detail\img\blog\blog-sidebar\thumb3.jpg" />
+    <Content Include="assets_detail\img\blog\blog-sidebar\thumb4.jpg" />
+    <Content Include="assets_detail\img\blog\blog-sidebar\user.png" />
+    <Content Include="assets_detail\img\brands\01.png" />
+    <Content Include="assets_detail\img\brands\02.png" />
+    <Content Include="assets_detail\img\brands\03.png" />
+    <Content Include="assets_detail\img\brands\04.png" />
+    <Content Include="assets_detail\img\brands\05.png" />
+    <Content Include="assets_detail\img\breadcrumb\01.jpg" />
+    <Content Include="assets_detail\img\breadcrumb\02.jpg" />
+    <Content Include="assets_detail\img\breadcrumb\bg.png" />
+    <Content Include="assets_detail\img\breadcrumb\panda.png" />
+    <Content Include="assets_detail\img\breadcrumb\shape-2.png" />
+    <Content Include="assets_detail\img\breadcrumb\shape.png" />
+    <Content Include="assets_detail\img\card\01.png" />
+    <Content Include="assets_detail\img\connected\bg.jpg" />
+    <Content Include="assets_detail\img\connected\shape.png" />
+    <Content Include="assets_detail\img\contact\bg.jpg" />
+    <Content Include="assets_detail\img\contact\shape-1.png" />
+    <Content Include="assets_detail\img\contact\shape-2.png" />
+    <Content Include="assets_detail\img\cta\plain.png" />
+    <Content Include="assets_detail\img\destination\01.jpg" />
+    <Content Include="assets_detail\img\destination\02.jpg" />
+    <Content Include="assets_detail\img\destination\03.jpg" />
+    <Content Include="assets_detail\img\destination\04.jpg" />
+    <Content Include="assets_detail\img\destination\05.jpg" />
+    <Content Include="assets_detail\img\destination\06.jpg" />
+    <Content Include="assets_detail\img\destination\07.jpg" />
+    <Content Include="assets_detail\img\destination\08.jpg" />
+    <Content Include="assets_detail\img\destination\details.jpg" />
+    <Content Include="assets_detail\img\faq\01.png" />
+    <Content Include="assets_detail\img\favicon\favicon.png" />
+    <Content Include="assets_detail\img\feature\01.jpg" />
+    <Content Include="assets_detail\img\feature\02.jpg" />
+    <Content Include="assets_detail\img\feature\03.jpg" />
+    <Content Include="assets_detail\img\feature\04.jpg" />
+    <Content Include="assets_detail\img\feature\two\01.jpg" />
+    <Content Include="assets_detail\img\feature\two\02.jpg" />
+    <Content Include="assets_detail\img\feature\two\03.jpg" />
+    <Content Include="assets_detail\img\feature\two\04.jpg" />
+    <Content Include="assets_detail\img\feature\two\05.jpg" />
+    <Content Include="assets_detail\img\feature\two\06.jpg" />
+    <Content Include="assets_detail\img\gellary\01.jpg" />
+    <Content Include="assets_detail\img\gellary\02.jpg" />
+    <Content Include="assets_detail\img\gellary\03.jpg" />
+    <Content Include="assets_detail\img\gellary\04.jpg" />
+    <Content Include="assets_detail\img\gellary\05.jpg" />
+    <Content Include="assets_detail\img\gellary\06.jpg" />
+    <Content Include="assets_detail\img\gellary\07.jpg" />
+    <Content Include="assets_detail\img\gellary\08.jpg" />
+    <Content Include="assets_detail\img\gellary\gallery\gallery-1.jpg" />
+    <Content Include="assets_detail\img\gellary\gallery\gallery-2.jpg" />
+    <Content Include="assets_detail\img\gellary\gallery\gallery-3.jpg" />
+    <Content Include="assets_detail\img\gellary\gallery\gallery-4.jpg" />
+    <Content Include="assets_detail\img\gellary\gallery\gallery-5.jpg" />
+    <Content Include="assets_detail\img\gellary\gallery\gallery-6.jpg" />
+    <Content Include="assets_detail\img\gellary\gallery\gallery-7.jpg" />
+    <Content Include="assets_detail\img\gellary\gallery\gallery-8.jpg" />
+    <Content Include="assets_detail\img\gellary\gallery\gallery-9.jpg" />
+    <Content Include="assets_detail\img\gellary\gellary-2\01.jpg" />
+    <Content Include="assets_detail\img\gellary\gellary-2\02.jpg" />
+    <Content Include="assets_detail\img\gellary\gellary-2\03.jpg" />
+    <Content Include="assets_detail\img\gellary\gellary-2\04.jpg" />
+    <Content Include="assets_detail\img\gellary\gellary-2\05.jpg" />
+    <Content Include="assets_detail\img\gellary\thumb-1.jpg" />
+    <Content Include="assets_detail\img\gellary\thumb-2.jpg" />
+    <Content Include="assets_detail\img\gellary\thumb-3.jpg" />
+    <Content Include="assets_detail\img\gellary\thumb-4.jpg" />
+    <Content Include="assets_detail\img\gellary\thumb.jpg" />
+    <Content Include="assets_detail\img\hero\01.jpg" />
+    <Content Include="assets_detail\img\hero\02.jpg" />
+    <Content Include="assets_detail\img\hero\03.jpg" />
+    <Content Include="assets_detail\img\hero\04.jpg" />
+    <Content Include="assets_detail\img\hero\hero-4\img-1.jpg" />
+    <Content Include="assets_detail\img\hero\hero-4\img-2.jpg" />
+    <Content Include="assets_detail\img\hero\hero-4\img-3.jpg" />
+    <Content Include="assets_detail\img\hero\hero-4\shape.png" />
+    <Content Include="assets_detail\img\hero\hero-4\vector.png" />
+    <Content Include="assets_detail\img\hero\home2\bg.png" />
+    <Content Include="assets_detail\img\hero\home2\man.png" />
+    <Content Include="assets_detail\img\hero\home2\woman.png" />
+    <Content Include="assets_detail\img\hero\home3\and.png" />
+    <Content Include="assets_detail\img\hero\home3\bg.jpg" />
+    <Content Include="assets_detail\img\icon\cross-out.png" />
+    <Content Include="assets_detail\img\instagram\01.jpg" />
+    <Content Include="assets_detail\img\instagram\02.jpg" />
+    <Content Include="assets_detail\img\instagram\03.jpg" />
+    <Content Include="assets_detail\img\instagram\04.jpg" />
+    <Content Include="assets_detail\img\instagram\05.jpg" />
+    <Content Include="assets_detail\img\instagram\06.jpg" />
+    <Content Include="assets_detail\img\login\laptop.png" />
+    <Content Include="assets_detail\img\login\man.png" />
+    <Content Include="assets_detail\img\login\shape-1.png" />
+    <Content Include="assets_detail\img\login\shape-2.png" />
+    <Content Include="assets_detail\img\login\shape-3.png" />
+    <Content Include="assets_detail\img\login\shape-4.png" />
+    <Content Include="assets_detail\img\logo\logo-2.png" />
+    <Content Include="assets_detail\img\logo\logo-4.png" />
+    <Content Include="assets_detail\img\logo\logo-white.png" />
+    <Content Include="assets_detail\img\logo\logo-white2.png" />
+    <Content Include="assets_detail\img\logo\logo.png" />
+    <Content Include="assets_detail\img\logo\logo3.png" />
+    <Content Include="assets_detail\img\menu-demo\demo-2.jpg" />
+    <Content Include="assets_detail\img\menu-demo\demo-3.jpg" />
+    <Content Include="assets_detail\img\menu-demo\demo-4.jpg" />
+    <Content Include="assets_detail\img\menu-demo\demo-5.jpg" />
+    <Content Include="assets_detail\img\menu-demo\demo.jpg" />
+    <Content Include="assets_detail\img\offcanvas\offcanvas-1.jpg" />
+    <Content Include="assets_detail\img\offcanvas\offcanvas-2.jpg" />
+    <Content Include="assets_detail\img\offcanvas\offcanvas-3.jpg" />
+    <Content Include="assets_detail\img\offcanvas\offcanvas-4.jpg" />
+    <Content Include="assets_detail\img\offer\01.jpg" />
+    <Content Include="assets_detail\img\offer\02.jpg" />
+    <Content Include="assets_detail\img\offer\03.jpg" />
+    <Content Include="assets_detail\img\offer\04.jpg" />
+    <Content Include="assets_detail\img\offer\04.png" />
+    <Content Include="assets_detail\img\offer\05.jpg" />
+    <Content Include="assets_detail\img\offer\06.jpg" />
+    <Content Include="assets_detail\img\product\01.jpg" />
+    <Content Include="assets_detail\img\product\02.jpg" />
+    <Content Include="assets_detail\img\product\03.jpg" />
+    <Content Include="assets_detail\img\product\04.jpg" />
+    <Content Include="assets_detail\img\review\avatar-2.png" />
+    <Content Include="assets_detail\img\review\avatar.png" />
+    <Content Include="assets_detail\img\room-details\room-01.jpg" />
+    <Content Include="assets_detail\img\room-details\room-02.jpg" />
+    <Content Include="assets_detail\img\room-details\room-03.jpg" />
+    <Content Include="assets_detail\img\room-details\room-04.jpg" />
+    <Content Include="assets_detail\img\room-details\room-1.jpg" />
+    <Content Include="assets_detail\img\room\01.jpg" />
+    <Content Include="assets_detail\img\room\02.jpg" />
+    <Content Include="assets_detail\img\room\03.jpg" />
+    <Content Include="assets_detail\img\room\bg-2.jpg" />
+    <Content Include="assets_detail\img\room\room2\01.jpg" />
+    <Content Include="assets_detail\img\room\room2\02.jpg" />
+    <Content Include="assets_detail\img\room\room2\03.jpg" />
+    <Content Include="assets_detail\img\room\room2\04.jpg" />
+    <Content Include="assets_detail\img\room\room2\05.jpg" />
+    <Content Include="assets_detail\img\room\room2\06.jpg" />
+    <Content Include="assets_detail\img\room\room3\01.jpg" />
+    <Content Include="assets_detail\img\room\room3\02.jpg" />
+    <Content Include="assets_detail\img\room\room3\03.jpg" />
+    <Content Include="assets_detail\img\room\room3\04.jpg" />
+    <Content Include="assets_detail\img\service\01.jpg" />
+    <Content Include="assets_detail\img\service\02.jpg" />
+    <Content Include="assets_detail\img\service\03.jpg" />
+    <Content Include="assets_detail\img\service\04.jpg" />
+    <Content Include="assets_detail\img\service\05.jpg" />
+    <Content Include="assets_detail\img\service\06.jpg" />
+    <Content Include="assets_detail\img\service\service3\01.jpg" />
+    <Content Include="assets_detail\img\service\service3\02.jpg" />
+    <Content Include="assets_detail\img\service\service3\03.jpg" />
+    <Content Include="assets_detail\img\team\member-1.jpg" />
+    <Content Include="assets_detail\img\team\member-2.jpg" />
+    <Content Include="assets_detail\img\team\member-3.jpg" />
+    <Content Include="assets_detail\img\team\member-4.jpg" />
+    <Content Include="assets_detail\img\testimonial\01.png" />
+    <Content Include="assets_detail\img\testimonial\02.png" />
+    <Content Include="assets_detail\img\testimonial\03.png" />
+    <Content Include="assets_detail\img\testimonial\tree.png" />
+    <Content Include="assets_detail\img\video\01.jpg" />
+    <Content Include="assets_detail\js\ajax-form.js" />
+    <Content Include="assets_detail\js\bootstrap-bundle.js" />
+    <Content Include="assets_detail\js\flatpicker.js" />
+    <Content Include="assets_detail\js\imagesloaded-pkgd.js" />
+    <Content Include="assets_detail\js\isotope-pkgd.js" />
+    <Content Include="assets_detail\js\jarallax.js" />
+    <Content Include="assets_detail\js\jquery.mb.YTPlayer.min.js" />
+    <Content Include="assets_detail\js\magnific-popup.js" />
+    <Content Include="assets_detail\js\main.js" />
+    <Content Include="assets_detail\js\nice-select.js" />
+    <Content Include="assets_detail\js\parallax-scroll.js" />
+    <Content Include="assets_detail\js\parallax.js" />
+    <Content Include="assets_detail\js\purecounter.js" />
+    <Content Include="assets_detail\js\slider-init.js" />
+    <Content Include="assets_detail\js\swiper-bundle.js" />
+    <Content Include="assets_detail\js\vendor\jquery.js" />
+    <Content Include="assets_detail\js\vendor\waypoints.js" />
+    <Content Include="assets_detail\js\wow.js" />
+    <Content Include="assets_user\css\app.min.css" />
+    <Content Include="assets_user\fonts\anticon.svg" />
+    <Content Include="assets_user\fonts\fa-brands-400.svg" />
+    <Content Include="assets_user\fonts\fa-regular-400.svg" />
+    <Content Include="assets_user\fonts\fa-solid-900.svg" />
+    <Content Include="assets_user\images\avatars\thumb-1.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-10.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-11.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-2.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-3.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-4.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-5.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-6.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-7.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-8.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-9.jpg" />
+    <Content Include="assets_user\images\logo\favicon.png" />
+    <Content Include="assets_user\images\logo\logo-fold-white.png" />
+    <Content Include="assets_user\images\logo\logo-fold.png" />
+    <Content Include="assets_user\images\logo\logo-white.png" />
+    <Content Include="assets_user\images\logo\logo.png" />
+    <Content Include="assets_user\images\others\adobe-thumb.png" />
+    <Content Include="assets_user\images\others\amazon-thumb.png" />
+    <Content Include="assets_user\images\others\cambridge-thumb.png" />
+    <Content Include="assets_user\images\others\coffee-app-thumb.jpg" />
+    <Content Include="assets_user\images\others\error-1.png" />
+    <Content Include="assets_user\images\others\error-2.png" />
+    <Content Include="assets_user\images\others\file-manager.png" />
+    <Content Include="assets_user\images\others\img-1.jpg" />
+    <Content Include="assets_user\images\others\img-11.jpg" />
+    <Content Include="assets_user\images\others\img-12.jpg" />
+    <Content Include="assets_user\images\others\img-13.jpg" />
+    <Content Include="assets_user\images\others\img-14.jpg" />
+    <Content Include="assets_user\images\others\img-2.jpg" />
+    <Content Include="assets_user\images\others\img-3.jpg" />
+    <Content Include="assets_user\images\others\img-4.jpg" />
+    <Content Include="assets_user\images\others\img-5.jpg" />
+    <Content Include="assets_user\images\others\img-6.jpg" />
+    <Content Include="assets_user\images\others\img-7.jpg" />
+    <Content Include="assets_user\images\others\img-8.jpg" />
+    <Content Include="assets_user\images\others\login-1.jpg" />
+    <Content Include="assets_user\images\others\login-2.png" />
+    <Content Include="assets_user\images\others\login-3.png" />
+    <Content Include="assets_user\images\others\music-app-thumb.jpg" />
+    <Content Include="assets_user\images\others\nvidia-thumb.png" />
+    <Content Include="assets_user\images\others\phillips-academy-thumb.png" />
+    <Content Include="assets_user\images\others\product-1.jpg" />
+    <Content Include="assets_user\images\others\product-2.jpg" />
+    <Content Include="assets_user\images\others\product-3.jpg" />
+    <Content Include="assets_user\images\others\sign-up-1.jpg" />
+    <Content Include="assets_user\images\others\sign-up-2.png" />
+    <Content Include="assets_user\images\others\thumb-1.jpg" />
+    <Content Include="assets_user\images\others\thumb-10.jpg" />
+    <Content Include="assets_user\images\others\thumb-11.jpg" />
+    <Content Include="assets_user\images\others\thumb-12.jpg" />
+    <Content Include="assets_user\images\others\thumb-13.jpg" />
+    <Content Include="assets_user\images\others\thumb-14.jpg" />
+    <Content Include="assets_user\images\others\thumb-15.jpg" />
+    <Content Include="assets_user\images\others\thumb-16.jpg" />
+    <Content Include="assets_user\images\others\thumb-2.jpg" />
+    <Content Include="assets_user\images\others\thumb-3.jpg" />
+    <Content Include="assets_user\images\others\thumb-4.jpg" />
+    <Content Include="assets_user\images\others\thumb-5.jpg" />
+    <Content Include="assets_user\images\others\thumb-6.jpg" />
+    <Content Include="assets_user\images\others\thumb-7.jpg" />
+    <Content Include="assets_user\images\others\thumb-8.jpg" />
+    <Content Include="assets_user\images\others\thumb-9.jpg" />
+    <Content Include="assets_user\images\others\weather-app-thumb.jpg" />
+    <Content Include="assets_user\js\app.min.js" />
+    <Content Include="assets_user\js\pages\chartist.js" />
+    <Content Include="assets_user\js\pages\chartjs.js" />
+    <Content Include="assets_user\js\pages\chat.js" />
+    <Content Include="assets_user\js\pages\dashboard-crm.js" />
+    <Content Include="assets_user\js\pages\dashboard-default.js" />
+    <Content Include="assets_user\js\pages\dashboard-e-commerce.js" />
+    <Content Include="assets_user\js\pages\dashboard-project.js" />
+    <Content Include="assets_user\js\pages\datatables.js" />
+    <Content Include="assets_user\js\pages\e-commerce-order-list.js" />
+    <Content Include="assets_user\js\pages\e-commerce-product-edit.js" />
+    <Content Include="assets_user\js\pages\file-manager.js" />
+    <Content Include="assets_user\js\pages\form-elements.js" />
+    <Content Include="assets_user\js\pages\form-validation.js" />
+    <Content Include="assets_user\js\pages\icon.js" />
+    <Content Include="assets_user\js\pages\mail.js" />
+    <Content Include="assets_user\js\pages\pricing.js" />
+    <Content Include="assets_user\js\pages\profile.js" />
+    <Content Include="assets_user\js\pages\project-list.js" />
+    <Content Include="assets_user\js\pages\slider.js" />
+    <Content Include="assets_user\js\vendors.min.js" />
+    <Content Include="assets_user\vendors\bootstrap-datepicker\bootstrap-datepicker.min.css" />
+    <Content Include="assets_user\vendors\bootstrap-datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="assets_user\vendors\chartist\chartist.min.js" />
+    <Content Include="assets_user\vendors\chartjs\Chart.min.js" />
+    <Content Include="assets_user\vendors\datatables\dataTables.bootstrap.min.css" />
+    <Content Include="assets_user\vendors\datatables\dataTables.bootstrap.min.js" />
+    <Content Include="assets_user\vendors\datatables\jquery.dataTables.min.js" />
+    <Content Include="assets_user\vendors\jquery-validation\jquery.validate.min.js" />
+    <Content Include="assets_user\vendors\nouislider\nouislider.min.css" />
+    <Content Include="assets_user\vendors\nouislider\nouislider.min.js" />
+    <Content Include="assets_user\vendors\quill\quill.min.js" />
+    <Content Include="assets_user\vendors\select2\select2-spinner.gif" />
+    <Content Include="assets_user\vendors\select2\select2.css" />
+    <Content Include="assets_user\vendors\select2\select2.min.js" />
+    <Content Include="assets_user\vendors\select2\select2.png" />
+    <Content Include="assets_user\vendors\select2\select2x2.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\ResortManagement.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ResortManagement.edmx</DependentUpon>
+      <LastGenOutput>ResortManagement.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ResortManagement.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ResortManagement.edmx</DependentUpon>
+      <LastGenOutput>ResortManagement.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BookingController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RoomController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ServiceController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PromotionController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\HandleErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvoiceController.cs" />
+    <Compile Include="Controllers\RoomController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AggregatedCounter.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Booking.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Counter.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hash.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoice.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Job.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobParameter.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobQueue.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\List.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentRequest.cs" />
+    <Compile Include="Models\Promotion.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ResortDBContext.cs" />
+    <Compile Include="Models\ResortManagement.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResortManagement.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ResortManagement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ResortManagement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResortManagement.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Review.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Room.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Schema.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Server.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Service.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiceItem.cs" />
+    <Compile Include="Models\Set.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\State.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TemporarySchedule.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsedService.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BackgroundJobs.cs" />
+    <Compile Include="Services\BookingService.cs" />
+    <Compile Include="Services\HmacHelper.cs" />
+    <Compile Include="Services\HttpHelper.cs" />
+    <Compile Include="Services\RSAHelper.cs" />
+    <Compile Include="Services\Utils.cs" />
+    <Compile Include="Services\ZaloPayService.cs" />
+    <Compile Include="ViewModel\LoginVM.cs" />
+    <Compile Include="ViewModel\PaypalConfiguration.cs" />
+    <Compile Include="ViewModel\SearchVM.cs" />
+    <Compile Include="ViewModel\ZaloPayConfiguration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutPage1_Admin.cshtml" />
+    <Content Include="assets_admin\fonts\anticon.eot" />
+    <Content Include="assets_admin\fonts\anticon.ttf" />
+    <Content Include="assets_admin\fonts\anticon.woff" />
+    <Content Include="assets_admin\fonts\anticond41d.eot" />
+    <Content Include="assets_admin\fonts\fa-brands-400.eot" />
+    <Content Include="assets_admin\fonts\fa-brands-400.ttf" />
+    <Content Include="assets_admin\fonts\fa-brands-400.woff" />
+    <Content Include="assets_admin\fonts\fa-brands-400.woff2" />
+    <Content Include="assets_admin\fonts\fa-brands-400d41d.eot" />
+    <Content Include="assets_admin\fonts\fa-regular-400.eot" />
+    <Content Include="assets_admin\fonts\fa-regular-400.ttf" />
+    <Content Include="assets_admin\fonts\fa-regular-400.woff" />
+    <Content Include="assets_admin\fonts\fa-regular-400.woff2" />
+    <Content Include="assets_admin\fonts\fa-regular-400d41d.eot" />
+    <Content Include="assets_admin\fonts\fa-solid-900.eot" />
+    <Content Include="assets_admin\fonts\fa-solid-900.ttf" />
+    <Content Include="assets_admin\fonts\fa-solid-900.woff" />
+    <Content Include="assets_admin\fonts\fa-solid-900.woff2" />
+    <Content Include="assets_admin\fonts\fa-solid-900d41d.eot" />
+    <Content Include="assets_detail\fonts\fa-brands-400.ttf" />
+    <Content Include="assets_detail\fonts\fa-brands-400.woff2" />
+    <Content Include="assets_detail\fonts\fa-light-300.ttf" />
+    <Content Include="assets_detail\fonts\fa-light-300.woff2" />
+    <Content Include="assets_detail\fonts\fa-regular-400.ttf" />
+    <Content Include="assets_detail\fonts\fa-regular-400.woff2" />
+    <Content Include="assets_detail\fonts\fa-solid-900.ttf" />
+    <Content Include="assets_detail\fonts\fa-solid-900.woff2" />
+    <Content Include="assets_detail\fonts\fa-thin-100.ttf" />
+    <Content Include="assets_detail\fonts\fa-thin-100.woff2" />
+    <Content Include="assets_detail\fonts\fa-v4compatibility.ttf" />
+    <Content Include="assets_detail\fonts\fa-v4compatibility.woff2" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Room\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Service\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Voucher\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Promotion\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\AddUser.cshtml" />
+    <Content Include="Areas\Admin\Views\User\DeleteUser.cshtml" />
+    <Content Include="Areas\Admin\Views\User\EditUser.cshtml" />
+    <Content Include="Areas\Admin\Views\Promotion\AddPromotion.cshtml" />
+    <Content Include="Areas\Admin\Views\Promotion\EditPromotion.cshtml" />
+    <Content Include="Areas\Admin\Views\Promotion\DeletePromotion.cshtml" />
+    <Content Include="Areas\Admin\Views\Service\AddService.cshtml" />
+    <Content Include="Areas\Admin\Views\Service\EditService.cshtml" />
+    <Content Include="Areas\Admin\Views\Service\DeleteService.cshtml" />
+    <Content Include="Areas\Admin\Views\Room\AddRoom.cshtml" />
+    <Content Include="Areas\Admin\Views\Room\EditRoom.cshtml" />
+    <Content Include="Areas\Admin\Views\Room\DeleteRoom.cshtml" />
+    <Content Include="Areas\Admin\Views\Booking\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <EntityDeploy Include="Models\ResortManagement.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ResortManagement.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ResortManagement.edmx.diagram">
+      <DependentUpon>ResortManagement.edmx</DependentUpon>
+    </Content>
+    <Content Include="assets_user\fonts\anticon.eot" />
+    <Content Include="assets_user\fonts\anticon.ttf" />
+    <Content Include="assets_user\fonts\anticon.woff" />
+    <Content Include="assets_user\fonts\anticond41d.eot" />
+    <Content Include="assets_user\fonts\fa-brands-400.eot" />
+    <Content Include="assets_user\fonts\fa-brands-400.ttf" />
+    <Content Include="assets_user\fonts\fa-brands-400.woff" />
+    <Content Include="assets_user\fonts\fa-brands-400.woff2" />
+    <Content Include="assets_user\fonts\fa-brands-400d41d.eot" />
+    <Content Include="assets_user\fonts\fa-regular-400.eot" />
+    <Content Include="assets_user\fonts\fa-regular-400.ttf" />
+    <Content Include="assets_user\fonts\fa-regular-400.woff" />
+    <Content Include="assets_user\fonts\fa-regular-400.woff2" />
+    <Content Include="assets_user\fonts\fa-regular-400d41d.eot" />
+    <Content Include="assets_user\fonts\fa-solid-900.eot" />
+    <Content Include="assets_user\fonts\fa-solid-900.ttf" />
+    <Content Include="assets_user\fonts\fa-solid-900.woff" />
+    <Content Include="assets_user\fonts\fa-solid-900.woff2" />
+    <Content Include="assets_user\fonts\fa-solid-900d41d.eot" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_LayoutPage_Mainpage.cshtml" />
+    <Content Include="Views\Home\MainPage.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage_Detail.cshtml" />
+    <Content Include="Views\Home\Detail.cshtml" />
+    <Content Include="Views\Cart\Cart.cshtml" />
+    <Content Include="Views\Invoice\Payment.cshtml" />
+    <Content Include="Views\Invoice\PaymentSuccess.cshtml" />
+    <Content Include="Views\Invoice\PaymentFail.cshtml" />
+    <Content Include="Views\Booking\SelectService.cshtml" />
+    <Content Include="Views\HandleError\Error.cshtml" />
+    <Content Include="Views\Booking\Confirm.cshtml" />
+    <Content Include="Views\Booking\BookingRoom.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage_UserManage.cshtml" />
+    <Content Include="Views\User\Dashboard.cshtml" />
+    <Content Include="Views\Invoice\PaymentError.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Views\Room\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8099</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44319/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,91 @@
+﻿@model List<ResortManagement.Models.Room>
+@{
+    ViewBag.Title = "MainPage";
+    Layout = "~/Views/Shared/_LayoutPage_Mainpage.cshtml";
+}
+
+
+@foreach (var item in Model)
+{
+    <div class="col-xl-4 col-lg-6 col-md-6 pb-25">
+        <div class="tp-place-wrap">
+            <div class="tp-place-thumb fix p-relative">
+            
+                <img class="w-100" src="~/assets/img/room/room2/@item.MainImage" alt="feature">
+                <span class="tp-place-offer">-10% off</span>
+                <button type="button" class="tp-place-wishlist">
+                    <svg class="black-heart" width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.79362 8.18821C0.946388 5.58241 1.93654 2.60402 4.71354 1.72272C6.17429 1.25834 7.78664 1.53214 9.00104 2.43212C10.1499 1.55703 11.8215 1.26145 13.2806 1.72272C16.0576 2.60402 17.0541 5.58241 16.2077 8.18821C14.889 12.3186 9.00104 15.5 9.00104 15.5C9.00104 15.5 3.15646 12.3668 1.79362 8.18821Z" stroke="#141414" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12.1597 4.39062C13.0045 4.66096 13.6015 5.40713 13.6733 6.28299" stroke="#141414" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+            <div class="tp-place-content p-relative">
+                <div class="tp-place-meta-wrap">
+                    <h4 class="tp-place-title"><a href="room-details-2.html">Cristales River Trip</a></h4>
+                    <div class="tp-place-meta">
+                        <ul>
+                            <li>
+                                <span>
+                                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.08912 6.83376C9.08912 5.75943 8.18378 4.88892 7.06731 4.88892C5.95002 4.88892 5.04468 5.75943 5.04468 6.83376C5.04468 7.90729 5.95002 8.7778 7.06731 8.7778C8.18378 8.7778 9.08912 7.90729 9.08912 6.83376Z" stroke="#5A5859" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.06627 15C6.09684 15 1 11.0321 1 6.88256C1 3.63405 3.71552 1 7.06627 1C10.417 1 13.1333 3.63405 13.1333 6.88256C13.1333 11.0321 8.03571 15 7.06627 15Z" stroke="#5A5859" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                London, Uk
+                            </li>
+                            <li>
+                                <span>
+                                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.5 14.5C11.0899 14.5 14 11.5899 14 8C14 4.41015 11.0899 1.5 7.5 1.5C3.91015 1.5 1 4.41015 1 8C1 11.5899 3.91015 14.5 7.5 14.5Z" stroke="#5A5859" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M7.5 4.1001V8.0001L10.1 9.3001" stroke="#5A5859" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                8 Days
+                            </li>
+                            <li>
+                                <span class="ratings">
+                                    <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.86681 0L10.174 4.60778L15.3335 5.35121L11.6001 8.93586L12.4812 14L7.86681 11.6078L3.25241 14L4.13348 8.93586L0.400146 5.35121L5.55961 4.60778L7.86681 0Z" fill="#FF9E0D" />
+                                    </svg>
+                                </span>
+                                4.5
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tp-place-price-wrap">
+                    <div class="tp-place-left">
+                        <span class="tp-place-price-discount">Only</span>
+                        <div class="tp-place-price-inner d-flex">
+                            <span class="tp-place-price">@item.Price</span>
+                            @*<del class="tp-place-old-price">$306.00</del>*@
+                        </div>
+                    </div>
+                    <div class="tp-place-btn">
+
+                        @*@if (Session["UserName"] != null)
+        {
+            <a class="btn-product-add" href="@Url.Action("AddToCart", "Cart", new { id = item.RoomID , quantity = 1 })">Add to cart</a>
+        }
+        else
+        {
+            <a class="btn-product-add" href="@Url.Action("Login", "Home")">Login to add to cart</a>
+        }*@
+                        <a class="btn-product-add" href="@Url.Action("Detail", "Home", new { id = item.RoomID })">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.53564 10.4642L10.4642 1.53564" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M1.53564 1.53564H10.4642V10.4642" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        @*<a class="btn-product-add" href="@Url.Action("Cart", "Cart", new { id = item.RoomID })">
+                           Thêm vào giỏ hàng
+                        </a>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+}
