@@ -44,90 +44,74 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="Hangfire.Core, Version=1.8.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.8.15\lib\net46\Hangfire.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    <Reference Include="Hangfire.SqlServer, Version=1.8.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.8.15\lib\net451\Hangfire.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.EntityFrameworkCore.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.32\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Logging.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Options, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
     <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
       <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
     </Reference>
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -532,6 +516,111 @@
     <Content Include="assets_detail\js\vendor\jquery.js" />
     <Content Include="assets_detail\js\vendor\waypoints.js" />
     <Content Include="assets_detail\js\wow.js" />
+    <Content Include="assets_user\css\app.min.css" />
+    <Content Include="assets_user\fonts\anticon.svg" />
+    <Content Include="assets_user\fonts\fa-brands-400.svg" />
+    <Content Include="assets_user\fonts\fa-regular-400.svg" />
+    <Content Include="assets_user\fonts\fa-solid-900.svg" />
+    <Content Include="assets_user\images\avatars\thumb-1.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-10.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-11.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-2.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-3.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-4.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-5.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-6.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-7.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-8.jpg" />
+    <Content Include="assets_user\images\avatars\thumb-9.jpg" />
+    <Content Include="assets_user\images\logo\favicon.png" />
+    <Content Include="assets_user\images\logo\logo-fold-white.png" />
+    <Content Include="assets_user\images\logo\logo-fold.png" />
+    <Content Include="assets_user\images\logo\logo-white.png" />
+    <Content Include="assets_user\images\logo\logo.png" />
+    <Content Include="assets_user\images\others\adobe-thumb.png" />
+    <Content Include="assets_user\images\others\amazon-thumb.png" />
+    <Content Include="assets_user\images\others\cambridge-thumb.png" />
+    <Content Include="assets_user\images\others\coffee-app-thumb.jpg" />
+    <Content Include="assets_user\images\others\error-1.png" />
+    <Content Include="assets_user\images\others\error-2.png" />
+    <Content Include="assets_user\images\others\file-manager.png" />
+    <Content Include="assets_user\images\others\img-1.jpg" />
+    <Content Include="assets_user\images\others\img-11.jpg" />
+    <Content Include="assets_user\images\others\img-12.jpg" />
+    <Content Include="assets_user\images\others\img-13.jpg" />
+    <Content Include="assets_user\images\others\img-14.jpg" />
+    <Content Include="assets_user\images\others\img-2.jpg" />
+    <Content Include="assets_user\images\others\img-3.jpg" />
+    <Content Include="assets_user\images\others\img-4.jpg" />
+    <Content Include="assets_user\images\others\img-5.jpg" />
+    <Content Include="assets_user\images\others\img-6.jpg" />
+    <Content Include="assets_user\images\others\img-7.jpg" />
+    <Content Include="assets_user\images\others\img-8.jpg" />
+    <Content Include="assets_user\images\others\login-1.jpg" />
+    <Content Include="assets_user\images\others\login-2.png" />
+    <Content Include="assets_user\images\others\login-3.png" />
+    <Content Include="assets_user\images\others\music-app-thumb.jpg" />
+    <Content Include="assets_user\images\others\nvidia-thumb.png" />
+    <Content Include="assets_user\images\others\phillips-academy-thumb.png" />
+    <Content Include="assets_user\images\others\product-1.jpg" />
+    <Content Include="assets_user\images\others\product-2.jpg" />
+    <Content Include="assets_user\images\others\product-3.jpg" />
+    <Content Include="assets_user\images\others\sign-up-1.jpg" />
+    <Content Include="assets_user\images\others\sign-up-2.png" />
+    <Content Include="assets_user\images\others\thumb-1.jpg" />
+    <Content Include="assets_user\images\others\thumb-10.jpg" />
+    <Content Include="assets_user\images\others\thumb-11.jpg" />
+    <Content Include="assets_user\images\others\thumb-12.jpg" />
+    <Content Include="assets_user\images\others\thumb-13.jpg" />
+    <Content Include="assets_user\images\others\thumb-14.jpg" />
+    <Content Include="assets_user\images\others\thumb-15.jpg" />
+    <Content Include="assets_user\images\others\thumb-16.jpg" />
+    <Content Include="assets_user\images\others\thumb-2.jpg" />
+    <Content Include="assets_user\images\others\thumb-3.jpg" />
+    <Content Include="assets_user\images\others\thumb-4.jpg" />
+    <Content Include="assets_user\images\others\thumb-5.jpg" />
+    <Content Include="assets_user\images\others\thumb-6.jpg" />
+    <Content Include="assets_user\images\others\thumb-7.jpg" />
+    <Content Include="assets_user\images\others\thumb-8.jpg" />
+    <Content Include="assets_user\images\others\thumb-9.jpg" />
+    <Content Include="assets_user\images\others\weather-app-thumb.jpg" />
+    <Content Include="assets_user\js\app.min.js" />
+    <Content Include="assets_user\js\pages\chartist.js" />
+    <Content Include="assets_user\js\pages\chartjs.js" />
+    <Content Include="assets_user\js\pages\chat.js" />
+    <Content Include="assets_user\js\pages\dashboard-crm.js" />
+    <Content Include="assets_user\js\pages\dashboard-default.js" />
+    <Content Include="assets_user\js\pages\dashboard-e-commerce.js" />
+    <Content Include="assets_user\js\pages\dashboard-project.js" />
+    <Content Include="assets_user\js\pages\datatables.js" />
+    <Content Include="assets_user\js\pages\e-commerce-order-list.js" />
+    <Content Include="assets_user\js\pages\e-commerce-product-edit.js" />
+    <Content Include="assets_user\js\pages\file-manager.js" />
+    <Content Include="assets_user\js\pages\form-elements.js" />
+    <Content Include="assets_user\js\pages\form-validation.js" />
+    <Content Include="assets_user\js\pages\icon.js" />
+    <Content Include="assets_user\js\pages\mail.js" />
+    <Content Include="assets_user\js\pages\pricing.js" />
+    <Content Include="assets_user\js\pages\profile.js" />
+    <Content Include="assets_user\js\pages\project-list.js" />
+    <Content Include="assets_user\js\pages\slider.js" />
+    <Content Include="assets_user\js\vendors.min.js" />
+    <Content Include="assets_user\vendors\bootstrap-datepicker\bootstrap-datepicker.min.css" />
+    <Content Include="assets_user\vendors\bootstrap-datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="assets_user\vendors\chartist\chartist.min.js" />
+    <Content Include="assets_user\vendors\chartjs\Chart.min.js" />
+    <Content Include="assets_user\vendors\datatables\dataTables.bootstrap.min.css" />
+    <Content Include="assets_user\vendors\datatables\dataTables.bootstrap.min.js" />
+    <Content Include="assets_user\vendors\datatables\jquery.dataTables.min.js" />
+    <Content Include="assets_user\vendors\jquery-validation\jquery.validate.min.js" />
+    <Content Include="assets_user\vendors\nouislider\nouislider.min.css" />
+    <Content Include="assets_user\vendors\nouislider\nouislider.min.js" />
+    <Content Include="assets_user\vendors\quill\quill.min.js" />
+    <Content Include="assets_user\vendors\select2\select2-spinner.gif" />
+    <Content Include="assets_user\vendors\select2\select2.css" />
+    <Content Include="assets_user\vendors\select2\select2.min.js" />
+    <Content Include="assets_user\vendors\select2\select2.png" />
+    <Content Include="assets_user\vendors\select2\select2x2.png" />
     <Content Include="Global.asax" />
     <Content Include="Models\ResortManagement.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -550,8 +639,6 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BookingController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Admin\Controllers\InvoiceController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoomController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServiceController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
@@ -559,25 +646,45 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\HandleErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AddBookingViewModel.cs" />
-    <Compile Include="Models\Bookings.cs">
+    <Compile Include="Models\AggregatedCounter.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Booking.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\BookingViewModel.cs" />
     <Compile Include="Models\Cart.cs" />
-    <Compile Include="Models\CustomerViewModel.cs" />
-    <Compile Include="Models\InvoiceDetailViewModel.cs" />
-    <Compile Include="Models\Invoices.cs">
+    <Compile Include="Models\Counter.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\InvoiceVM.cs" />
-    <Compile Include="Models\Promotions.cs">
+    <Compile Include="Models\Hash.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoice.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Job.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobParameter.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobQueue.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\List.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentRequest.cs" />
+    <Compile Include="Models\Promotion.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ResortDBContext.cs" />
@@ -599,21 +706,29 @@
     <Compile Include="Models\Reviews.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Rooms.cs">
+    <Compile Include="Models\Schema.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SelectRoomViewModel.cs" />
-    <Compile Include="Models\Services.cs">
+    <Compile Include="Models\Server.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ServiceSelectionViewModel.cs" />
-    <Compile Include="Models\sysdiagrams.cs">
+    <Compile Include="Models\Service.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiceItem.cs" />
+    <Compile Include="Models\Set.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\State.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TemporarySchedule.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UsedServices.cs">
+    <Compile Include="Models\TemporarySchedule.cs">
+      <DependentUpon>ResortManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsedService.cs">
       <DependentUpon>ResortManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Users.cs">
@@ -621,10 +736,17 @@
     </Compile>
     <Compile Include="Models\UserVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BackgroundJobs.cs" />
     <Compile Include="Services\BookingService.cs" />
+    <Compile Include="Services\HmacHelper.cs" />
+    <Compile Include="Services\HttpHelper.cs" />
+    <Compile Include="Services\RSAHelper.cs" />
+    <Compile Include="Services\Utils.cs" />
+    <Compile Include="Services\ZaloPayService.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
     <Compile Include="ViewModel\PaypalConfiguration.cs" />
     <Compile Include="ViewModel\SearchVM.cs" />
+    <Compile Include="ViewModel\ZaloPayConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -680,16 +802,6 @@
     <Content Include="Areas\Admin\Views\Room\DeleteRoom.cshtml" />
     <Content Include="Areas\Admin\Views\Booking\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Invoice\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Invoice\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Invoice\PrintInvoice.cshtml" />
-    <Content Include="Areas\Admin\Views\Booking\CustomerSelection.cshtml" />
-    <Content Include="Areas\Admin\Views\Booking\RoomSelection.cshtml" />
-    <Content Include="Areas\Admin\Views\Booking\GetAvailableRooms.cshtml" />
-    <Content Include="Areas\Admin\Views\Booking\ServiceSelection.cshtml" />
-    <Content Include="Areas\Admin\Views\Booking\Checkout.cshtml" />
-    <Content Include="Areas\Admin\Views\Booking\BookingSuccess.cshtml" />
-    <Content Include="Areas\Admin\Views\Profile\Info.cshtml" />
     <EntityDeploy Include="Models\ResortManagement.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ResortManagement.Designer.cs</LastGenOutput>
@@ -697,6 +809,25 @@
     <Content Include="Models\ResortManagement.edmx.diagram">
       <DependentUpon>ResortManagement.edmx</DependentUpon>
     </Content>
+    <Content Include="assets_user\fonts\anticon.eot" />
+    <Content Include="assets_user\fonts\anticon.ttf" />
+    <Content Include="assets_user\fonts\anticon.woff" />
+    <Content Include="assets_user\fonts\anticond41d.eot" />
+    <Content Include="assets_user\fonts\fa-brands-400.eot" />
+    <Content Include="assets_user\fonts\fa-brands-400.ttf" />
+    <Content Include="assets_user\fonts\fa-brands-400.woff" />
+    <Content Include="assets_user\fonts\fa-brands-400.woff2" />
+    <Content Include="assets_user\fonts\fa-brands-400d41d.eot" />
+    <Content Include="assets_user\fonts\fa-regular-400.eot" />
+    <Content Include="assets_user\fonts\fa-regular-400.ttf" />
+    <Content Include="assets_user\fonts\fa-regular-400.woff" />
+    <Content Include="assets_user\fonts\fa-regular-400.woff2" />
+    <Content Include="assets_user\fonts\fa-regular-400d41d.eot" />
+    <Content Include="assets_user\fonts\fa-solid-900.eot" />
+    <Content Include="assets_user\fonts\fa-solid-900.ttf" />
+    <Content Include="assets_user\fonts\fa-solid-900.woff" />
+    <Content Include="assets_user\fonts\fa-solid-900.woff2" />
+    <Content Include="assets_user\fonts\fa-solid-900d41d.eot" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_LayoutPage_Mainpage.cshtml" />
     <Content Include="Views\Home\MainPage.cshtml" />
@@ -707,6 +838,13 @@
     <Content Include="Views\Invoice\Payment.cshtml" />
     <Content Include="Views\Invoice\PaymentSuccess.cshtml" />
     <Content Include="Views\Invoice\PaymentFail.cshtml" />
+    <Content Include="Views\Booking\SelectService.cshtml" />
+    <Content Include="Views\HandleError\Error.cshtml" />
+    <Content Include="Views\Booking\Confirm.cshtml" />
+    <Content Include="Views\Booking\BookingRoom.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage_UserManage.cshtml" />
+    <Content Include="Views\User\Dashboard.cshtml" />
+    <Content Include="Views\Invoice\PaymentError.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -720,8 +858,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Proifile\" />
-    <Folder Include="Views\Booking\" />
     <Folder Include="Views\Room\" />
   </ItemGroup>
   <PropertyGroup>

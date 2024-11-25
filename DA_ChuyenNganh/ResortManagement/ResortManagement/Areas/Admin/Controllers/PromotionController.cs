@@ -60,7 +60,7 @@ namespace ResortManagement.Areas.Admin.Controllers
             if(pro == null)
             {
                 return HttpNotFound();
-            }    
+            }
 
             return View(pro);
         }
@@ -102,7 +102,7 @@ namespace ResortManagement.Areas.Admin.Controllers
             if(pro == null)
             {
                 return HttpNotFound();
-            }    
+            }
 
             return View(pro);
         }

@@ -11,7 +11,7 @@
 
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/x-icon" href="~/assets_detail/img/favicon/favicon.png">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- CSS here -->
     <link rel="stylesheet" href="~/assets_detail/css/bootstrap.css">
     <link rel="stylesheet" href="~/assets_detail/css/animate.css">
@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="~/assets_detail/css/flatpicker-min.css">
     <link rel="stylesheet" href="~/assets_detail/css/spacing.css">
     <link rel="stylesheet" href="~/assets_detail/css/main.css">
+
+    <!-- Icon here -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=smoke_free" />
 </head>
 <body >
     <!--[if lte IE 9]>
@@ -46,8 +50,10 @@
     <div class="tp-offcanvas-area tp-offcanvas-style-2">
         <div class="tp-offcanvas-wrapper">
             <div class="tp-offcanvas-top d-flex align-items-center justify-content-between">
-                <div class="tp-offcanvas-logo">
+                <div class="tp-offcanvas-xlogo">
+
                     <a href="index.html">
+                      
                         <img data-width="155" src="~/assets_detail/img/logo/logo-2.png" alt="">
                     </a>
                 </div>
@@ -167,7 +173,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2 col-6">
                             <div class="tp-header-logo">
-                                <a href="index.html"><img data-width="138" src="~/assets/img/logo/logo.png" alt="logo"></a>
+                                <a href="@Url.Action("MainPage", "Home")" title="Logout"><img data-width="138" src="~/assets/img/logo/logo.png" alt="logo"></a>
                             </div>
                         </div>
                         <div class="col-xl-8 col-lg-8  d-none d-lg-block">

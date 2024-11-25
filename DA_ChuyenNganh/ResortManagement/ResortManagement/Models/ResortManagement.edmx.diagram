@@ -4,26 +4,39 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="67fcfe6713274a1aad23441846d6e52b" Name="Diagram1">
-        <EntityTypeShape EntityType="DB_ResortfModel.Bookings" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_ResortfModel.Invoices" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_ResortfModel.Promotions" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_ResortfModel.Reviews" Width="1.5" PointX="6" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_ResortfModel.Rooms" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_ResortfModel.Services" Width="1.5" PointX="6" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_ResortfModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_ResortfModel.TemporarySchedule" Width="1.5" PointX="8.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_ResortfModel.UsedServices" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_ResortfModel.Users" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
-        <AssociationConnector Association="DB_ResortfModel.FK__Bookings__Promot__4CA06362" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_ResortfModel.FK__Bookings__RoomID__4D94879B" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_ResortfModel.FK__Bookings__UserID__4E88ABD4" ManuallyRouted="false" />
+      <Diagram DiagramId="1899a84d49554b83a03411e996483e98" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_ResortfModel.Booking" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Invoice" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Promotion" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Review" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Room" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Service" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.TemporarySchedule" Width="1.5" PointX="8.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.UsedService" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_ResortfModel.User" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <AssociationConnector Association="DB_ResortfModel.FK__Bookings__Promot__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__Bookings__RoomID__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__Bookings__UserID__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__Invoices__Bookin__5AEE82B9" ManuallyRouted="false" />
         <AssociationConnector Association="DB_ResortfModel.FK__UsedServi__Booki__628FA481" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_ResortfModel.FK_Invoices_BookingID" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_ResortfModel.FK__Reviews__RoomID__4F7CD00D" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_ResortfModel.FK__Reviews__Service__5070F446" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_ResortfModel.FK__Reviews__UserID__5165187F" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_ResortfModel.FK__UsedServi__Servi__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__Reviews__RoomID__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__Reviews__Service__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__Reviews__UserID__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_ResortfModel.FK__UsedServi__Servi__6383C8BA" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DB_ResortfModel.AggregatedCounter" Width="1.5" PointX="10.375" PointY="4.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Counter" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Hash" Width="1.5" PointX="12.375" PointY="3.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Job" Width="1.5" PointX="7.375" PointY="10.125" />
+        <EntityTypeShape EntityType="DB_ResortfModel.JobParameter" Width="1.5" PointX="9.625" PointY="12.125" />
+        <EntityTypeShape EntityType="DB_ResortfModel.JobQueue" Width="1.5" PointX="3.375" PointY="12.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.List" Width="1.5" PointX="12.375" PointY="6.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Schema" Width="1.5" PointX="12.375" PointY="9.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Server" Width="1.5" PointX="12.375" PointY="11.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Set" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.State" Width="1.5" PointX="9.625" PointY="9.125" />
+        <AssociationConnector Association="DB_ResortfModel.FK_HangFire_JobParameter_Job" />
+        <AssociationConnector Association="DB_ResortfModel.FK_HangFire_State_Job" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

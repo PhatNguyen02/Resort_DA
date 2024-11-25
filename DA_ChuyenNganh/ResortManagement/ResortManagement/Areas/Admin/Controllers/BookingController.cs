@@ -466,7 +466,7 @@ namespace ResortManagement.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        
+
     }
 
     

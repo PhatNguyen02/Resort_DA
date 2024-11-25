@@ -10,7 +10,7 @@ namespace ResortManagement.Areas.Admin.Controllers
 {
     public class UserController : Controller
     {
-       
+
         // GET: Admin/User
         public ActionResult Index(string search)
         {
@@ -23,7 +23,7 @@ namespace ResortManagement.Areas.Admin.Controllers
                 users = context.Users.ToList();
             }
             else
-            {
+        {
                 users = context.Users
                 .Where(p => p.Username.Contains(search))
                     .ToList();
@@ -46,10 +46,10 @@ namespace ResortManagement.Areas.Admin.Controllers
             DB_ResortfEntities _context = new DB_ResortfEntities();
             if (ModelState.IsValid)
             {
-                    _context.Users.Add(user);
-                    _context.SaveChanges();
+                _context.Users.Add(user);
+                _context.SaveChanges();
 
-                    return RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
             return View(user);
         }
@@ -64,7 +64,7 @@ namespace ResortManagement.Areas.Admin.Controllers
                 return HttpNotFound();
             }
 
-            
+
             return View(user);
         }
 
@@ -74,17 +74,17 @@ namespace ResortManagement.Areas.Admin.Controllers
             DB_ResortfEntities _context = new DB_ResortfEntities();
             var user = _context.Users.Find(id);
 
-           
+
             if (user == null)
             {
                 return HttpNotFound();
             }
 
-            
-            _context.Users.Remove(user);
-            _context.SaveChanges(); 
 
-            
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+
+
             return RedirectToAction("Index");
         }
 

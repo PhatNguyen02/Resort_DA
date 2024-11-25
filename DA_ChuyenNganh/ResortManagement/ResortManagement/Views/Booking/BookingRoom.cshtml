@@ -1,0 +1,31 @@
+﻿@model ResortManagement.Models.Booking
+
+@{
+    ViewBag.Title = "BookingRoom";
+    Layout = "~/Views/Shared/_LayoutPage_Detail.cshtml";
+}
+
+<h2>BookingRoom</h2>
+
+
+
+<h2>XÁC NHẬN BOOKING </h2>
+
+<form action="@Url.Action("PaymentWithPaypal", "Invoice")" method="post">
+    <input type="hidden" name="TotalAmount" value="1000" />
+    <input type="hidden" name="Services" value="0" />
+    <button type="submit">Pay with PayPal</button>
+</form>
+
+<a href="@Url.Action("PaymentWithPaypal", "Invoice" , new { idRoom = Model.BookingID })">Bạn có muốn chọn thêm dịch vụ không </a>
+
+
+<h2>Booking Confirmation</h2>
+<p>@ViewBag.Message</p>
+<p>Booking ID: @ViewBag.BookingID</p>
+<p>Cảm ơn bạn đã đặt phòng với chúng tôi! Chúng tôi sẽ liên hệ lại nếu cần thêm thông tin.</p>
+
+<a href="@Url.Action("MainPage", "Home")" class="btn btn-primary">Quay lại trang chủ</a>
+
+
+

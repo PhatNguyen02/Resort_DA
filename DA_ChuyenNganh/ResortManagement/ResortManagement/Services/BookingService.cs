@@ -20,9 +20,39 @@ namespace ResortManagement.Services
             return true;
         }
 
-        public decimal calculateTotal(DateTime checkInDate, DateTime checkOutDate, decimal pricePerDay)
+        public int totalday(DateTime checkInDate, DateTime checkOutDate)
         {
-            if(checkBooking(checkInDate,checkOutDate))
+            double totalDays = (checkOutDate - checkInDate).TotalDays;
+
+            // Làm tròn lên nếu có phần thập phân (ngày phần thập phân có nghĩa là chưa đến hết một ngày)
+            int rentalUnits = (int)Math.Ceiling(totalDays);
+            return rentalUnits;
+        }
+
+        public Booking GetBookingById(long bookingId)
+        {
+            // Ví dụ: Truy xuất từ cơ sở dữ liệu
+            return _dbContext.Bookings
+                .Include(b => b.UsedServices) // Bao gồm dịch vụ (nếu có)
+                .FirstOrDefault(b => b.BookingID == bookingId);
+        }
+
+        public Room GetRoomByIdBooking(int roomId)
+        {
+            // Ví dụ: Truy xuất từ cơ sở dữ liệu
+            return _dbContext.Rooms
+                .FirstOrDefault(b => b.RoomID == roomId);
+        }
+
+        public decimal calculateTotal(DateTime checkInDate, DateTime checkOutDate, int  idRoom)
+        {
+            decimal pricePerDay = _dbContext.Rooms
+            .Where(x => x.RoomID == idRoom)
+            .Select(x => x.Price)
+            .SingleOrDefault() ?? 0m;  // Nếu giá là null, gán 0m (mặc định)
+
+
+            if (checkBooking(checkInDate,checkOutDate))
             {
                 double totalHours = (checkOutDate - checkInDate).TotalHours;
 

@@ -12,6 +12,7 @@ namespace ResortManagement.Models
     using System;
     using System.Collections.Generic;
     
+
     public partial class TemporarySchedule
     {
         public string id { get; set; }
@@ -20,5 +21,14 @@ namespace ResortManagement.Models
         public System.DateTime endTime { get; set; }
         public string serviceId { get; set; }
         public string status { get; set; }
+
+    public partial class JobParameter
+    {
+        public long JobId { get; set; }
+        public string Name { get; set; }
+        public string Value { get; set; }
+    
+        public virtual Job Job { get; set; }
+
     }
 }
