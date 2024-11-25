@@ -12,6 +12,14 @@ namespace ResortManagement.Models
     using System;
     using System.Collections.Generic;
     
+    public partial class JobParameter
+    {
+        public long JobId { get; set; }
+        public string Name { get; set; }
+        public string Value { get; set; }
+    
+        public virtual Job Job { get; set; }
+
     public partial class UsedServices
     {
         public int UsedServiceID { get; set; }
@@ -22,5 +30,6 @@ namespace ResortManagement.Models
     
         public virtual Bookings Bookings { get; set; }
         public virtual Services Services { get; set; }
+
     }
 }

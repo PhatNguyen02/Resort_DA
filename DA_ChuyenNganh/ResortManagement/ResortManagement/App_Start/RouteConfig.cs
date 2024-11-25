@@ -13,6 +13,16 @@ namespace ResortManagement
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // Đảm bảo rằng route cho controller Invoice được cấu hình đúng
+            routes.MapRoute(
+     name: "Invoice",
+     url: "Invoice/{action}/{id}",
+     defaults: new { controller = "Invoice", action = "Payment", id = UrlParameter.Optional },
+     namespaces: new[] { "ResortManagement.Controllers" }
+ );
+
+
+            // Route mặc định
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
@@ -20,5 +30,6 @@ namespace ResortManagement
                 namespaces: new[] { "ResortManagement.Controllers" }
             );
         }
+
     }
 }
