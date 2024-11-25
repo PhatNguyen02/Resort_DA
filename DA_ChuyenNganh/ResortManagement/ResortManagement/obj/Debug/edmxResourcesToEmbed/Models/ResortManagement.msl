@@ -2,7 +2,7 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DB_ResortfModelStoreContainer" CdmEntityContainer="DB_ResortfEntities">
     <EntitySetMapping Name="Bookings">
-      <EntityTypeMapping TypeName="DB_ResortfModel.Booking">
+      <EntityTypeMapping TypeName="DB_ResortfModel.Bookings">
         <MappingFragment StoreEntitySet="Bookings">
           <ScalarProperty Name="BookingID" ColumnName="BookingID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
@@ -18,7 +18,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Invoices">
-      <EntityTypeMapping TypeName="DB_ResortfModel.Invoice">
+      <EntityTypeMapping TypeName="DB_ResortfModel.Invoices">
         <MappingFragment StoreEntitySet="Invoices">
           <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
           <ScalarProperty Name="BookingID" ColumnName="BookingID" />
@@ -31,7 +31,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Promotions">
-      <EntityTypeMapping TypeName="DB_ResortfModel.Promotion">
+      <EntityTypeMapping TypeName="DB_ResortfModel.Promotions">
         <MappingFragment StoreEntitySet="Promotions">
           <ScalarProperty Name="PromotionID" ColumnName="PromotionID" />
           <ScalarProperty Name="PromotionCode" ColumnName="PromotionCode" />
@@ -44,7 +44,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Reviews">
-      <EntityTypeMapping TypeName="DB_ResortfModel.Review">
+      <EntityTypeMapping TypeName="DB_ResortfModel.Reviews">
         <MappingFragment StoreEntitySet="Reviews">
           <ScalarProperty Name="ReviewID" ColumnName="ReviewID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
@@ -57,20 +57,27 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Rooms">
-      <EntityTypeMapping TypeName="DB_ResortfModel.Room">
+      <EntityTypeMapping TypeName="DB_ResortfModel.Rooms">
         <MappingFragment StoreEntitySet="Rooms">
-          <ScalarProperty Name="MainImage" ColumnName="MainImage" />
           <ScalarProperty Name="RoomID" ColumnName="RoomID" />
           <ScalarProperty Name="RoomType" ColumnName="RoomType" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="ImageRooms" ColumnName="ImageRooms" />
+          <ScalarProperty Name="MainImage" ColumnName="MainImage" />
+          <ScalarProperty Name="Description_check_in" ColumnName="Description_check_in" />
+          <ScalarProperty Name="Description_check_out" ColumnName="Description_check_out" />
+          <ScalarProperty Name="Description_service_room" ColumnName="Description_service_room" />
+          <ScalarProperty Name="Description_bed_type" ColumnName="Description_bed_type" />
+          <ScalarProperty Name="Description_max_occupancy" ColumnName="Description_max_occupancy" />
+          <ScalarProperty Name="Description_room_no_smoke" ColumnName="Description_room_no_smoke" />
+          <ScalarProperty Name="Description_room_size" ColumnName="Description_room_size" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Services">
-      <EntityTypeMapping TypeName="DB_ResortfModel.Service">
+      <EntityTypeMapping TypeName="DB_ResortfModel.Services">
         <MappingFragment StoreEntitySet="Services">
           <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
           <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
@@ -83,7 +90,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="DB_ResortfModel.sysdiagram">
+      <EntityTypeMapping TypeName="DB_ResortfModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -93,8 +100,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TemporarySchedule">
+      <EntityTypeMapping TypeName="DB_ResortfModel.TemporarySchedule">
+        <MappingFragment StoreEntitySet="TemporarySchedule">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="customerId" ColumnName="customerId" />
+          <ScalarProperty Name="startTime" ColumnName="startTime" />
+          <ScalarProperty Name="endTime" ColumnName="endTime" />
+          <ScalarProperty Name="serviceId" ColumnName="serviceId" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="UsedServices">
-      <EntityTypeMapping TypeName="DB_ResortfModel.UsedService">
+      <EntityTypeMapping TypeName="DB_ResortfModel.UsedServices">
         <MappingFragment StoreEntitySet="UsedServices">
           <ScalarProperty Name="UsedServiceID" ColumnName="UsedServiceID" />
           <ScalarProperty Name="BookingID" ColumnName="BookingID" />
@@ -105,7 +124,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="DB_ResortfModel.User">
+      <EntityTypeMapping TypeName="DB_ResortfModel.Users">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
@@ -116,42 +135,6 @@
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
           <ScalarProperty Name="Role" ColumnName="Role" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DB_ResortfModel.Store.sp_alterdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DB_ResortfModel.Store.sp_creatediagram" />
-    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DB_ResortfModel.Store.sp_dropdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DB_ResortfModel.Store.sp_helpdiagramdefinition">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DB_ResortfModel.sp_helpdiagramdefinition_Result">
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DB_ResortfModel.Store.sp_helpdiagrams">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DB_ResortfModel.sp_helpdiagrams_Result">
-          <ScalarProperty Name="Database" ColumnName="Database" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Owner" ColumnName="Owner" />
-          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DB_ResortfModel.Store.sp_renamediagram" />
-    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DB_ResortfModel.Store.sp_upgraddiagrams" />
-    <EntitySetMapping Name="TemporarySchedules">
-      <EntityTypeMapping TypeName="DB_ResortfModel.TemporarySchedule">
-        <MappingFragment StoreEntitySet="TemporarySchedule">
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="serviceId" ColumnName="serviceId" />
-          <ScalarProperty Name="endTime" ColumnName="endTime" />
-          <ScalarProperty Name="startTime" ColumnName="startTime" />
-          <ScalarProperty Name="customerId" ColumnName="customerId" />
-          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

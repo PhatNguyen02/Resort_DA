@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="BookingID" />
     </Key>
-    <Property Name="BookingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookingID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserID" Type="int" />
     <Property Name="RoomID" Type="int" />
     <Property Name="PromotionID" Type="int" />
@@ -19,8 +19,8 @@
     <Key>
       <PropertyRef Name="InvoiceID" />
     </Key>
-    <Property Name="InvoiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="BookingID" Type="int" />
+    <Property Name="InvoiceID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookingID" Type="bigint" />
     <Property Name="InvoiceDate" Type="datetime" />
     <Property Name="TotalAmount" Type="decimal" Precision="10" Scale="2" />
     <Property Name="IsPaid" Type="bit" />
@@ -59,9 +59,16 @@
     <Property Name="RoomType" Type="nvarchar" MaxLength="50" />
     <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
     <Property Name="Status" Type="nvarchar" MaxLength="50" />
-    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar(max)" />
     <Property Name="ImageRooms" Type="nvarchar" MaxLength="255" />
     <Property Name="MainImage" Type="varchar" MaxLength="255" />
+    <Property Name="Description_check_in" Type="nvarchar(max)" />
+    <Property Name="Description_check_out" Type="nvarchar(max)" />
+    <Property Name="Description_service_room" Type="nvarchar(max)" />
+    <Property Name="Description_bed_type" Type="nvarchar(max)" />
+    <Property Name="Description_max_occupancy" Type="int" />
+    <Property Name="Description_room_no_smoke" Type="nvarchar(max)" />
+    <Property Name="Description_room_size" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Services">
     <Key>
@@ -101,7 +108,7 @@
       <PropertyRef Name="UsedServiceID" />
     </Key>
     <Property Name="UsedServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="BookingID" Type="int" />
+    <Property Name="BookingID" Type="bigint" />
     <Property Name="ServiceID" Type="int" />
     <Property Name="Quantity" Type="int" />
     <Property Name="TotalPrice" Type="decimal" Precision="10" Scale="2" />
@@ -120,7 +127,7 @@
     <Property Name="RegistrationDate" Type="datetime" />
     <Property Name="Role" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <Association Name="FK__Bookings__Promot__571DF1D5">
+  <Association Name="FK__Bookings__Promot__4CA06362">
     <End Role="Promotions" Type="Self.Promotions" Multiplicity="0..1" />
     <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
     <ReferentialConstraint>
@@ -132,7 +139,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Bookings__RoomID__5629CD9C">
+  <Association Name="FK__Bookings__RoomID__4D94879B">
     <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
     <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
     <ReferentialConstraint>
@@ -144,7 +151,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Bookings__UserID__5535A963">
+  <Association Name="FK__Bookings__UserID__4E88ABD4">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
     <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
     <ReferentialConstraint>
@@ -156,19 +163,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Invoices__Bookin__5AEE82B9">
-    <End Role="Bookings" Type="Self.Bookings" Multiplicity="0..1" />
-    <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Bookings">
-        <PropertyRef Name="BookingID" />
-      </Principal>
-      <Dependent Role="Invoices">
-        <PropertyRef Name="BookingID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Reviews__RoomID__5EBF139D">
+  <Association Name="FK__Reviews__RoomID__4F7CD00D">
     <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
     <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
     <ReferentialConstraint>
@@ -180,7 +175,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Reviews__Service__5FB337D6">
+  <Association Name="FK__Reviews__Service__5070F446">
     <End Role="Services" Type="Self.Services" Multiplicity="0..1" />
     <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
     <ReferentialConstraint>
@@ -192,7 +187,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Reviews__UserID__5DCAEF64">
+  <Association Name="FK__Reviews__UserID__5165187F">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
     <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
     <ReferentialConstraint>
@@ -216,7 +211,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__UsedServi__Servi__6383C8BA">
+  <Association Name="FK__UsedServi__Servi__534D60F1">
     <End Role="Services" Type="Self.Services" Multiplicity="0..1" />
     <End Role="UsedServices" Type="Self.UsedServices" Multiplicity="*" />
     <ReferentialConstraint>
@@ -228,37 +223,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Association Name="FK_Invoices_BookingID">
+    <End Role="Bookings" Type="Self.Bookings" Multiplicity="0..1" />
+    <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bookings">
+        <PropertyRef Name="BookingID" />
+      </Principal>
+      <Dependent Role="Invoices">
+        <PropertyRef Name="BookingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="DB_ResortfModelStoreContainer">
     <EntitySet Name="Bookings" EntityType="Self.Bookings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
@@ -270,31 +246,27 @@
     <EntitySet Name="TemporarySchedule" EntityType="Self.TemporarySchedule" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UsedServices" EntityType="Self.UsedServices" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Bookings__Promot__571DF1D5" Association="Self.FK__Bookings__Promot__571DF1D5">
+    <AssociationSet Name="FK__Bookings__Promot__4CA06362" Association="Self.FK__Bookings__Promot__4CA06362">
       <End Role="Promotions" EntitySet="Promotions" />
       <End Role="Bookings" EntitySet="Bookings" />
     </AssociationSet>
-    <AssociationSet Name="FK__Bookings__RoomID__5629CD9C" Association="Self.FK__Bookings__RoomID__5629CD9C">
+    <AssociationSet Name="FK__Bookings__RoomID__4D94879B" Association="Self.FK__Bookings__RoomID__4D94879B">
       <End Role="Rooms" EntitySet="Rooms" />
       <End Role="Bookings" EntitySet="Bookings" />
     </AssociationSet>
-    <AssociationSet Name="FK__Bookings__UserID__5535A963" Association="Self.FK__Bookings__UserID__5535A963">
+    <AssociationSet Name="FK__Bookings__UserID__4E88ABD4" Association="Self.FK__Bookings__UserID__4E88ABD4">
       <End Role="Users" EntitySet="Users" />
       <End Role="Bookings" EntitySet="Bookings" />
     </AssociationSet>
-    <AssociationSet Name="FK__Invoices__Bookin__5AEE82B9" Association="Self.FK__Invoices__Bookin__5AEE82B9">
-      <End Role="Bookings" EntitySet="Bookings" />
-      <End Role="Invoices" EntitySet="Invoices" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Reviews__RoomID__5EBF139D" Association="Self.FK__Reviews__RoomID__5EBF139D">
+    <AssociationSet Name="FK__Reviews__RoomID__4F7CD00D" Association="Self.FK__Reviews__RoomID__4F7CD00D">
       <End Role="Rooms" EntitySet="Rooms" />
       <End Role="Reviews" EntitySet="Reviews" />
     </AssociationSet>
-    <AssociationSet Name="FK__Reviews__Service__5FB337D6" Association="Self.FK__Reviews__Service__5FB337D6">
+    <AssociationSet Name="FK__Reviews__Service__5070F446" Association="Self.FK__Reviews__Service__5070F446">
       <End Role="Services" EntitySet="Services" />
       <End Role="Reviews" EntitySet="Reviews" />
     </AssociationSet>
-    <AssociationSet Name="FK__Reviews__UserID__5DCAEF64" Association="Self.FK__Reviews__UserID__5DCAEF64">
+    <AssociationSet Name="FK__Reviews__UserID__5165187F" Association="Self.FK__Reviews__UserID__5165187F">
       <End Role="Users" EntitySet="Users" />
       <End Role="Reviews" EntitySet="Reviews" />
     </AssociationSet>
@@ -302,9 +274,13 @@
       <End Role="Bookings" EntitySet="Bookings" />
       <End Role="UsedServices" EntitySet="UsedServices" />
     </AssociationSet>
-    <AssociationSet Name="FK__UsedServi__Servi__6383C8BA" Association="Self.FK__UsedServi__Servi__6383C8BA">
+    <AssociationSet Name="FK__UsedServi__Servi__534D60F1" Association="Self.FK__UsedServi__Servi__534D60F1">
       <End Role="Services" EntitySet="Services" />
       <End Role="UsedServices" EntitySet="UsedServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoices_BookingID" Association="Self.FK_Invoices_BookingID">
+      <End Role="Bookings" EntitySet="Bookings" />
+      <End Role="Invoices" EntitySet="Invoices" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -1,0 +1,18 @@
+﻿@model List<ResortManagement.Models.Rooms>
+
+@*<select class="form-control" id="RoomID" name="RoomID" required>
+    @foreach (var room in Model)
+    {
+        <option value="@room.RoomID">@room.RoomType - @(room.Price.ToString("#,##0") + " $")</option>
+    }
+</select>*@
+@foreach (var room in Model)
+{
+    <div class="room">
+        <p>@room.RoomType - Price: @(room.Price.HasValue ? room.Price.Value.ToString("#,##0") + " $" : "0$")</p>
+        <label>
+            <input type="radio" name="RoomID" value="@room.RoomID" required />
+            Select this room
+        </label>
+    </div>
+}

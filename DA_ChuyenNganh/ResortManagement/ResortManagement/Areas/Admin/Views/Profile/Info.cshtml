@@ -1,0 +1,42 @@
+﻿@model  ResortManagement.Models.Users
+@{
+    ViewBag.Title = "Info";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+}
+
+
+
+<div class="container mt-5">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white text-center">
+            <h4>Personal Profile</h4>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong>ID:</strong> @Model.UserID
+                </li>
+                <li class="list-group-item">
+                    <strong>Full Name:</strong> @Model.FullName
+                </li>
+                <li class="list-group-item">
+                    <strong>Email:</strong> @Model.Email
+                </li>
+                <li class="list-group-item">
+                    <strong>Phone Number:</strong> @Model.PhoneNumber
+                </li>
+                <li class="list-group-item">
+                    <strong>Address:</strong> @Model.Address
+                </li>
+                <li class="list-group-item">
+                    <strong>Registration Date:</strong> @(Model.RegistrationDate.HasValue ? Model.RegistrationDate.Value.ToString("dd/MM/yyyy") : "N/A")
+                </li>
+                <li class="list-group-item">
+                    <strong>Role:</strong> @Model.Role
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+

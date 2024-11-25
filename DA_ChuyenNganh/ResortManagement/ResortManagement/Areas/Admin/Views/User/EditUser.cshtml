@@ -1,4 +1,4 @@
-﻿@model ResortManagement.Models.User
+﻿@model ResortManagement.Models.Users
 
 @{
     ViewBag.Title = "Edit User";
@@ -33,6 +33,12 @@
                         @Html.LabelFor(m => m.PhoneNumber, htmlAttributes: new { @class = "form-label" })
                         @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @placeholder = "Enter phone number", required = "required" })
                         @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(m => m.Address, htmlAttributes: new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.Address, new { @class = "form-control", @placeholder = "Enter Address", required = "required" })
+                        @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="form-group mb-3">

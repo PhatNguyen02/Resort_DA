@@ -1,4 +1,4 @@
-﻿@model ResortManagement.Models.Room
+﻿@model ResortManagement.Models.Rooms
 
 @{
     ViewBag.Title = "Edit Room";
@@ -12,7 +12,7 @@
         @using (Html.BeginForm("EditRoom", "Room", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
-
+            @Html.HiddenFor(r => r.RoomID);
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     @Html.HiddenFor(m => m.ImageRooms)
@@ -24,7 +24,8 @@
                             {
                                 new SelectListItem { Text = "Single", Value = "Single" },
                                 new SelectListItem { Text = "Double", Value = "Double" },
-                                new SelectListItem { Text = "Suite", Value = "Suite" }
+                                new SelectListItem { Text = "Suite", Value = "Suite" },
+                                new SelectListItem { Text = "Family", Value = "Family" }
                             }, "Value", "Text", Model.RoomType),
                             "-- Select Room Type --",
                             new { @class = "form-control", required = "required" })
@@ -67,7 +68,18 @@
                         <div class="form-group mb-3">
                             <label class="form-label">Current Image</label>
                             <div>
-                                <img src="@Url.Content("~/assets_detail/img/room/" + Model.ImageRooms)" alt="Room Image" class="img-thumbnail" style="max-width: 200px;" />
+                                @if (!string.IsNullOrEmpty(Model.ImageRooms))
+                                {
+                                    var images = Model.ImageRooms.Split(',');
+                                    foreach (var image in images)
+                                    {
+                                        <img src="@Url.Content("~/assets_detail/img/room-details/" + image.Trim())" alt="Room Image" class="img-thumbnail" style="max-width: 200px; margin-right: 5px;" />
+                                    }
+                                }
+                                else
+                                {
+                                    <p>No images available.</p> 
+                                }
                             </div>
                         </div>
                     }

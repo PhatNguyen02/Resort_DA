@@ -1,24 +1,31 @@
-﻿@model List<ResortManagement.Models.Service>
+﻿@model List<ResortManagement.Models.Services>
 @{
     ViewBag.Title = "Service Management";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+
+    <style>
+        #searchBox {
+            background-color: #f8f9fa;
+            border: 2px solid #007bff;
+            border-radius: 0.375rem;
+            transition: border-color 0.3s ease;
+        }
+
+
+            #searchBox:focus {
+                border-color: #0056b3;
+                box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+            }
+    </style>
 }
 
 <div class="card">
     <div class="card-body">
         <div class="row m-b-30">
-            <div class="col-md-8 d-flex flex-wrap">
-                @*<div class="m-b-10 m-r-15">
-                    <select class="custom-select" style="min-width: 180px;">
-                        <option selected>Status</option>
-                        <option value="all">All</option>
-                        <option value="available">Available</option>
-                        <option value="unavailable">Unavailable</option>
-                    </select>
-                </div>
-                <div class="m-b-10">
-                    <input type="text" class="form-control" placeholder="Search by Service Name">
-                </div>*@
+            <div class="col-lg-8">
+                <form method="get" action="@Url.Action("Index", "Service", new { area = "Admin" })" class="d-flex">
+                    <input type="text" class="form-control " id="searchBox" placeholder="Enter ServiceName..." value="@ViewBag.Search" />
+                </form>
             </div>
 
             <div class="col-md-4 d-flex justify-content-md-end" style="margin-top: 60px;">
@@ -52,7 +59,7 @@
                             <td>@service.ServiceID</td>
                             <td>@service.ServiceName</td>
                             <td>@service.ServiceCategory</td>
-                            <td>@service.Price</td>
+                            <td>@(service.Price.HasValue ? service.Price.Value.ToString("#,##0") : "0")$</td>
                             <td>@service.Description</td>
                             <td>@service.StatusServices</td>
                             <td>
@@ -70,6 +77,24 @@
                     }
                 </tbody>
             </table>
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+            <script>
+                $(document).ready(function () {
+                    $("#searchBox").on("input", function () {
+                        var searchTerm = $(this).val();
+                        $.ajax({
+                            url: '@Url.Action("Index", "Service", new { area = "Admin" })',
+                            type: 'GET',
+                            data: { search: searchTerm },
+                            success: function (data) {
+                                $("tbody").html($(data).find("tbody").html());
+                            }
+                        });
+                    });
+                });
+            </script>
         </div>
     </div>
 </div>

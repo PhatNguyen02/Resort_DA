@@ -1,4 +1,5 @@
-﻿using ResortManagement.Models;
+﻿using PayPal.Api;
+using ResortManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,24 @@ namespace ResortManagement.Areas.Admin.Controllers
     {
        
         // GET: Admin/User
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
-            DB_ResortfEntities _context = new DB_ResortfEntities();
-            List<User> users = _context.Users.ToList();
+            DB_ResortfEntities context = new DB_ResortfEntities();
+            List<Users> users;
+
+
+            if (string.IsNullOrEmpty(search))
+            {
+                users = context.Users.ToList();
+            }
+            else
+            {
+                users = context.Users
+                .Where(p => p.Username.Contains(search))
+                    .ToList();
+            }
+
+            ViewBag.Search = search;
             return View(users);
         }
 
@@ -26,7 +41,7 @@ namespace ResortManagement.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddUser(User user)
+        public ActionResult AddUser(Users user)
         {
             DB_ResortfEntities _context = new DB_ResortfEntities();
             if (ModelState.IsValid)
@@ -86,7 +101,7 @@ namespace ResortManagement.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditUser(User user)
+        public ActionResult EditUser(Users user)
         {
             if (ModelState.IsValid)
             {
@@ -101,6 +116,7 @@ namespace ResortManagement.Areas.Admin.Controllers
                     existingUser.FullName = user.FullName;
                     existingUser.Email = user.Email;
                     existingUser.PhoneNumber = user.PhoneNumber;
+                    existingUser.Address = user.Address;
                     existingUser.Username = user.Username;
                     existingUser.Password = user.Password;
                     existingUser.Role = user.Role;

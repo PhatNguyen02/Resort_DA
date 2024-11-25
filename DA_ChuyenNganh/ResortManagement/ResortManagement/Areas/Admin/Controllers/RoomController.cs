@@ -14,7 +14,7 @@ namespace ResortManagement.Areas.Admin.Controllers
         public ActionResult Index()
         {
             DB_ResortfEntities context = new DB_ResortfEntities();
-            List<Room> rooms = context.Rooms.ToList();
+            List<Rooms> rooms = context.Rooms.ToList();
             return View(rooms);
         }
 
@@ -24,14 +24,14 @@ namespace ResortManagement.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddRoom(Room room, HttpPostedFileBase ImageRooms)
+        public ActionResult AddRoom(Rooms room, HttpPostedFileBase ImageRooms)
         {
             DB_ResortfEntities _context = new DB_ResortfEntities();
 
             if (ImageRooms != null && ImageRooms.ContentLength > 0)
             {
                 string fileName = Path.GetFileName(ImageRooms.FileName);
-                string path = Path.Combine(Server.MapPath("~/assets_detail/img/room/"), fileName);
+                string path = Path.Combine(Server.MapPath("~/assets_detail/img/room-details/"), fileName);
 
                 ImageRooms.SaveAs(path);
 
@@ -64,7 +64,7 @@ namespace ResortManagement.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditRoom(Room room, HttpPostedFileBase ImageRooms)
+        public ActionResult EditRoom(Rooms room, HttpPostedFileBase ImageRooms)
         {
             if (ModelState.IsValid)
             {

@@ -1,0 +1,144 @@
+﻿@model ResortManagement.Models.SelectRoomViewModel
+@{
+    ViewBag.Title = "RoomSelection";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+}
+
+<form method="post" action="@Url.Action("CreateBooking", "Booking")">
+    <input type="hidden" name="UserID" value="@Model.UserID" />
+    <div class="form-group">
+        <label for="CheckInDate">CheckInDate:</label>
+        <input type="date" class="form-control" id="CheckInDate" name="CheckInDate" value="@Model.CheckInDate.ToString("yyyy-MM-dd")" required />
+    </div>
+
+    <div class="form-group">
+        <label for="CheckOutDate">CheckOutDate:</label>
+        <input type="date" class="form-control" id="CheckOutDate" name="CheckOutDate" value="@Model.CheckOutDate.ToString("yyyy-MM-dd")" required />
+    </div>
+
+    <button id="searchButton" class="btn btn-primary mt-3">Search</button>
+
+    <div id="roomSelection">
+        <h3>Available Rooms</h3>
+        @foreach (var room in Model.AvailableRooms)
+        {
+            <div class="room">
+                <p>@room.RoomType - Price: @(room.Price.HasValue ? room.Price.Value.ToString("#,##0") + " $" : "0")</p>
+
+                <label>
+                    <input type="radio" name="RoomID" value="@room.RoomID" required onchange="updateRoomID(this.value)" />
+                    Select this room
+                </label>
+            </div>
+        }
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="margin-top: 10px">Select Service</button>
+</form>
+
+<form method="post" action="@Url.Action("CreateBooking", "Booking")" id="checkoutForm">
+    <input type="hidden" name="UserID" value="@Model.UserID" />
+    <input type="hidden" name="CheckInDate" id="CheckoutCheckInDate" value="" />
+    <input type="hidden" name="CheckOutDate" id="CheckoutCheckOutDate" value="" />
+    <input type="hidden" name="RoomID" id="CheckoutRoomID" value="" />
+    <input type="hidden" name="IsCheckoutOnly" value="true" />
+
+    <button type="button" class="btn btn-secondary" style="margin-top: 20px" onclick="submitCheckoutForm()">Check Out</button>
+</form>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    @*$(document).ready(function() {
+        // Lắng nghe sự thay đổi của ngày nhận phòng và ngày trả phòng
+        $('#CheckInDate, #CheckOutDate').change(function() {
+            var checkInDate = $('#CheckInDate').val();
+            var checkOutDate = $('#CheckOutDate').val();
+
+            console.log("CheckInDate: " + checkInDate);  // Kiểm tra giá trị check-in
+            console.log("CheckOutDate: " + checkOutDate); // Kiểm tra giá trị check-out
+
+            // Gửi yêu cầu AJAX để lấy danh sách phòng
+            $.ajax({
+                url: '@Url.Action("GetAvailableRooms", "Booking")',
+                type: 'GET',
+                data: {
+                    checkInDate: checkInDate,
+                    checkOutDate: checkOutDate
+                },
+                success: function(result) {
+                    console.log("Received Rooms: ", result); // Kiểm tra dữ liệu trả về từ server
+                    // Cập nhật lại danh sách phòng trong view
+                    $('#roomSelection').html(result);  // Cập nhật phần tử chứa danh sách phòng
+                },
+                error: function() {
+                    alert("Room list could not be loaded. Please try again.");
+                }
+            });
+        });
+    });*@
+    $(document).ready(function() {
+    // Lắng nghe sự kiện nhấn nút Search
+    $('#searchButton').click(function() {
+        var checkInDate = $('#CheckInDate').val();
+        var checkOutDate = $('#CheckOutDate').val();
+
+        // Kiểm tra nếu ngày nhận phòng và ngày trả phòng hợp lệ
+        if (checkInDate && checkOutDate) {
+            // Gửi yêu cầu AJAX để lấy danh sách phòng
+            $.ajax({
+                url: '@Url.Action("GetAvailableRooms", "Booking")',
+                type: 'GET',
+                data: {
+                    checkInDate: checkInDate,
+                    checkOutDate: checkOutDate
+                },
+                success: function(result) {
+                    console.log("Received Rooms: ", result); // Kiểm tra dữ liệu trả về từ server
+                    // Cập nhật lại danh sách phòng trong view
+                    $('#roomSelection').html(result);  // Cập nhật phần tử chứa danh sách phòng
+                },
+                error: function() {
+                    alert("Room list could not be loaded. Please try again.");
+                }
+            });
+        } else {
+            alert("Please select both check-in and check-out dates.");
+        }
+    });
+});
+
+
+    function submitCheckoutForm() {
+        // Tìm phòng đã chọn
+        var selectedRoomID = $('input[name="RoomID"]:checked');
+
+        if (selectedRoomID.length > 0) {
+            // Gán giá trị RoomID vào form checkout
+            $('#CheckoutRoomID').val(selectedRoomID.val());
+
+            // Gán giá trị CheckInDate và CheckOutDate vào form checkout
+            var checkInDate = $('#CheckInDate').val();
+            var checkOutDate = $('#CheckOutDate').val();
+
+            // Kiểm tra giá trị hợp lệ và gán vào các trường hidden
+            if (checkInDate) {
+                $('#CheckoutCheckInDate').val(checkInDate);
+            }
+            if (checkOutDate) {
+                $('#CheckoutCheckOutDate').val(checkOutDate);
+            }
+
+            // Gửi form checkout
+            $('#checkoutForm').submit();
+        } else {
+            alert("Please select a room before checking out.");
+        }
+    }
+
+
+</script>
+
+

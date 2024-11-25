@@ -1,0 +1,121 @@
+﻿@model ResortManagement.Models.InvoiceVM
+
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1_Admin.cshtml";
+}
+
+
+
+<h2>Checkout</h2>
+
+<!-- Thông tin Booking -->
+<div>
+    <h4>Booking Information</h4>
+    <p><strong>Booking ID:</strong> @Model.BookingID</p>
+</div>
+
+<!-- Thông tin Phòng -->
+<div>
+    <h4>Room Information</h4>
+    <p><strong>Room Name:</strong> @Model.Room.RoomType</p>
+    <p><strong>Room Price:</strong> @(Model.RoomTotal.ToString("#,##0") + " $")</p>
+</div>
+
+<!-- Thông tin Dịch vụ (nếu có) -->
+@if (ViewBag.NoServicesMessage != null)
+{
+    <div class="alert alert-warning">
+        @ViewBag.NoServicesMessage
+    </div>
+}
+
+@if (Model.Services.Any())
+{
+    <h4>Selected Services</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Service Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var service in Model.Services)
+            {
+                <tr>
+                    <td>@service.Name</td>
+                    <td>@(service.Price.ToString("#,##0") + " $")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No additional services selected.</p>
+}
+
+<!-- Tổng giá -->
+<div>
+    <h4>Total Price</h4>
+    <p><strong>Grand Total:</strong> @(Model.GrandTotal.ToString("#,##0") + " $")</p>
+</div>
+
+<!-- Nút Xác nhận Thanh toán -->
+<form method="post" action="@Url.Action("ConfirmPayment", "Booking")">
+    <input type="hidden" name="BookingID" value="@Model.BookingID" />
+    <input type="hidden" name="GrandTotal" value="@Model.GrandTotal" />
+    <button type="submit" class="btn btn-success">Confirm Payment</button>
+</form>
+
+@*<div class="container">
+    <h2>Checkout</h2>-->*@
+
+<!-- Form để submit thanh toán -->
+<!--<form method="post" action="@Url.Action("ConfirmPayment", "Booking")">
+    <input type="hidden" name="BookingID" value="@Model.BookingID" />
+    <input type="hidden" name="GrandTotal" value="@Model.GrandTotal" />
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>-->
+<!-- Hiển thị thông tin phòng -->
+<!--<tr>
+    <td>@Model.Room.RoomType</td>
+    <td>@(Model.RoomTotal.ToString("#,##0") + " $")</td>
+</tr>-->
+<!-- Hiển thị danh sách dịch vụ -->
+<!--@foreach (var service in Model.Services)
+{
+    <tr>
+        <td>@service.Name</td>
+        <td>@(service.Price.ToString("#,##0") + " $")</td>
+    </tr>
+}-->
+<!-- Tổng cộng -->
+<!--<tr>
+                <td><strong>Total</strong></td>
+                <td><strong>@(Model.GrandTotal.ToString("#,##0") + " $")</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="form-group">
+    <label for="PaymentMethod">Payment Method:</label>
+    <select id="PaymentMethod" name="PaymentMethod" class="form-control" required>
+        <option value="CreditCard">Credit Card</option>
+        <option value="Cash">Cash</option>
+    </select>
+</div>-->
+<!-- Confirm Payment -->
+<!--<button type="submit" class="btn btn-primary">Confirm Payment</button>
+    </form>
+</div>-->

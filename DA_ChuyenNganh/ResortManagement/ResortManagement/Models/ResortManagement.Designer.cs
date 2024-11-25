@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\DA_ChuyenNganh\ResortManagement\ResortManagement\Models\ResortManagement.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\HUUTHANH\TaiLieu\HK7\DACN\Source\Thanh\Resort_DA\DA_ChuyenNganh\ResortManagement\ResortManagement\Models\ResortManagement.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

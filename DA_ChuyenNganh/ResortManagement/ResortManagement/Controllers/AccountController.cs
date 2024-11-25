@@ -40,6 +40,19 @@ namespace ResortManagement.Controllers
             }
         }
 
+        public ActionResult Logout()
+        {
+            // Xóa thông tin người dùng khỏi Session
+            Session.Clear(); // Xóa toàn bộ session
+
+            // Hoặc xóa cụ thể từng thông tin nếu cần
+            // Session["User"] = null;
+            // Session["UserId"] = null;
+
+            // Điều hướng người dùng đến trang đăng nhập hoặc trang chủ
+            return RedirectToAction("Login", "Account");
+        }
+
         //public ActionResult Login(LoginVM lvm)
         //{
         //    using (var DB = new DB_ResortfEntities())

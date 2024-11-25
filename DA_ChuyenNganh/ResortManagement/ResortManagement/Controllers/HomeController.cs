@@ -18,7 +18,7 @@ namespace ResortManagement.Controllers
         public ActionResult MainPage(int page=1 )
         {
             DB_ResortfEntities dBContext = new DB_ResortfEntities();
-            List<Room> roomList = dBContext.Rooms.ToList();
+            List<Rooms> roomList = dBContext.Rooms.ToList();
             
             //Paging
             int NoOfRecordPerPage = 3;

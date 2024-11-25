@@ -55,7 +55,7 @@ namespace ResortManagement.Controllers
                 }
 
                 // Tạo booking mới
-                var booking = new Booking
+                var booking = new Bookings
                 {
                     RoomID = room.RoomID,
                     UserID = user.UserID,
@@ -63,7 +63,6 @@ namespace ResortManagement.Controllers
                     CheckInDate = checkInDate,
                     CheckOutDate = checkOutDate,
                     TotalPrice = 520000, // Giá có thể tính toán dựa vào thời gian thuê
-                    PaymentType = "Prepaid",
                     Status = "Confirmed"
                 };
 
