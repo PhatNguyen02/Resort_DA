@@ -300,5 +300,161 @@
       <End Role="Services" EntitySet="Services" />
       <End Role="UsedServices" EntitySet="UsedServices" />
     </AssociationSet>
+    <EntitySet Name="AggregatedCounters" EntityType="DB_ResortfModel.AggregatedCounter" />
+    <EntitySet Name="Counters" EntityType="DB_ResortfModel.Counter" />
+    <EntitySet Name="Hashes" EntityType="DB_ResortfModel.Hash" />
+    <EntitySet Name="Jobs" EntityType="DB_ResortfModel.Job" />
+    <EntitySet Name="JobParameters" EntityType="DB_ResortfModel.JobParameter" />
+    <EntitySet Name="JobQueues" EntityType="DB_ResortfModel.JobQueue" />
+    <EntitySet Name="Lists" EntityType="DB_ResortfModel.List" />
+    <EntitySet Name="Schemata" EntityType="DB_ResortfModel.Schema" />
+    <EntitySet Name="Servers" EntityType="DB_ResortfModel.Server" />
+    <EntitySet Name="Sets" EntityType="DB_ResortfModel.Set" />
+    <EntitySet Name="States" EntityType="DB_ResortfModel.State" />
+    <AssociationSet Name="FK_HangFire_JobParameter_Job" Association="DB_ResortfModel.FK_HangFire_JobParameter_Job">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="JobParameter" EntitySet="JobParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HangFire_State_Job" Association="DB_ResortfModel.FK_HangFire_State_Job">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="State" EntitySet="States" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="AggregatedCounter">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="Int64" Nullable="false" />
+    <Property Name="ExpireAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Counter">
+    <Key>
+      <PropertyRef Name="Key" />
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Key" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="Int32" Nullable="false" />
+    <Property Name="ExpireAt" Type="DateTime" Precision="3" />
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Hash">
+    <Key>
+      <PropertyRef Name="Key" />
+      <PropertyRef Name="Field" />
+    </Key>
+    <Property Name="Key" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Field" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExpireAt" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateId" Type="Int64" />
+    <Property Name="StateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InvocationData" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Arguments" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ExpireAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="JobParameters" Relationship="DB_ResortfModel.FK_HangFire_JobParameter_Job" FromRole="Job" ToRole="JobParameter" />
+    <NavigationProperty Name="States" Relationship="DB_ResortfModel.FK_HangFire_State_Job" FromRole="Job" ToRole="State" />
+  </EntityType>
+  <EntityType Name="JobParameter">
+    <Key>
+      <PropertyRef Name="JobId" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="JobId" Type="Int64" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Job" Relationship="DB_ResortfModel.FK_HangFire_JobParameter_Job" FromRole="JobParameter" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="JobQueue">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Queue" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobId" Type="Int64" Nullable="false" />
+    <Property Name="Queue" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FetchedAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="List">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Key" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExpireAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Schema">
+    <Key>
+      <PropertyRef Name="Version" />
+    </Key>
+    <Property Name="Version" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Server">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Data" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastHeartbeat" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Set">
+    <Key>
+      <PropertyRef Name="Key" />
+      <PropertyRef Name="Value" />
+    </Key>
+    <Property Name="Key" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Score" Type="Double" Nullable="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ExpireAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="JobId" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobId" Type="Int64" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Reason" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Data" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Job" Relationship="DB_ResortfModel.FK_HangFire_State_Job" FromRole="State" ToRole="Job" />
+  </EntityType>
+  <Association Name="FK_HangFire_JobParameter_Job">
+    <End Type="DB_ResortfModel.Job" Role="Job" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DB_ResortfModel.JobParameter" Role="JobParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JobParameter">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HangFire_State_Job">
+    <End Type="DB_ResortfModel.Job" Role="Job" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DB_ResortfModel.State" Role="State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

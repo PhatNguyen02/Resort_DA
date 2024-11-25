@@ -35,5 +35,16 @@ namespace ResortManagement.Models
         public virtual DbSet<TemporarySchedule> TemporarySchedules { get; set; }
         public virtual DbSet<UsedService> UsedServices { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<AggregatedCounter> AggregatedCounters { get; set; }
+        public virtual DbSet<Counter> Counters { get; set; }
+        public virtual DbSet<Hash> Hashes { get; set; }
+        public virtual DbSet<Job> Jobs { get; set; }
+        public virtual DbSet<JobParameter> JobParameters { get; set; }
+        public virtual DbSet<JobQueue> JobQueues { get; set; }
+        public virtual DbSet<List> Lists { get; set; }
+        public virtual DbSet<Schema> Schemata { get; set; }
+        public virtual DbSet<Server> Servers { get; set; }
+        public virtual DbSet<Set> Sets { get; set; }
+        public virtual DbSet<State> States { get; set; }
     }
 }

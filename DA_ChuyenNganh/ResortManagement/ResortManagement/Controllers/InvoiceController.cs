@@ -535,17 +535,100 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ResortManagement.Services;
+using ResortInvoice = ResortManagement.Models.Invoice;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
+using ZaloPay.Helper.Crypto;
+using ZaloPay.Helper;
 namespace ResortManagement.Controllers
 {
     public class InvoiceController : Controller
     {
-         public ActionResult PaymentSuccess()
+        private readonly BookingService _bookingService = new BookingService();
+        private readonly ZaloPayConfiguration _zaloPayConfig;
+
+        public InvoiceController()
         {
-            // Trang hiển thị thông báo thành công
-            ViewBag.SuccessMessage = TempData["SuccessMessage"];
-            return View();
+            // Khởi tạo đối tượng ZaloPayConfiguration từ class này
+            _zaloPayConfig = new ZaloPayConfiguration();
         }
+
+        public ActionResult PaymentSuccess(string paymentId, string token, string PayerID)
+        {
+            try
+            {
+                // Lấy APIContext
+                APIContext apiContext = PaypalConfiguration.GetAPIContext();
+
+                // Xử lý thanh toán hoàn tất
+                var paymentExecution = new PaymentExecution() { payer_id = PayerID };
+                var payment = new Payment() { id = paymentId };
+
+                // Hoàn tất thanh toán
+                var executedPayment = payment.Execute(apiContext, paymentExecution);
+
+                // Lấy thông tin giao dịch từ executedPayment
+                var transaction = executedPayment.transactions.FirstOrDefault();
+                if (transaction == null)
+                {
+                    TempData["Message"] = "Không tìm thấy giao dịch.";
+                    return RedirectToAction("Error", "HandleError");
+                }
+
+                // Lấy invoice_number (BookingId) từ giao dịch, chuyển về kiểu long vì BookingID là BIGINT
+                var bookingId = long.Parse(transaction.invoice_number);
+
+                using (var db = new DB_ResortfEntities())
+                {
+                    // Tìm booking trong cơ sở dữ liệu, với BookingID là long (BIGINT)
+                    var booking = db.Bookings.FirstOrDefault(b => b.BookingID == bookingId);
+                    if (booking == null)
+                    {
+                        TempData["Message"] = "Không tìm thấy Booking.";
+                        return RedirectToAction("Error", "HandleError");
+                    }
+
+                    // Cập nhật trạng thái thanh toán của booking
+                    booking.Status = "Paid";
+                    db.SaveChanges();
+
+                    // Tạo hóa đơn (Invoice)
+                    var invoice = new ResortInvoice
+                    {
+                        BookingID = booking.BookingID,
+                        InvoiceDate = DateTime.Now,
+
+                        // Kiểm tra TotalPrice là decimal (hoặc float nếu cần)
+                        TotalAmount = booking.TotalPrice.HasValue ? (decimal)booking.TotalPrice : 0m,  // Hoặc sử dụng float nếu cần
+                        IsPaid = true,
+                        PaymentStatus = "Paid",
+                        PaymentMethod = "PayPal"
+                    };
+
+                    // Lưu Invoice vào cơ sở dữ liệu
+                    db.Invoices.Add(invoice);
+                    db.SaveChanges();
+
+                    // Chuyển hướng đến trang xác nhận hóa đơn
+                    return RedirectToAction("Confirm", "Invoice", new { invoiceId = invoice.InvoiceID });
+                }
+            }
+            catch (PayPal.PayPalException ex)
+            {
+                TempData["Message"] = "Lỗi PayPal: " + (ex.InnerException?.Message ?? ex.Message);
+                return RedirectToAction("Error", "HandleError");
+            }
+            catch (Exception ex)
+            {
+                TempData["Message"] = "Lỗi: " + ex.Message;
+                return RedirectToAction("Error", "HandleError");
+            }
+        }
+
 
         public ActionResult PaymentError()
         {
@@ -565,59 +648,115 @@ namespace ResortManagement.Controllers
         {
             try
             {
+                // Lấy APIContext
                 APIContext apiContext = PaypalConfiguration.GetAPIContext();
 
-                // Chuyển đổi sang USD và làm tròn
-                decimal exchangeRate = 0.000043m; // Tỷ giá VND sang USD
-                decimal totalUSD = Math.Round(request.TotalAmount * exchangeRate, 2);
+                // Tỷ giá VND sang USD
+                decimal exchangeRate = 0.000043m;
 
-                var itemList = new ItemList()
+                // Lấy thông tin booking từ cơ sở dữ liệu
+                var booking = _bookingService.GetBookingById(request.BookingId); // Hàm này bạn cần triển khai
+                if (booking == null)
                 {
-                    items = request.Services.Select(s => new Item()
+                    return Json(new
                     {
-                        name = s.ServiceName,
-                        currency = "USD",
-                        price = Math.Round(s.Price * exchangeRate, 2).ToString("0.00"),
-                        quantity = s.Quantity.ToString(),
-                        sku = s.ServiceID.ToString()
-                    }).ToList()
-                };
+                        success = false,
+                        message = "Booking không tồn tại."
+                    });
+                }
 
-                var details = new Details()
+                if (booking.RoomID == null)
+                {
+                    return Json(new
+                    {
+                        success = false,
+                        message = "RoomID không tồn tại."
+                    });
+                }
+
+                var room = _bookingService.GetRoomByIdBooking(booking.RoomID.Value);
+
+                // Lấy thông tin phòng
+               
+                decimal totalVND = booking.TotalPrice ?? 0m; // Giá trị mặc định là 0 nếu null
+
+                var itemList = new ItemList { items = new List<Item>() };
+
+                // Thêm thông tin phòng vào danh sách
+                itemList.items.Add(new Item()
+                {
+                    name = $"Room {room.RoomType}",
+                    currency = "USD",
+                    price = Math.Round((decimal)(booking.TotalPrice ?? 0m) * exchangeRate, 2).ToString("0.00"),
+                    quantity = "1",
+                    sku = booking.Room.ToString()
+                });
+
+
+                // Nếu booking có dịch vụ, thêm vào danh sách
+                if (request.Services != null && request.Services.Any())
+                {
+                    foreach (var service in request.Services)
+                    {
+                        var servicePriceUSD = Math.Round(service.Price * exchangeRate, 2);
+                        totalVND += service.Price * service.Quantity;
+
+                        itemList.items.Add(new Item
+                        {
+                            name = service.ServiceName,
+                            currency = "USD",
+                            price = servicePriceUSD.ToString("0.00"),
+                            quantity = service.Quantity.ToString(),
+                            sku = service.ServiceID.ToString()
+                        });
+                    }
+                }
+
+                // Tổng tiền sau khi chuyển đổi sang USD
+                decimal totalUSD = Math.Round(totalVND * exchangeRate, 2);
+
+                // Chi tiết thanh toán
+                var details = new Details
                 {
                     subtotal = totalUSD.ToString("0.00"),
                     tax = "0.00",
                     shipping = "0.00"
                 };
 
-                var amount = new Amount()
+                // Tạo thông tin thanh toán
+                var amount = new Amount
                 {
                     currency = "USD",
                     total = totalUSD.ToString("0.00"),
                     details = details
                 };
 
-                var transactionList = new List<Transaction> {
-            new Transaction() {
-                description = $"Booking #{request.BookingId}",
-                invoice_number = DateTime.Now.Ticks.ToString(),
+                // Tạo giao dịch
+                var transactionList = new List<Transaction>
+        {
+            new Transaction
+            {
+                description = $"Payment for Booking #{request.BookingId}",
+                invoice_number = request.BookingId.ToString(),
                 amount = amount,
                 item_list = itemList
             }
         };
 
-                var payment = new Payment()
+                // Tạo thanh toán PayPal
+                var payment = new Payment
                 {
                     intent = "sale",
-                    payer = new Payer() { payment_method = "paypal" },
+                    payer = new Payer { payment_method = "paypal" },
                     transactions = transactionList,
-                    redirect_urls = new RedirectUrls()
+                    redirect_urls = new RedirectUrls
                     {
-                        cancel_url = Request.Url.Scheme + "://" + Request.Url.Authority + "/Invoice/PaymentCancel",
-                        return_url = Request.Url.Scheme + "://" + Request.Url.Authority + "/Invoice/PaymentSuccess"
+                        cancel_url = $"{Request.Url.Scheme}://{Request.Url.Authority}/Invoice/PaymentCancel",
+                        return_url = $"{Request.Url.Scheme}://{Request.Url.Authority}/Invoice/PaymentSuccess"
                     }
                 };
 
+                // Tạo thanh toán
                 var createdPayment = payment.Create(apiContext);
                 var redirectUrl = createdPayment.links
                     .FirstOrDefault(x => x.rel.ToLower() == "approval_url")?.href;
@@ -630,15 +769,16 @@ namespace ResortManagement.Controllers
             }
             catch (PayPal.PayPalException ex)
             {
-                // Log chi tiết lỗi PayPal
+                // Xử lý lỗi PayPal
                 return Json(new
                 {
                     success = false,
-                    message = "Lỗi PayPal: " + ex.InnerException?.Message ?? ex.Message
+                    message = "Lỗi PayPal: " + (ex.InnerException?.Message ?? ex.Message)
                 });
             }
             catch (Exception ex)
             {
+                // Xử lý lỗi khác
                 return Json(new
                 {
                     success = false,
@@ -647,8 +787,91 @@ namespace ResortManagement.Controllers
             }
         }
 
-        // Lớp để ánh xạ dữ liệu từ AJAX
-        
-       
+
+        ///zalo Pay
+        public async Task<Dictionary<string, object>> CreatePaymentOrder(PaymentRequest paymentRequest)
+        {
+            Random rnd = new Random();
+            var embed_data = new { };
+            var items = paymentRequest.Services.Select(s => new { s.ServiceName, s.Subtotal }).ToArray();
+
+            var app_trans_id = rnd.Next(1000000);
+            var param = new Dictionary<string, string>();
+
+            // Dùng các giá trị từ ZaloPayConfiguration và PaymentRequest
+            param.Add("app_id", _zaloPayConfig.AppId);  // app_id từ ZaloPayConfiguration
+            param.Add("app_user", paymentRequest.BookingId.ToString());  // Chuyển BookingId thành app_user
+            param.Add("app_time", Utils.GetTimeStamp().ToString());
+            param.Add("amount", paymentRequest.TotalAmount.ToString());  // Sử dụng TotalAmount từ PaymentRequest
+            param.Add("app_trans_id", DateTime.Now.ToString("yyMMdd") + "_" + app_trans_id);
+            param.Add("embed_data", JsonConvert.SerializeObject(embed_data));
+            param.Add("item", JsonConvert.SerializeObject(items));
+            param.Add("description", "Booking #" + paymentRequest.BookingId);  // Mô tả có thể là BookingId hoặc thông tin từ Services
+            param.Add("bank_code", "");
+
+            // Tạo chuỗi dữ liệu để tính toán MAC
+            var data = _zaloPayConfig.AppId + "|" + param["app_trans_id"] + "|" + param["app_user"] + "|" + param["amount"] + "|"
+                         + param["app_time"] + "|" + param["embed_data"] + "|" + param["item"];
+            param.Add("mac", HmacHelper.Compute(ZaloPayHMAC.HMACSHA256, _zaloPayConfig.AppSecret, data));  // Dùng appSecret từ ZaloPayConfiguration
+
+            // Gửi yêu cầu đến API ZaloPay để tạo đơn hàng
+            var result = await HttpHelper.PostFormAsync(_zaloPayConfig.CreateOrderUrl, param);  // Dùng create_order_url từ ZaloPayConfiguration
+
+            // Kiểm tra kết quả trả về
+            if (result.ContainsKey("return_code") && result["return_code"].ToString() == "1")
+            {
+                // Nếu có order_url, chuyển hướng đến URL thanh toán
+                if (result.ContainsKey("order_url"))
+                {
+                    string orderUrl = result["order_url"].ToString();
+                    // Mở URL thanh toán trong trình duyệt mặc định hoặc trả về cho người dùng
+                    // System.Diagnostics.Process.Start(orderUrl); // Bạn có thể mở URL này hoặc trả về kết quả cho người dùng
+                }
+            }
+            else
+            {
+                // Xử lý lỗi hoặc không có order_url
+                Console.WriteLine("Error: " + result["return_message"]);
+            }
+
+            return result; // Trả về kết quả
+        }
+
+
+        public async Task<Dictionary<string, object>> QueryPaymentStatus(string appTransId)
+        {
+            string queryOrderUrl = "https://sb-openapi.zalopay.vn/v2/query";
+
+            var param = new Dictionary<string, string>
+            {
+                { "app_id", _zaloPayConfig.AppId },  // Dùng app_id từ ZaloPayConfiguration
+                { "app_trans_id", appTransId }
+            };
+
+            // Tạo dữ liệu để tính toán MAC
+            var data = $"{_zaloPayConfig.AppId}|{appTransId}|{_zaloPayConfig.AppSecret}";
+            param.Add("mac", HmacHelper.Compute(ZaloPayHMAC.HMACSHA256, _zaloPayConfig.AppSecret, data));
+
+            // Gửi yêu cầu để truy vấn trạng thái thanh toán
+            var result = await HttpHelper.PostFormAsync(queryOrderUrl, param);
+            return result; // Trả về kết quả
+        }
+
+        [HttpPost]
+        public ActionResult PaymentNotify()
+        {
+            // Xử lý callback từ ZaloPay
+            var response = Request.Form;
+            // Lưu log payment
+            // Cập nhật trạng thái đơn hàng
+            return new HttpStatusCodeResult(200);
+        }
+
+        public ActionResult PaymentSuccess()
+        {
+            // Xử lý khi user được redirect về
+            return View();
+        }
+
     }
 }

@@ -1,5 +1,4 @@
 ﻿using ResortManagement.Models;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -56,7 +55,7 @@ namespace ResortManagement.Areas.Admin.Controllers
 
             var service = _context.Services.Find(id);
 
-            if(service == null)
+            if (service == null)
             {
                 return HttpNotFound();
             }

@@ -103,7 +103,7 @@ namespace ResortManagement.Controllers
 
 
 
-        public ActionResult SelectService(int bookingId=13)
+        public ActionResult SelectService(int bookingId)
         {
          
         
@@ -111,7 +111,7 @@ namespace ResortManagement.Controllers
             {
                
                var booking = db.Bookings
-                               .Include("User")
+                               .Include("User") 
                                .Include("Room")
                                .FirstOrDefault(b => b.BookingID == bookingId);
 
@@ -128,10 +128,13 @@ namespace ResortManagement.Controllers
                 //int totalday = _bookingService.totalday(booking.CheckInDate, booking.CheckOutDate);
                 // Tính tổng số ngày
                 int totalDay = _bookingService.totalday(booking.CheckInDate.Value, booking.CheckOutDate.Value);
-       
-                ViewBag.Totalday = totalDay;
-                ViewBag.BookingId = bookingId;
-                ViewBag.BookingPrice = booking.TotalPrice;
+
+                TempData["Totalday"] = totalDay;
+                TempData["BookingId"] = bookingId;
+                TempData["BookingPrice"] = booking.TotalPrice;
+                //ViewBag.Totalday = totalDay;
+                //ViewBag.BookingId = bookingId;
+                //ViewBag.BookingPrice = booking.TotalPrice;
                 //ViewBag.Services = services;
 
                 return View(service);
@@ -143,7 +146,7 @@ namespace ResortManagement.Controllers
             using (var db = new DB_ResortfEntities())
             {
                 var expiredBookings = db.Bookings
-                                        .Where(b => b.Status == "Pending" && b.BookingDate < DateTime.Now.AddHours(-24))
+                                        .Where(b => b.Status == "Pending" && b.BookingDate < DateTime.Now.AddMinutes(-1))
                                         .ToList();
 
                 foreach (var booking in expiredBookings)

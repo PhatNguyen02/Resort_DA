@@ -1,8 +1,6 @@
 ﻿using ResortManagement.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ResortManagement.Areas.Admin.Controllers
@@ -42,10 +40,10 @@ namespace ResortManagement.Areas.Admin.Controllers
             DB_ResortfEntities _context = new DB_ResortfEntities();
             var pro = _context.Promotions.Find(id);
 
-            if(pro == null)
+            if (pro == null)
             {
                 return HttpNotFound();
-            }    
+            }
 
             return View(pro);
         }
@@ -84,10 +82,10 @@ namespace ResortManagement.Areas.Admin.Controllers
             DB_ResortfEntities _context = new DB_ResortfEntities();
             var pro = _context.Promotions.Find(id);
 
-            if(pro == null)
+            if (pro == null)
             {
                 return HttpNotFound();
-            }    
+            }
 
             return View(pro);
         }

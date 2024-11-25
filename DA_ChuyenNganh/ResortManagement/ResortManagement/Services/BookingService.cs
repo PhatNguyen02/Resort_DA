@@ -29,6 +29,21 @@ namespace ResortManagement.Services
             return rentalUnits;
         }
 
+        public Booking GetBookingById(long bookingId)
+        {
+            // Ví dụ: Truy xuất từ cơ sở dữ liệu
+            return _dbContext.Bookings
+                .Include(b => b.UsedServices) // Bao gồm dịch vụ (nếu có)
+                .FirstOrDefault(b => b.BookingID == bookingId);
+        }
+
+        public Room GetRoomByIdBooking(int roomId)
+        {
+            // Ví dụ: Truy xuất từ cơ sở dữ liệu
+            return _dbContext.Rooms
+                .FirstOrDefault(b => b.RoomID == roomId);
+        }
+
         public decimal calculateTotal(DateTime checkInDate, DateTime checkOutDate, int  idRoom)
         {
             decimal pricePerDay = _dbContext.Rooms

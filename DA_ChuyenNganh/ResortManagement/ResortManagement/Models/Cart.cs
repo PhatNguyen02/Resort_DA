@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ResortManagement.Models
+﻿namespace ResortManagement.Models
 {
     public class CartItem
     {

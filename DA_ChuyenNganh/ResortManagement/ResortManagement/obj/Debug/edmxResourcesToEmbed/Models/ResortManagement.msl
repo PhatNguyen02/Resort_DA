@@ -138,5 +138,114 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="AggregatedCounters">
+      <EntityTypeMapping TypeName="DB_ResortfModel.AggregatedCounter">
+        <MappingFragment StoreEntitySet="AggregatedCounter">
+          <ScalarProperty Name="ExpireAt" ColumnName="ExpireAt" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Counters">
+      <EntityTypeMapping TypeName="DB_ResortfModel.Counter">
+        <MappingFragment StoreEntitySet="Counter">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExpireAt" ColumnName="ExpireAt" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hashes">
+      <EntityTypeMapping TypeName="DB_ResortfModel.Hash">
+        <MappingFragment StoreEntitySet="Hash">
+          <ScalarProperty Name="ExpireAt" ColumnName="ExpireAt" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Field" ColumnName="Field" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="DB_ResortfModel.Job">
+        <MappingFragment StoreEntitySet="Job">
+          <ScalarProperty Name="ExpireAt" ColumnName="ExpireAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="Arguments" ColumnName="Arguments" />
+          <ScalarProperty Name="InvocationData" ColumnName="InvocationData" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobParameters">
+      <EntityTypeMapping TypeName="DB_ResortfModel.JobParameter">
+        <MappingFragment StoreEntitySet="JobParameter">
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobQueues">
+      <EntityTypeMapping TypeName="DB_ResortfModel.JobQueue">
+        <MappingFragment StoreEntitySet="JobQueue">
+          <ScalarProperty Name="FetchedAt" ColumnName="FetchedAt" />
+          <ScalarProperty Name="Queue" ColumnName="Queue" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lists">
+      <EntityTypeMapping TypeName="DB_ResortfModel.List">
+        <MappingFragment StoreEntitySet="List">
+          <ScalarProperty Name="ExpireAt" ColumnName="ExpireAt" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schemata">
+      <EntityTypeMapping TypeName="DB_ResortfModel.Schema">
+        <MappingFragment StoreEntitySet="Schema">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servers">
+      <EntityTypeMapping TypeName="DB_ResortfModel.Server">
+        <MappingFragment StoreEntitySet="Server">
+          <ScalarProperty Name="LastHeartbeat" ColumnName="LastHeartbeat" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sets">
+      <EntityTypeMapping TypeName="DB_ResortfModel.Set">
+        <MappingFragment StoreEntitySet="Set">
+          <ScalarProperty Name="ExpireAt" ColumnName="ExpireAt" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="DB_ResortfModel.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

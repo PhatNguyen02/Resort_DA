@@ -1,8 +1,6 @@
 ﻿using ResortManagement.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ResortManagement.Areas.Admin.Controllers
@@ -14,7 +12,7 @@ namespace ResortManagement.Areas.Admin.Controllers
         {
             DB_ResortfEntities context = new DB_ResortfEntities();
             List<Booking> book = context.Bookings.ToList();
-            return View(book);  
+            return View(book);
         }
 
         public ActionResult EditBooking(int id)
@@ -22,7 +20,7 @@ namespace ResortManagement.Areas.Admin.Controllers
             DB_ResortfEntities context = new DB_ResortfEntities();
             Booking book = context.Bookings.Find(id);
 
-            if(book == null)
+            if (book == null)
             {
                 return HttpNotFound();
             }
@@ -30,6 +28,6 @@ namespace ResortManagement.Areas.Admin.Controllers
             return View(book);
         }
 
-        
+
     }
 }

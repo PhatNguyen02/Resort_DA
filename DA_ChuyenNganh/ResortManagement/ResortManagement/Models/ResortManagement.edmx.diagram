@@ -24,6 +24,19 @@
         <AssociationConnector Association="DB_ResortfModel.FK__Reviews__Service__5FB337D6" ManuallyRouted="false" />
         <AssociationConnector Association="DB_ResortfModel.FK__Reviews__UserID__5DCAEF64" ManuallyRouted="false" />
         <AssociationConnector Association="DB_ResortfModel.FK__UsedServi__Servi__6383C8BA" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DB_ResortfModel.AggregatedCounter" Width="1.5" PointX="10.375" PointY="4.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Counter" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Hash" Width="1.5" PointX="12.375" PointY="3.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Job" Width="1.5" PointX="7.375" PointY="10.125" />
+        <EntityTypeShape EntityType="DB_ResortfModel.JobParameter" Width="1.5" PointX="9.625" PointY="12.125" />
+        <EntityTypeShape EntityType="DB_ResortfModel.JobQueue" Width="1.5" PointX="3.375" PointY="12.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.List" Width="1.5" PointX="12.375" PointY="6.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Schema" Width="1.5" PointX="12.375" PointY="9.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Server" Width="1.5" PointX="12.375" PointY="11.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.Set" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_ResortfModel.State" Width="1.5" PointX="9.625" PointY="9.125" />
+        <AssociationConnector Association="DB_ResortfModel.FK_HangFire_JobParameter_Job" />
+        <AssociationConnector Association="DB_ResortfModel.FK_HangFire_State_Job" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
